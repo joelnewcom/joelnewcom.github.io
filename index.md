@@ -1,6 +1,6 @@
 ## Welcome to my blog
 
-go to [Diary](https://joelnewcom.github.io/diary.md)
+Go to [Diary](https://joelnewcom.github.io/diary)
 
 ## Welcome to GitHub Pages
 
