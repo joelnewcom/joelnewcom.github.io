@@ -21,13 +21,16 @@ We agreed on using a special kind of key-value-database and decoupled the whole 
 For every decision we made it was important that a senior developer gave his OK to it. As long as the decision was made from someone "high" everybody agreed to it.
 We decided to use xml based spring bean configuration and use camel as framework for our data-intake component. At this time all these decisions seemed right to me. I actually never questioned them or even supported them.
 
-#### Curve goes down
-The project was not new anymore. Developers around the world were coming and going. They could basically do whatever they want. There was no design to follow, there was no quality gate to fulfill. There was no level of code maturity to hold. 
+#### Different ways of making software
+The project was not new anymore. Developers from around the world were coming and going. They could basically do whatever they want. There was no design to follow, there was no quality gate to fulfill. There was no level of code maturity to hold.
+There were a lot of external people.
+ 
+#### Curve flattens
 We somehow slowed down. Discussions got longer and the same topics came back over and over again.
 The management granted us time to work on our technical debt stories and even provided us a real scrum master as our team was not able to organize itself anymore. It did help. It helped the team to act as a team and we really tried to make our software better.
 But we were not able to do so.
 
-#### Which fault is it? 
+#### Whos fault is it? 
  
 #### the craftsman, the journeyman
 The project was two years old and a new guy joined the team. By this time I wasn't a junior anymore
