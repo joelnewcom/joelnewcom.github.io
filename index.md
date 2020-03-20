@@ -1,6 +1,7 @@
 ## Welcome to my blog
 
 [My Tale about Craftsmanship](craftsmanship/becoming-a-craftsman.md)
+
 [Software project](software-project/points-to-consider.md)
 
 ### Markdown

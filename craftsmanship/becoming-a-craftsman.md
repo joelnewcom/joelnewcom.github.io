@@ -1,5 +1,5 @@
 ## My tale of becoming a craftsman
-*//20.03.2020*
+*// 20.03.2020*
 
 ### Green field
 I had the privilege to work on a green field project as a junior software engineer in a financial software company. This was from 2016 to 2020.
