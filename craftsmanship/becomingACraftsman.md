@@ -1,31 +1,33 @@
 ## My tale of becoming a craftsman
-*// 18.03.2020*
+*//20.03.2020*
 
-#### New project
-I worked from 2016 to 2020 as a software engineer in a financial software company. I had the privilege to work on a green field project as a junior software engineer.
-The business unit had a great idea where the company could start a totally new business.
-The idea was pretty simple: We want to provide a platform where financial institutes can meet with their regulatory data. The platform will support a lot of different regulatory-templates, handle a huge amount of data and store for a long time for a potential audit.
+#### Green field
+I had the privilege to work on a green field project as a junior software engineer in a financial software company. This was from 2016 to 2020.
+Our business unit had a great idea and wanted to start a new business with a lot of determination.
+The idea was simple: The company provides a platform where financial institutes meet with their regulatory data. The platform will support a lot of different regulatories and their templates, 
+The system will need to handle a huge amount of data and store its data for a long time.
 
 #### Pressure and fun
-There was a big pressure since the beginning of the project to a specific date. An important european regulatory went active beginning of 2018 and we needed to be ready in production at latest this date. Otherwise our customers could be fined by the regulator.
-Nevertheless it was big fun. Colleagues were awesome. We discovered new technologies and made a lot of POCs. The GUI looked awesome and the business liked us. It seemed everything is possible and we developers are the kings. We had no idea that actually nobody of us really knew how to make proper software.
-We all thought, as long as we were compliant with the agile manifesto, we were fine. We worked with the scrum method.
+There was a big pressure since the beginning of the project to a specific date. An important european regulatory became effective beginning of 2018 and we needed to be ready in prod at latest this date. Otherwise our customers could be fined by the regulators.
+Nevertheless it was big fun. Colleagues were awesome. We discovered new technologies and made a lot of POCs. The GUI looked awesome and the business liked us. It seemed everything is possible and we developers are the kings. 
+We had no idea that actually nobody of us really knew how to make proper software.
+We all thought, as long as we are working in scrum methodology and were compliant with the [agile manifesto](https://agilemanifesto.org/), we were fine.
+At the end we went live and achieved our target. But till now we already shaped the system in a way we hardly can change later on.
 
-> * Individuals and interactions over processes and tools
-> * Working software over comprehensive documentation
-> * Customer collaboration over contract negotiation
-> * Responding to change over following a plan
+#### Decisions were made
+We used a key-value-database as we thought we go into big data area. So the database needs to be distributed. 
+The argument for key-value over a relational was always something like:
+ 
+* Its impossible to make a backup of a normal relational database with this huge amount of data we are excepting. 
+* Another one was the ACID functionality of oracle noSQL, as every other key-value store doesn't have it.
 
-At the end we went live and achieved our target. On the way we already shaped the system in a way we hardly can change afterwards.
-
-#### Decisions were made 
-We agreed on using a special kind of key-value-database and separated the input process from the normal application into an own component. We all agreed on having a REST API between these two components.
-We decided to use xml based spring bean configuration and use camel as framework for our data-intake component. 
-We decided to buy super powerful servers to give our database the boost it needed to run fast. Without any load on the system we already agreed on having the best and most expensive hardware we got.
+We separated the input process from the normal application into an own component and defined REST-interface between them. Only later I found out [conway's law](http://www.melconway.com/Home/Conways_Law.html) was a thing. 
+We decided to use xml based spring bean configuration and use apache camel as framework for our data-intake component. 
+We decided to buy super powerful servers to give our database the boost it needed to run fast. Without any load on the system we already agreed on having the best and most expensive hardware we can get.
 For decisions to be made, it was important that a senior developer gave his approval to it. As long as the decision was made from someone "high" everybody agreed to it. 
-At this time all these decisions seemed right to me, I never questioned them.
+At this time all these decisions seemed right to me, I never questioned them. I only found out later these decisino will come back in my own face. Not to those who actually made and pushed them.
 
-#### Different ways of making software
+#### Different people, different ways of crafting software
 The project was not new anymore. Developers from around the world were coming and going. They could basically do whatever they want here. There was no design to follow, there was no quality gate to fulfill. There was no level of code maturity to remain.
 There were a lot of external people. There was this guy who took cocaine and seemed to be really good at coding. He destroyed everybody in discussions, he came always up with facts nobody understood and always talked about his deep database knowledge.
 He wrote the whole DAO layer which communicates with our not so user-friendly key-value store. We were actually happy with it, because he took the responsibility for it. Nobody questioned his outcome nor did we really understand it. He was just too fast. 
