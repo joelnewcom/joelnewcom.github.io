@@ -8,27 +8,29 @@ The idea was pretty simple: We want to provide a platform where financial instit
 
 #### Pressure and fun
 There was a big pressure since the beginning of the project to a specific date. An important european regulatory went active beginning of 2018 and we needed to be ready in production at latest this date. Otherwise our customers could be fined by the regulator.
-Nevertheless it was big fun. Colleagues were awesome. We discovered new technologies and made a lot of POCs. The GUI looked awesome and the business like us. It seemed everything is possible and we developers are the kings. We had no idea that actually nobody of us really knew how to make proper software.
-We thought, as long as we were compliant with agile manifesto, we were fine. At a certain point it was even true. At the end we actually went live and achieved our target.
+Nevertheless it was big fun. Colleagues were awesome. We discovered new technologies and made a lot of POCs. The GUI looked awesome and the business liked us. It seemed everything is possible and we developers are the kings. We had no idea that actually nobody of us really knew how to make proper software.
+We all thought, as long as we were compliant with the agile manifesto, we were fine. We worked with the scrum method.
 
 > * Individuals and interactions over processes and tools
 > * Working software over comprehensive documentation
 > * Customer collaboration over contract negotiation
 > * Responding to change over following a plan
 
+At the end we went live and achieved our target. On the way we already shaped the system in a way we hardly can change afterwards.
+
 #### Decisions were made 
 We agreed on using a special kind of key-value-database and separated the input process from the normal application into an own component. We all agreed on having a REST API between these two components.
 We decided to use xml based spring bean configuration and use camel as framework for our data-intake component. 
 We decided to buy super powerful servers to give our database the boost it needed to run fast. Without any load on the system we already agreed on having the best and most expensive hardware we got.
 For decisions to be made, it was important that a senior developer gave his approval to it. As long as the decision was made from someone "high" everybody agreed to it. 
-At this time all these decisions seemed right to me. I actually never questioned them or even supported them.
+At this time all these decisions seemed right to me, I never questioned them.
 
 #### Different ways of making software
-The project was not new anymore. Developers from around the world were coming and going. They could basically do whatever they want. There was no design to follow, there was no quality gate to fulfill. There was no level of code maturity to hold.
-There were a lot of external people. There was this guy who took cocaine and seemed to be really good at coding. He could and did destroy everybody in discussions. He just found the right arguments and always talked about his deep database knowledge.
-He wrote the whole DAO layer which communicates with our not so user-friendly key-value store. We were actually happy with it. Nobody questioned ever his code nor did we really understand it. He was just too fast. 
+The project was not new anymore. Developers from around the world were coming and going. They could basically do whatever they want here. There was no design to follow, there was no quality gate to fulfill. There was no level of code maturity to remain.
+There were a lot of external people. There was this guy who took cocaine and seemed to be really good at coding. He destroyed everybody in discussions, he came always up with facts nobody understood and always talked about his deep database knowledge.
+He wrote the whole DAO layer which communicates with our not so user-friendly key-value store. We were actually happy with it, because he took the responsibility for it. Nobody questioned his outcome nor did we really understand it. He was just too fast. 
  
-#### Curve flattens
+#### Performance curve flattens
 We somehow slowed down. Discussions got longer and the same topics came back over and over again.
 The management granted us time to work on our technical debt stories and even provided us a real scrum master as our team was not able to organize itself anymore. It did actually help. It helped the team to act as a team, it gave a structure in our work and we all really tried to make our software better.
 But we were not able to do so.
