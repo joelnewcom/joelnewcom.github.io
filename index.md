@@ -1,31 +1,8 @@
-## Welcome to my blog
+* [Diary entries](craftsmanship)
 
-[My Tale about Craftsmanship](craftsmanship/becoming-a-craftsman.md)
+### Writing software 
+[Things to consider on a new project](software-project/points-to-consider.md)
+[Patterns not to forget](software-project/Java)
 
-[Software project](software-project/points-to-consider.md)
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/joelnewcom/joelnewcom.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+### Help
+[cheatsheet](cheatsheet.md)
