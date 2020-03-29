@@ -1,8 +1,8 @@
 * [Diary entries](craftsmanship)
 
 ### Writing software 
-[Things to consider on a new project](software-project/points-to-consider.md)
-[Patterns not to forget](software-project/Java)
+* [Things to consider on a new project](software-project/points-to-consider.md)
+* [Patterns not to forget](software-project/Java)
 
 ### Help
-[cheatsheet](cheatsheet.md)
+* [Cheat sheet](cheatsheet.md)
