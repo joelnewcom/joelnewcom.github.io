@@ -4,24 +4,23 @@
 *// 29.03.2020*
 
 ### Green field
-After my studies at zhaw I had the privilege to work on a green field project as a junior software engineer in a financial software company. This was from 2016 to 2020.
-Our business unit had a great idea and wanted to start a new business with a lot of determination.
-The idea was simple: The company provides a platform where financial institutes meet with their regulatory data. The platform will support a lot of different regulatories and their templates, 
-The system will need to handle a huge amount of data and store its data for a long time.
+After my studies at ZHAW I had the privilege to work on a green field project as a junior software engineer in a financial software company. This was from 2016 to 2020.
+Our business unit of the company had the vision to start doing business in the financial regulatory sector. 
+The idea was to provide a platform where financial institutes can share their regulatory data to be compliant with different regulations. 
 
-### Pressure and fun
-There was a big pressure since the beginning of the project to a specific date. An important european regulatory became effective beginning of 2018 and we needed to be ready in prod at latest this date. Otherwise our customers could be fined by the regulators.
+### Deadline
+There was a big pressure since the beginning of the project to a specific date. An important european regulatory (mifid2) became effective beginning of 2018 and we needed to be ready in prod at latest this date. Otherwise our customers could be fined by the regulators.
 Nevertheless it was big fun. Colleagues were awesome. We discovered new technologies and made a lot of POCs. The GUI looked awesome and the business liked us. It seemed everything is possible and we developers are the kings. 
 We had no idea that actually nobody of us really knew how to make proper software.
-We all thought, as long as we are working in scrum methodology and were compliant with the [agile manifesto](https://agilemanifesto.org/), we were fine.
-At the end we went live and achieved our target. But till now we already shaped the system in a way we hardly can change later on.
+I thought, as long as we are working in scrum methodology and were compliant with the [agile manifesto](https://agilemanifesto.org/), we were doing fine.
+In december 18 we went live and achieved our target.
 
 ### Decisions were made
-We used a key-value-database as we thought we go into big data area. So the database needs to be distributed. 
-The argument for key-value over a relational was always something like:
+We used a distributed key-value-database as we thought we go into big-data area and data-structure needs to be as weak as possible. 
+The argument for key-value over a relational database was something like:
  
 * Its impossible to make a backup of a normal relational database with this huge amount of data we are excepting. 
-* Another one was the ACID functionality of oracle noSQL, as every other key-value store doesn't have it.
+* ACID functionality of oracle noSQL, as every other noSQL store doesn't have it.
 
 We separated the input process from the normal application into an own component and defined REST-interface between them. Only later I found out [conway's law](http://www.melconway.com/Home/Conways_Law.html) was a thing. 
 We decided to use xml based spring bean configuration and use apache camel as framework for our data-intake component. 
