@@ -1,3 +1,5 @@
+[Home](/)
+
 ## Backup
 1. Mount same filesystem on every node
 2. Add a repository path on every node by put this into every elasticsearch.yml file: 

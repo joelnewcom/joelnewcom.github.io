@@ -1,3 +1,5 @@
+[Home](/)
+
 ## docker usages
 ```Usage:  docker run [OPTIONS] IMAGE [COMMAND] [ARG...]```
 ```Usage:  docker exec [OPTIONS] CONTAINER COMMAND [ARG...]```
@@ -16,6 +18,7 @@
 ```docker run -it -v /var/opt/directory:/mounted --privileged --rm rhel7 bash```
 
 ##### Override defined entrypoint
+This can be used to explore an exited container.
 ```docker run -it --entrypoint /bin/bash <image>```
 
 ## Exec into a running container
@@ -25,3 +28,10 @@
 ```-t``` for allocate a pseudo terminal 
 ```bash``` as command for new process in container  
 
+
+## Show docker stats
+```docker stats --format "table {{.Container}}\t{{.Name}}\t{{.CPUPerc}}\t{{.MemUsage}}"```
+
+```docker stats --format "table {{.Container}}\t{{.Name}}\t{{.CPUPerc}}\t{{.MemUsage}}\t{{.MemPerc}}"```
+
+```docker ps --format "table {{.Status}}\t{{.Names}}\t{{.Image}}\t{{.ID}}"```
