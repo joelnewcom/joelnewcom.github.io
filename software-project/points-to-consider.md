@@ -1,5 +1,7 @@
 [Home](/)
 
+[Back](index.md)
+
 ## New project
 *// 20.03.2020*
 

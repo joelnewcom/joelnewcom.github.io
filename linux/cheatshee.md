@@ -1,3 +1,4 @@
+[Home](/)
 
 ## Gives info about the file system
 ```

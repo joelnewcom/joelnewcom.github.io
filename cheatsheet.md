@@ -1,3 +1,5 @@
+[Home](/)
+
 ```markdown
 Syntax highlighted code block
 

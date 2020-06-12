@@ -1,3 +1,5 @@
+[Home](/)
+
 ## Shows git stats
 git log --numstat --since 01-01-2019
 

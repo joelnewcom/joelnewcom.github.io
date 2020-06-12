@@ -1,3 +1,5 @@
+[Home](/)
+
 ## Count elements with certain criteria
 ```
 [ .result[] | .isParticipatingAsManufacturer = true ] | length
