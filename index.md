@@ -7,12 +7,12 @@
 * [Tools and Frameworks](tools-frameworks/index.md)
 
 ### Writing software 
-* [Things to consider on a new project](software-project/points-to-consider.md)
-* [Patterns not to forget](software-project/Java)
-
-### Mardown Help
-* [Cheat sheet](cheatsheet.md)
+* [Things to consider on a new project](software-project/index.md)
+* [Patterns not to forget](software-project/Java/index.md)
 
 ### Diaries
 * [Diary entries](craftsmanship)
 * [Projects I worked on](projects-i-worked-on/project-reghub.md)
+
+### Mardown Help
+* [Cheat sheet](cheatsheet.md)

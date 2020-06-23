@@ -8,6 +8,9 @@
 ### Template for a technical concept
 [Technical Concept](technical-concept.md)
 
+### Business side of a project
+[Business](business/acronyms.md)
+
 ### CI 
 [CI](ci-ci-cd/ci-cd.md)
 [Checkstyle config](ci-cd/checkstyle-config.xml)
