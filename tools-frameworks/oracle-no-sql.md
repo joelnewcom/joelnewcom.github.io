@@ -1,5 +1,7 @@
 [Home](/)
 
+[Back](index.md)
+
 ## Export import a table into json and vice versa
 Export
 get table -name member -file fulldata.member.json;

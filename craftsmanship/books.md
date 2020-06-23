@@ -1,5 +1,7 @@
 [Home](/)
 
+[Back](index.md)
+
 ### Effective Java by Joshua Bloch 3rd edition
 [Amazon](https://www.amazon.com/Effective-Java-Joshua-Bloch/dp/0134685997)
 
@@ -10,4 +12,3 @@ Just coding is not good enough. THe books explains why we need an software craft
 ### Clean architecture by Robert C. Martin
 Describes the SOLID principle in an understandable way.
 The books describes how and where to draw the borders in a software to split it into smaller understandable parts.
-  

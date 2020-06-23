@@ -1,3 +1,5 @@
+[Back](index.md)
+
 ### Work with SSH on windows
 Install git bash on windows.
 In the git bash shell you can create a .bashrc file in your userhome directory:

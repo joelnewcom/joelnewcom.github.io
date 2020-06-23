@@ -1,5 +1,7 @@
 [Home](/)
 
+[Back](index.md)
+
 The steps are similar to [rolling-restart](../rolling-restart.md)
 
 0. Make a backup of the cluster

@@ -1,5 +1,7 @@
 [Home](/)
 
+[Back](index.md)
+
 0. Make a backup of the cluster
 1. stop non-essential indexing (if possible)
 2. disable shard allocation

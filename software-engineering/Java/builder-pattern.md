@@ -1,4 +1,6 @@
 [Home](/)
+
+[Back](index.md)
  
 Shows how to create an immutable object (Solution by joshua bloch from effective java)
 

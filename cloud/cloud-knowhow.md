@@ -1,5 +1,7 @@
 [Home](/)
 
+[Back](index.md)
+
 ### cloud
 
 ## public cloud

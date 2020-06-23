@@ -1,9 +1,9 @@
 ### My tech notes
-* [Cloud](cloud/cloud-knowhow.md)
+* [Cloud](cloud/index.md)
 * [Docker](docker/cheatsheet.md)
 * [ElasticSearch](elasticsearch/index.md)
-* [Git](git/gitlog.md)
-* [Linux](linux/cheatshee.md)
+* [Git](git/index.md)
+* [Linux](linux/cheatsheet.md)
 
 ### Writing software 
 * [Things to consider on a new project](software-project/points-to-consider.md)

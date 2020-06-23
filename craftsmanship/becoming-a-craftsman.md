@@ -1,5 +1,7 @@
 [Home](/)
 
+[Back](index.md)
+
 ## My tale of becoming a craftsman
 *// 20.03.2020*
 

@@ -1,3 +1,5 @@
+[Back](index.md)
+
 ## Option - Scroll Search
 		a. Takes a snapshot of results
 		b. statefull
