@@ -25,3 +25,5 @@ You don't need to care about the underlying hardware. Can be used as development
 Hosted software. Office 365, Skype and Dynamics CRM online sind SaaS-Software.
 The cloud provider is in charge of the application.
 
+## Virtual machines for development
+You can automatically shutdown your virtual machine to save money.

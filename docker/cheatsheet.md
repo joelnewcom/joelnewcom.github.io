@@ -1,5 +1,9 @@
 [Home](/)
 
+## Advantages
+The big advantage of containers is the non existing virtualisation layer. The running application within a docker container actually runs directly on the physical machine as process.
+If you don't need to configure the hardware, you better use container instead of VW. 
+
 ## docker usages
 ```Usage:  docker run [OPTIONS] IMAGE [COMMAND] [ARG...]```
 ```Usage:  docker exec [OPTIONS] CONTAINER COMMAND [ARG...]```
