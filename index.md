@@ -6,7 +6,7 @@
 * [Linux](linux/cheatsheet.md)
 * [Tools and Frameworks](tools-frameworks/index.md)
 
-### Writing software 
+### Software project 
 * [Things to consider on a new project](software-project/index.md)
 * [Patterns not to forget](software-project/Java/index.md)
 
@@ -14,5 +14,5 @@
 * [Diary entries](craftsmanship)
 * [Projects I worked on](projects-i-worked-on/project-reghub.md)
 
-### Mardown Help
+### Markdown Help
 * [Cheat sheet](cheatsheet.md)
