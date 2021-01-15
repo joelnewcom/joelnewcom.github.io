@@ -1,0 +1,1 @@
+https://stackoverflow.com/questions/35747109/where-do-i-set-character-encoding-in-soapui-preferences#:~:text=To%20set%20up%20an%20encoding,or%20iso%2D8859%2D1.

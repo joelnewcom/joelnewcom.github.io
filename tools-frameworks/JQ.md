@@ -4,7 +4,12 @@
 
 ## Count elements with certain criteria
 ```
-[ .result[] | .isParticipatingAsManufacturer = true ] | length
+.result 
+| map({customerTypeID: .customerTypeID})  
+| group_by(.customerTypeID)  
+| map({customerTypeID: .[0].customerTypeID, Count: length}) 
+| .[]
+ 
 ```
 ## Group by
 ```
