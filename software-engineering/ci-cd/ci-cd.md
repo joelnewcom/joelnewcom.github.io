@@ -1,7 +1,14 @@
+[Home](/)
+
+[Software Engineering](/software-engineering/index.md)
+
 ## checkstyle and pmd
-Its necessary for a software-project to have static code analysis checks in place.
+It is necessary for a software-project to have static code analysis checks in place.
 On Jenkins the reports of pmp and checkstyle can be easily evaluated by the "Warnings Next Generation Plugin" plugin.
 To reuse the pmd or checkstyle configuration we created an own project called build-tools which just holds these files as resources. 
+
+- [Checkstyle config](../software-engineering/ci-cd/checkstyle-config.xml)
+- [PMD config](../software-engineering/ci-cd/pmd_rules.xml)
 
 In JenkinsFile:
 ```

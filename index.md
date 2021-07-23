@@ -1,18 +1,15 @@
-### My tech notes
-* [Cloud](cloud/index.md)
-* [Docker](docker/cheatsheet.md)
-* [ElasticSearch](elasticsearch/index.md)
-* [Git](git/index.md)
-* [Linux](linux/cheatsheet.md)
-* [Tools and Frameworks](tools-frameworks/index.md)
+### My personal tech notes
+#### [Cloud](cloud/index.md)
+As I am working now with Azure I will document my learning here.  
 
-### Software project 
-* [Things to consider on a new project](software-project/index.md)
-* [Patterns not to forget](software-project/Java/index.md)
+#### [Tools and Frameworks](tools-frameworks/index.md)
+Every tool I walk over becomes a special place here. As a software engineer there is almost no way around: Docker, ElasticSearch, Maven, Linux, you name it. 
 
-### Diaries
-* [Diary entries](craftsmanship)
-* [Projects I worked on](projects-i-worked-on/project-reghub.md)
+#### [Software project](software-project/index.md) 
+This is the place for non-technical wisdom. Methodologies, soft-skills, how to pitch and so on.
 
-### Markdown Help
-* [Cheat sheet](cheatsheet.md)
+#### [Software engineering](software-engineering/index.md)
+Notes about programming languages, technical stuff I should remember for next projects.
+
+#### [Diary entries](craftsmanship)
+My diary about projects I worked on, books a read and what else bothers me.

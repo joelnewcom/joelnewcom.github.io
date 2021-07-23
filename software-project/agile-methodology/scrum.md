@@ -1,4 +1,6 @@
 ## Estimation
+This is a helpful table for estimate stories. If you don't have a reference story, or other strategy to estimate a story just go through this table every time.  
+
 |   |1|2|3|5|8|13|
 |---|---|---|---|---|---|---|
 |Feature changes|Small|Small|Not significant|Significant|New functionality|New functionality|   

@@ -7,7 +7,7 @@
 
 ### First project
 In late 2016 I had the privilege to work on a green field project as a junior software engineer in a financial software company.
-The project was called [reghub](../projects-i-worked-on/project-reghub.md) which needed to go live on a specific date because an european regulatory became effective beginning of 2018. 
+The project was called [reghub](projects-i-worked-on/project-reghub.md) which needed to go live on a specific date because an european regulatory became effective beginning of 2018. 
 After two years the project got into troubles because developing new features got slower to almost no progress.
 
 ### the craftsman, the journeyman, the mentor
@@ -24,7 +24,7 @@ We wrote many automated tests that refactoring became just as easy as writing ne
 ### It is all clear now
 Looking back to this project, so many moments come back to my memory, where I totally failed as a software engineer. 
 I agreed to so many things just because I was afraid to argue about it or to show I didn't fully understand it. Sometimes I also was just to lazy to make it right.
-Now I know, software craftsmanship is black and white. Its that simple.
+Now I know, software craftsmanship is black and white. It is that simple.
 There is no: "We will do it later". There is no architect who is responsible for what you do.
 * If somebody writes code and annotate it with a //TODO you need to consider it as not done. 
 * **Every workaround** becomes the final implementation.

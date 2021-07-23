@@ -11,7 +11,7 @@ How to solve repeating problems the best way in Java. Like best way in Java for 
 [Amazon](https://www.amazon.com/Effective-Java-Joshua-Bloch/dp/0134685997)
 
 ### The software craftsmanship by Sandro Mancuso
-Writing software is not only a job, but a honest craftsmanship.Hugo 
+Writing software is not only a job, but an honest craftsmanship.Hugo 
 Just coding is not good enough. THe books explains why we need an software craftsmanship manifesto on top of the agile manifesto.
 [Amazon](https://www.amazon.com/Software-Craftsman-Professionalism-Pragmatism-Robert/dp/0134052501)
 
