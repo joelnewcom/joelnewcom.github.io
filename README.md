@@ -1,2 +1,1 @@
-# joelnewcom.github.io
-my tech diary
+# [my tech diary](https://joelnewcom.github.io)
