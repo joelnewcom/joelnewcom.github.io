@@ -1,4 +1,7 @@
-### My personal tech notes
+### Joel's tech notes
+#### [Diary entries](craftsmanship)
+My diary about projects I worked on, books a read and what else bothers me.
+
 #### [Cloud](cloud/index.md)
 As I am working now with Azure I will document my learning here.  
 
@@ -11,5 +14,3 @@ This is the place for non-technical wisdom. Methodologies, soft-skills, how to p
 #### [Software engineering](software-engineering/index.md)
 Notes about programming languages, technical stuff I should remember for next projects.
 
-#### [Diary entries](craftsmanship)
-My diary about projects I worked on, books a read and what else bothers me.
