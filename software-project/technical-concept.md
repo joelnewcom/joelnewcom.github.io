@@ -1,18 +1,18 @@
-()
-
 # Requirements Engineering Template
 
 # Technical Concept
 ## In a nutshell
+TLDR
 ## Clarifications
 Points which needs to be clarified. A status shows if its already clarified.
 ## Assumptions
+list all the assumption made
 ## Status
 The status of this concept (in approval, draft, approved, in development)
 ## Change Request (after initial Approval)
 ## Approvals
 ## Links
-To Jiras, other related pages.
+To Jiras, ADO, other related pages.
 ## Phase x Requirements
 What requirements will be solved by this concept
 ## Technical Requirements

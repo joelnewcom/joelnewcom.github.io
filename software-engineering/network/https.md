@@ -1,3 +1,5 @@
+[Home](/)
+
 Even if you don't understand how it really works, you can assume following points are true:
 
 1. Any message encrypted with Bob's public key can only be decrypted with Bob's private key.

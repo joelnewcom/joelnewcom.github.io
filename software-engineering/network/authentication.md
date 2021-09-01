@@ -1,5 +1,6 @@
 [Home](/)
 
+
 # SAML 2.0
 Open standard for passing authentication and authorization information between three actors:
 * the principal
