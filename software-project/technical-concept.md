@@ -26,3 +26,4 @@ Define also what is not in scope
 Main part which describes the whole thing on a technical level
 ## WBS (work breakdown structure)
 ## Impact analysis
+Table of which components will be impacted 
