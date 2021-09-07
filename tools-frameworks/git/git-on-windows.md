@@ -1,5 +1,25 @@
 [Back](index.md)
 
+### Adding company certificate to GIT trusted root CA's
+Run this command to check current settings:
+
+``` 
+git config -l
+```
+
+If you see this config: http.sslbackend=openssl, it means GIT will use 
+
+```
+C:\Program Files\Git\mingw64\ssl\certs\ca-bundle.crt​
+or
+C:\Users\username\AppData\Local\Programs\Git\mingw64\ssl\certs\ca-bundle.crt​
+```
+
+to configure GIT use the windows certificate store:
+```
+git config --global http.sslBackend schannel
+```
+
 ### Work with SSH on windows
 Install git bash on windows.
 In the git bash shell you can create a .bashrc file in your userhome directory:
