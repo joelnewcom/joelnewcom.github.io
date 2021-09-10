@@ -11,13 +11,13 @@ How to solve repeating problems the best way in Java. Like best way in Java for 
 [Amazon](https://www.amazon.com/Effective-Java-Joshua-Bloch/dp/0134685997)
 
 ### The software craftsmanship by Sandro Mancuso
-Writing software is not only a job, but an honest craftsmanship.Hugo 
-Just coding is not good enough. THe books explains why we need an software craftsmanship manifesto on top of the agile manifesto.
+Writing software is not only a job, but an honest craftsmanship. 
+Just haevin working code is not good enough. This book explains why we need a software craftsmanship manifesto on top of the agile manifesto.
 [Amazon](https://www.amazon.com/Software-Craftsman-Professionalism-Pragmatism-Robert/dp/0134052501)
 
 ### Clean architecture by Robert C. Martin
-Describes the SOLID principle understandable.
-The book describes how and where to draw the borders in a software to split it into smaller understandable parts.
+Describes the SOLID principle in understandable examples.
+The book describes how and where to draw the borders in software to split it into smaller understandable components.
 [Amazon](https://www.amazon.com/Clean-Architecture-Craftsmans-Software-Structure/dp/0134494164)
 
 ### Head first - Design patterns Second Edition
