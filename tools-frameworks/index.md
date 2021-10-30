@@ -5,6 +5,7 @@
 * [Docker](docker/cheatsheet.md)
 
 # Tools
+* [IntelliJ](intelliJ/index.md)
 * [GIT](git/index.md)
 * [JQ](JQ.md)
 * [Maven](maven.md)
