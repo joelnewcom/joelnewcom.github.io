@@ -1,3 +1,23 @@
+[Home](/)
+
+# async and await
+In C# you can make usage of the keywords async and await like this:
+```
+public sealed class SystemUnderTest
+{
+  public static async Task SimpleAsync()
+  {
+    await Task.Delay(10);
+    // throw new Exception("Should fail.");
+  }
+}
+```
+
+This method might become asynchronous when reaching the await operator. This method might run on another thread then the main thread and main thread can go on with its work. 
+Once the Task is done, C# will make sure the code proceeds as you would expect. 
+
+Its best practice that an async method always returns a Task. If it doesn't it will be hard to test the method. 
+
 # Settings
 Order of settings (A higher number overrides the lower)
 
