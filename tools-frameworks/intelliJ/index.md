@@ -10,8 +10,8 @@ Now bind a shortcut to this quicklist. I use Ctrl+$ to open this list.
 
 
 # Shortcuts
-## Rename
-Rename anything (file, method-name, variable-name, class-name) by pressing Shift+F6
+Shift+F6 - Rename anything (file, method-name, variable-name, class-name) 
 
-## Go to implementation
-Ctrl+b
+Ctrl+b - Go to implementation
+
+Alt+F7 - Show usages
