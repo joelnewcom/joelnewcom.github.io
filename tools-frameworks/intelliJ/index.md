@@ -1,5 +1,7 @@
 [Home](/)
 
+[Back](../index.md)
+
 # Quicklists
 To create a quicklist go to File -> settings -> Appearance & Behaviour -> Quick-Lists.
 Here you can create a new Quicklist like: Git heavy used actions

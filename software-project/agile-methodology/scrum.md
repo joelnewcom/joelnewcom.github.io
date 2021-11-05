@@ -1,5 +1,7 @@
 [Home](/)
 
+[Back](../index.md)
+
 ## Estimation
 This is a helpful table for estimate stories. If you don't have a reference story, or other strategy to estimate a story just go through this table every time.  
 

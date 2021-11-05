@@ -1,5 +1,7 @@
 [Home](/)
 
+[Back](../index.md)
+
 ## Gives info about the file system
 ```
 df -h .

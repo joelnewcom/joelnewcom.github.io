@@ -1,5 +1,7 @@
 [Home](/)
 
+[Back](../index.md)
+
 ### table of content
 [Backup & Restore](backup-restore.md)
 [Full cluster restart](full-cluster-restart.md)

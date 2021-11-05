@@ -1,5 +1,7 @@
 [Home](/)
 
+[Back](index.md)
+
 ```markdown
 Syntax highlighted code block
 

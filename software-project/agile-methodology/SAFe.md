@@ -1,5 +1,7 @@
 [Home](/)
 
+[Back](../index.md)
+
 # Enterprise strategy
 
 SAFe starts with the enterprise strategy. It is a plan to achieve the company's mission and should have answers to questions like:

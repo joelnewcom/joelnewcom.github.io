@@ -1,3 +1,7 @@
+[Home](/)
+
+[Back](../index.md)
+
 # Troubleshooting
 ## Import open api specification into SOAPUI
 If you don't see the Project -> Import swagger menu:

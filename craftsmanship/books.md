@@ -12,7 +12,7 @@ How to solve repeating problems the best way in Java. Like best way in Java for 
 
 ### The software craftsmanship by Sandro Mancuso
 Writing software is not only a job, but an honest craftsmanship. 
-Just haevin working code is not good enough. This book explains why we need a software craftsmanship manifesto on top of the agile manifesto.
+Just having working code is not good enough. This book explains why we need a software craftsmanship manifesto on top of the agile manifesto.
 [Amazon](https://www.amazon.com/Software-Craftsman-Professionalism-Pragmatism-Robert/dp/0134052501)
 
 ### Clean architecture by Robert C. Martin
