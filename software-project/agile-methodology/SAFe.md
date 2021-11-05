@@ -1,3 +1,5 @@
+[Home](/)
+
 # Enterprise strategy
 
 SAFe starts with the enterprise strategy. It is a plan to achieve the company's mission and should have answers to questions like:
@@ -75,6 +77,19 @@ A Capability is something which spans over multiple ARTs, to work on a capabilit
 # PI
 * Has a PI roadmap 
 * Has PI objectives
+
+## PI Planning
+Your team has to prepare for the PI planing. It is a good idea to adapt the sprint-names of the train and plan your internal features already in the train scheme. 
+Otherwise, you will have a hard time in the PI Planning.
+
+Outcome of a PI Planing should be a list of objectives (they don't need to match the features). 
+These objectives have a business-value, and an assessor attached. The business-value gives the prioritisation of all your business-objectives.
+Once the PI is over, in the Inspect&Adapt session the assessor defines the actual business-value delivered.
+
+On the Board you place your features and draw lines if they have any dependencies. The arrows should point to the feature which is a successor.
+In most cases a feature is at the end of a series of stories which the feature depends on. The stories can be on your own team or another. 
+
+The last sprint is for Innovation & Planning, you shouldn't plan any features into this sprint. 
 
 # Roles
 Solution Manager - Focuses on Capabilities. Helping on the Solution roadmap
