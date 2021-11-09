@@ -1,5 +1,7 @@
 [Home](/)
 
+[Back](../index.md)
+
 # Software engineering
 
 ### [Solid](solid.md)
@@ -10,5 +12,6 @@
 
 ### [Java](java/index.md)
 
-### [C#](CSharp/index.md)
+### [C#](csharp/index.md)
 
+### [Pet Projects](pet-projects/index.md)
