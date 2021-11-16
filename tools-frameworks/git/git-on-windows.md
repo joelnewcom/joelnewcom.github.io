@@ -3,10 +3,13 @@
 [Back](index.md)
 
 ## Using ssh 
+Following this [manual](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 
-1. ssh-keygen -t rsa -b 4096 -C "<your-email-address"
-2. Make sure you take a proper name for your key (Like: github.joel.neukom)
-3. Add the public key to your account on the git host
+1. Check if you have already a key you can do this in GitBash: ```ls -al ~/.ssh``` 
+2. If we need a new key: In GitBash: ```ssh-keygen -t ed25519 -C "<your-mail>"```
+3. Use a proper name for your key-file (Like: github.joel.neukom)
+4. Add the public key to your account on the git server
+5. If you used previously https: protocol to sync you can change it to ssh with this: ```git remote set-url origin git@github.com:USERNAME/REPO.git```
 
 #### using ssh config file 
 Go to the .ssh directory /c/Users/PC_USER_NAME/.ssh/
