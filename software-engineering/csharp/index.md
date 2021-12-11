@@ -20,6 +20,17 @@ Once the Task is done, C# will make sure the code proceeds as you would expect.
 
 Its best practice that an async method always returns a Task. If it doesn't it will be hard to test the method. 
 
+# Dependency injection
+
+## Scope
+scoped = Will be newly instantiated for every request context
+singleton = Will be created only once
+
+Only a smaller scope can reference a larger scoped object. A singleton cannot hold reference to a scoped instance.  
+
+### Use scoped instance from singleton
+Use IServiceScopeFactory to instantiate a new scoped object in a singleton scoped class. 
+
 # Settings
 Order of settings (A higher number overrides the lower)
 

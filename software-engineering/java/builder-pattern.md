@@ -2,7 +2,7 @@
 
 [Back](index.md)
  
-Shows how to create an immutable object (Solution by joshua bloch from effective java)
+Shows how to create an immutable object (Solution by Joshua Bloch from effective java)
 
 ```java
 public class Rocket {
@@ -16,7 +16,7 @@ public class Rocket {
         private final int maxSpeed;
 
         // Optional parameters - initialized to default values
-        private List<Cargo> cargo = new ArrayList<Cargo>;
+        private List<Cargo> cargo = new ArrayList<Cargo>();
        
         public Builder(int height, int maxSpeed) {
             this.height = height;
@@ -24,7 +24,8 @@ public class Rocket {
         }
 
         public Builder withCargo(List<Cargo> cargo) { 
-            this.cargo = cargo;return this; 
+            this.cargo = cargo;
+            return this; 
         }
 
         public Rocket build() {
