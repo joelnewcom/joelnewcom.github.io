@@ -15,3 +15,5 @@
 ### [C#](csharp/index.md)
 
 ### [Pet Projects](pet-projects/index.md)
+
+### [Patterns](patterns/index.md)

@@ -2,7 +2,8 @@
 
 [Back](../index.md)
 
-[GitHub AutoTrader](https://github.com/joelnewcom/AutoTrader)
+Written in C# and running as webApp on Azure. It trades cryptocurrencies assets on its own over lykke exchange.
+Has a React UI which is served by the same IIS server which runs the autotrading service. 
 
-Written in C# and running as webApp on Azure. It trades a lot of assetPairs on its own over lykke exchange.
+[AutoTrader GitHub Repo](https://github.com/joelnewcom/AutoTrader)
  
