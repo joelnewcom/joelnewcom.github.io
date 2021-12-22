@@ -9,6 +9,9 @@ As RegWay started in a hurry, we forgot (or skipped by purpose) a lot of things,
 Those things are hitting us now really bad and by now you cannot just fix them, as other system and customers already depend on it. 
 In this document I want to describe those mistakes, so I don’t do them again.
 
+*//22.12.2021 Ha! It happened again!*
+[For future reference](https://martinfowler.com/articles/is-quality-worth-cost.html)
+
 ### Splitting things apart
 As soon as the application gets bigger an complexer the team wants to separate things. There will be multiple domains, multiple business processes and multiple parts will have different purposes to change. 
 Don't just separate them because it feels right to do it. Think more about it. Think about reasons, try to apply known best practices like SOLID to your decision. 
@@ -42,9 +45,9 @@ As soon as the DAO layer merges businessobjects, manipulates or verifies input, 
 For example: It’s better to fetch the entity from the business layer for existence-check, rather than doing this in the DAO layer (even it feels better, as the DAO layer is closer to the database)
 The DAO layer should be as simple and neutral as possible. You never know what the needs in the future are!
 
-### REST endpoints
-Start with internal endpoints, which returns almost the raw content of your database.
-Then make some business endpoints which transform the output in a way the user can use it. 
+### APIs
+APIs are contracts. Once you have a client, its hard to change this contract. Even to remove unused fields brakes the contract by definition. 
+That is why the "Interface Segregation" of SOLID makes sense. Always start with the bare minimum. Don't just return the raw database entry, but transform it into a minimalistic, but well defined business DTO (or client data model)    
 
 ### Configuration
 You need to configure your application somehow, but don't exaggerate it. 
@@ -52,7 +55,7 @@ If you don’t know if it needs to be configurable, don’t make it configurable
  
 ### Define a CDM
 Separate your internal business object and the clients business object. These will be almost the same when the project start, but they will diverge in the future.
-Your business-object will hold your primarykey, internal timestampl, record version, metainfo etc. Your client data model will remain the same as long your API doesn't change. 
+Your internal business-object will hold your primarykey, internal timestamp, record version, metainfo etc. Your client data model will remain the same as long your API doesn't change. 
 The API definition needs to be tested against the client data model, if they are not generated from the same source.
 The best would be when such definitions will be generated.
 
@@ -62,7 +65,7 @@ Error codes are always a good idea. Define KPIs for your application in an early
 
 ### Code review and analysis
 You need to have a common sense about code review in your team. Reviewing and decline a PR is something good!
-Right at the beginning you need static code analysis. The application needs to have a certain level of maturity which you can hold. Otherwise it will take you months to implement it.
+Right at the beginning you need static code analysis. The application needs to have a certain level of maturity which you can hold. Otherwise it will take you months to implement such a mindset in your team.
 
 ### CI/CD
 You cannot invest enough time for that, do it before your first line of code. 
