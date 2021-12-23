@@ -52,4 +52,8 @@ Typically a NuGet package that does not have an open source license will require
 ```dotnet new console```  will create a new console project. 
 
 ## New Unit test project
-```dotnet new mstest -o MyClassTest
+```dotnet new mstest -o MyClassTest```
+
+# int/float division
+integer / integer returns an integer even when the result has decimals. To get a float as result, at least one of the
+numbers needs to be a float: integer / (float)integer  

@@ -1,2 +1,2 @@
 ## run extensions commands
-CTRL + p opens the prompt. Then press > and the name of your extension.
+Shift + CTRL + p opens the prompt (Or Ctrl + p and then press >)
