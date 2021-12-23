@@ -47,3 +47,9 @@ A NuGet package available on nuget.org can have any license.
 There is no restriction on whether the NuGet package is free, open source or commercially licensed.
 You should review the license that each NuGet package has. 
 Typically a NuGet package that does not have an open source license will require you to accept the license agreement before installing it but you should still review the license even if you are not prompted to accept one.
+
+# Start from scratch
+```dotnet new console```  will create a new console project. 
+
+## New Unit test project
+```dotnet new mstest -o MyClassTest
