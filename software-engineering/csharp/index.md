@@ -20,6 +20,13 @@ Once the Task is done, C# will make sure the code proceeds as you would expect.
 
 Its best practice that an async method always returns a Task. If it doesn't it will be hard to test the method. 
 
+# Fields and Property
+Field is a private instance variable which is set via constructor. 
+Property is a public instance variable which is normally defined like this: 
+```
+public String name {get;set;}
+```
+
 # Dependency injection
 
 ## Scope
