@@ -20,6 +20,13 @@ Once the Task is done, C# will make sure the code proceeds as you would expect.
 
 Its best practice that an async method always returns a Task. If it doesn't it will be hard to test the method. 
 
+# Fields and Property
+Field is a private instance variable which is set via constructor. 
+Property is a public instance variable which is normally defined like this: 
+```
+public String name {get;set;}
+```
+
 # Dependency injection
 
 ## Scope
@@ -47,3 +54,13 @@ A NuGet package available on nuget.org can have any license.
 There is no restriction on whether the NuGet package is free, open source or commercially licensed.
 You should review the license that each NuGet package has. 
 Typically a NuGet package that does not have an open source license will require you to accept the license agreement before installing it but you should still review the license even if you are not prompted to accept one.
+
+# Start from scratch
+```dotnet new console```  will create a new console project. 
+
+## New Unit test project
+```dotnet new mstest -o MyClassTest```
+
+# int/float division
+integer / integer returns an integer even when the result has decimals. To get a float as result, at least one of the
+numbers needs to be a float: integer / (float)integer  
