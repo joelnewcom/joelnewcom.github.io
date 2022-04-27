@@ -6,7 +6,7 @@
 
 ### [Solid](solid.md)
 
-### [CI](ci-cd/ci-cd.md)
+### [CI](devops/ci-cd.md)
 
 ### [HTTP](network/index.md)
 
