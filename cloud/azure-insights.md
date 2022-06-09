@@ -11,7 +11,6 @@ requests
 ```
 
 ### Get all available logs for a specific string
-
 ```
 union isfuzzy=true
 availabilityResults,

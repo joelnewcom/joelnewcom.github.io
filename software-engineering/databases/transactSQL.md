@@ -9,3 +9,9 @@ AND birthdate IS NOT NULL
 
 ## WHERE IS NULL
 AND birthdate IS NULL
+
+## LIMIT
+-- Select the first 10 random employees.  
+SELECT TOP(10)JobTitle, HireDate  
+FROM HumanResources.Employee;  
+GO  
