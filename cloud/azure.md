@@ -18,14 +18,3 @@ Storing data for backup and restore, disaster recovery, and archiving.
 Storing data for analysis by an on-premises or Azure-hosted service.
 Storing up to 8 TB of data for virtual machines.
 
-## Azure data logs Kusto syntax
-I once had the problem that the request logs couldn't be retrieved because the url value contained characters which lead to malformed json (request where from vulnerability scan).
-So I created a query which displays all columns expect the url one. Fortunately the url also appears in the name and operation_name column anyway.
-```
-let start=datetime("2021-09-09T05:11:00.000Z");
-let end=datetime("2021-09-09T06:37:00.000Z");
-requests
-    | where timestamp > start and timestamp < end
-    | where client_Type != "Browser"
-    | project timestamp, id, source, name, success, resultCode, duration, performanceBucket, itemType, customDimensions, customMeasurements, operation_Name, operation_Id, operation_ParentId, operation_SyntheticSource, session_Id, user_Id,user_AuthenticatedId, user_AccountId, application_Version, client_Type, client_Model, client_OS, client_IP, client_City, client_StateOrProvince, client_CountryOrRegion, client_Browser, cloud_RoleName, cloud_RoleInstance, appId, appName, iKey,sdkVersion, itemId, itemCount
-```
