@@ -66,6 +66,14 @@ Append clipboard to file
 3. Maybe an enter
 4. CTRL + D (EOF)
 
+
+## Read file
+* head file.txt
+* tail file.txt
+* cat file.txt (prints out the whole file at once)
+* more file.txt (by enter you can scroll through the file)
+
+
 ## VI paste mode
 If you don't want Vim to mangle formatting in incoming pasted text, you want to consider using: ```:set paste ```This will prevent vim from re-tabbing your code. When done pasting, ```:set nopaste``` will return to the normal behavior.
 
