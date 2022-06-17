@@ -3,6 +3,23 @@
 [Back](../index.md)
 
 # Azure DevOps
+
+## ARM Templates
+* In full-mode, the template would delete resources not mentioned in the template.
+* In incremental mode, ARM would not delete the not mentioned resources.
+* Doesn't support modules. Files will get really long. The language is Azure Resource Manager specific.
+* New features are available immediately
+
+## Bicep
+* Uses ARM underneath and is straight forward. It only works with Azure.
+* Doesn't know about the current Infrastructure deployment (no state)
+* Support modules
+
+## Terraform
+* Uses ARM for Azure resources. Has a state about the current infrastructure deployment.
+* Doesn't has the latest feature from the providers
+
+
 ## OpenHack Documentation
 
 The setup is 4 different API applications and one website application to   

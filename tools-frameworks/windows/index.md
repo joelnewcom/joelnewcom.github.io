@@ -1,19 +1,27 @@
+# Paths
+To get the absolute path of a file you need to shift-right click on a file and click on getPath:
+![](getPathOfAFile.png)
+
+
+# PowerShell
+To show manual you need to run Get-Help cmdlet: ```Get-Help Get-Credentials```
+
 # BAT / CMD
 
-
 ## CMD
+```
 @echo off
 
 set /p username= "Enter username: "
 set /p password= "Enter password: "
-curl --location --request POST "https://zurich.okta-emea.com/oauth2/aus31n1lbcWktwFZF0i7/v1/token" ^
+curl --location --request POST "https://okta.com/oauth2/v1/token" ^
 --header "Content-Type: application/x-www-form-urlencoded" ^
 --header "flowid: PROD-getOktaToken-byAgent" ^
 --data-urlencode "username=%username%" ^
 --data-urlencode "password=%password%" ^
 --data-urlencode "scope=openid" ^
---data-urlencode "grant_type=password" ^
---data-urlencode "client_id=0oa31mz8mn9HeAiAg0i7" ^
---data-urlencode "client_secret=9NutLWgwRpEK848-yag1bv9aIwVTPr1RnsZJdi1b"
+--data-urlencode "grant_type=password"
 
 pause
+
+```

@@ -82,6 +82,7 @@ git config --global core.sshCommand "C:/Windows/System32/OpenSSH/ssh.exe"
 ```
 PS> [Environment]::SetEnvironmentVariable("GIT_SSH", "$((Get-Command ssh).Source)", [System.EnvironmentVariableTarget]::User)
 ```
+
 ### Make sure windows ssh-agent starts automatically
 Set the ssh-agent service to run automatically when the OS starts. 
 ```
@@ -92,3 +93,12 @@ Check if the command points to C:\Windows\System32\OpenSSH\ssh.exe
 ```
 PS> Get-Command ssh | Select-Object Source
 ```
+## Troubleshooting
+Check if ssh-agent is even running by: ``` eval `ssh-agent -s` ```
+
+
+Git would only add ssh key files automatically starting with id_
+Add your ssh key to ssh-agent: ``` ssh-add ~/.ssh/id_rsa ```
+
+
+

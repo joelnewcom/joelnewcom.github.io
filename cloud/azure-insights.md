@@ -30,3 +30,13 @@ dependencies
 Providing access to a specific dashboard is not enough. People also need to have reader access on the underlying data of the dashboard.
 This can be achieved by providing the default role "Reader" for Azure Insights. 
 
+### count
+
+count all rows with same value
+```| summarize meet_id_count = count() by meet_id```
+
+Count distinct values of id grouped by user_id
+```| summarize MeetingsCreatedAccount = dcount(meet_id) by user_Id```
+
+### Failures
+To seperate different backend dependencies you can filter on "Dependency Base name". 
