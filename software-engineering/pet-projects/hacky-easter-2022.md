@@ -45,7 +45,6 @@ It is somewhere in New York and most probably china town. Then I looked around o
 tried some different angles to the significant building to match the angle on the downloaded image until I found it. 
 
 # 8 - The Unicorn
-No solution found so far
 There is an image to download with a unicorn. image is named unicorn.png
 The text on the riddle is: Ain't no CTF without a unicorn!
 
