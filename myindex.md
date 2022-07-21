@@ -2,7 +2,7 @@
 #### [Diary entries](craftsmanship)
 My diary about projects I worked on, books a read and what else bothers me.
 
-#### [Cloud](cloud/index.md)
+#### [Cloud](_cloud/index.md)
 As I am working now with Azure I will document my learning here.  
 
 #### [Tools and Frameworks](tools-frameworks/index.md)

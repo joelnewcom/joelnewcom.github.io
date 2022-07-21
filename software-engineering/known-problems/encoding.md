@@ -1,3 +1,6 @@
+---
+---
+
 https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/
 
 * ASCII: (using number from 0 - 127) (2^7) in 7 bits. Characters from 32 to 127

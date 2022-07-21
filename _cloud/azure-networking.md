@@ -1,6 +1,5 @@
-[Home](/)
-
-[Back](index.md)
+---
+---
 
 ### Connectivity
 Azure resources communicate over one of these channels: VNets, VNet service endpoints and VNet peering.

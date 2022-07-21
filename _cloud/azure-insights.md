@@ -1,3 +1,6 @@
+---
+---
+
 ## Azure data logs Kusto syntax
 I once had the problem that the request logs couldn't be retrieved because the url value contained characters which lead to malformed json (request where from vulnerability scan).
 So I created a query which displays all columns expect the url one. Fortunately the url also appears in the name and operation_name column anyway.

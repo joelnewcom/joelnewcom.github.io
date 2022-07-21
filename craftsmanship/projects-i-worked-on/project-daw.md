@@ -1,6 +1,5 @@
-[Home](/)
-
-[Back](index.md)
+---
+---
 
 ## Project DAW
 *// 01.06.2020*

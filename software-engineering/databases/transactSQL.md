@@ -1,3 +1,6 @@
+---
+---
+
 ## SELECT COUNT
 SELECT COUNT(*) FROM <TableName> WITH (NOLOCK)
 

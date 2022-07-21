@@ -1,6 +1,5 @@
-[Home](/)
-
-[Back](index.md)
+---
+---
 
 
 # SAML 2.0

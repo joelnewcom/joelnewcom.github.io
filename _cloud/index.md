@@ -1,4 +1,5 @@
-[Home](/)
+---
+---
 
 * [Cloud knowhow](cloud-knowhow.md)
 * [Azure](azure.md)

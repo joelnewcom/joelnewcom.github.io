@@ -1,6 +1,5 @@
-[Home](/)
-
-[Back](index.md)
+---
+---
 
 ### REST API Design Rulebook 
 Basic rules for designing a REST API, like how to create an unstructured store, where a customer can save whatever it wants (preferences and settings). 

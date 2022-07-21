@@ -1,10 +1,8 @@
-[Home](/)
-
-[Back](index.md)
+---
+---
 
 ## Who the internet see me
-Useful website to test local area network from outside (does port forwarding works?)
-https://canyouseeme.org/
+Useful website to test local area network from outside (does port forwarding works?): https://canyouseeme.org/
 
 ## Substitute domain with IP address
 You can issue the request by specifying the IP directly, i.e. http://192.168.99.99/web/path

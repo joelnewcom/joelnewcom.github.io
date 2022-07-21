@@ -1,6 +1,5 @@
-[Home](/)
-
-[Back](index.md)
+---
+---
 
 Even if you don't understand how it really works, you can assume following points are true:
 

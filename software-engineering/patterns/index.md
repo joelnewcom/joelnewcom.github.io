@@ -1,6 +1,5 @@
-[Home](/)
-
-[Back](../index.md)
+---
+---
 
 ## Builder
 If you want to instantiate a specific class with a lot of constructor parameters, or the class should be immutable, 

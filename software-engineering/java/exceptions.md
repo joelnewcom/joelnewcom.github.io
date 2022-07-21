@@ -1,6 +1,5 @@
-[Home](/)
-
-[Back](index.md)
+---
+---
 
 # Exceptions
 In Java, you can to a lot with exceptions. You should use and handle exceptions the same way in your project. The mess starts when you mix different patterns.

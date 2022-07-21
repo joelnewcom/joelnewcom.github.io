@@ -1,6 +1,6 @@
 [Home](/)
 
-[Back](../index.md)
+[Back](../myindex.md)
 
 # Software project
 

@@ -1,6 +1,6 @@
-[Home](/)
-
-[Back](index.md)
+---
+title: "Azure"
+---
 
 ## connectivity troubleshooting
 There are two major causes if you cannot reach a host:

@@ -1,6 +1,5 @@
-[Home](/)
-
-[Back](index.md)
+---
+---
 
 ## Dynamics 365 Apps
 Sind modellgesteuerte Power-Apps und basieren auf common data service.

@@ -1,6 +1,5 @@
-[Home](/)
-
-[Back](../index.md)
+---
+---
 
 # Projects I worked on
 
