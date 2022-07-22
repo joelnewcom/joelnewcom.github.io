@@ -1,7 +1,7 @@
 ---
 layout: single
 title:  "Managing a soft-deleted apim resource"
-date:   2022-07-22 20:41:53 +0200
+date:   2022-07-22 18:20:53 +0200
 categories: azure
 ---
 
