@@ -3,6 +3,8 @@ layout: single
 title:  "Builder pattern in Java"
 date:   2022-07-20 20:41:53 +0200
 categories: java
+header:
+  teaser: "/assets/images/java-teaser-500x300.JPG"
 ---
  
 Shows how to create an immutable object (Solution by Joshua Bloch from effective java)

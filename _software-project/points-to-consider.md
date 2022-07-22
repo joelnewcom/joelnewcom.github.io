@@ -13,9 +13,9 @@ In this document I want to describe those mistakes, so I don’t do them again.
 [For future reference](https://martinfowler.com/articles/is-quality-worth-cost.html)
 
 ### Splitting things apart
-As soon as the application gets bigger an complexer the team wants to separate things. There will be multiple domains, multiple business processes and multiple parts will have different purposes to change. 
+As soon as the application gets bigger and more complex, the team wants to separate things. There will be multiple domains, multiple business processes and multiple parts will have different purposes to change. 
 Don't just separate them because it feels right to do it. Think more about it. Think about reasons, try to apply known best practices like SOLID to your decision. 
-Think from the beginning what will happen when another component does not work. This question didn't appear before because everything was in one place anyway. If you end up with two components which both don't work with each other, what did win?
+Think from the beginning what will happen when another component does not work. This question didn't appear before, because everything was in one place anyway. If you end up with two components which both don't work with each other, what did win?
 The easiest way is, that every component or every process-step will produce its own persisted artifact which can be taken by another component. In most cases this artifact will just be a file or an event in a queue. 
 You need to have a really good argumentation if you connect components synchronously. This will make the dependency even closer.
 

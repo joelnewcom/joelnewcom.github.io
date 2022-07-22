@@ -24,10 +24,8 @@ The book describes how and where to draw the borders in software to split it int
 [Amazon](https://www.amazon.com/Clean-Architecture-Craftsmans-Software-Structure/dp/0134494164)
 
 ### Head first - Design patterns Second Edition
-How and when use design patterns in code.
-reading in progress...
+How and when use design patterns in code..
 [Amazon](https://www.amazon.com/Head-First-Design-Patterns-Object-Oriented/dp/149207800X)
 
 ### Cracking the coding interview 6th edition
-Reading in progress...
 [Amazon](https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850)

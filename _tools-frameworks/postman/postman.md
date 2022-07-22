@@ -2,8 +2,6 @@
 layout: single
 ---
 
-# Postman
-
 ## Collections
 The Highest logical container for grouping stuff. You can share/import/export a collection.
 
@@ -18,7 +16,7 @@ You can only move collections from personal to a shared one. (But be careful: Vi
 
 ## Environments
 You can create environments and chose one for a test-run, regardless on which level you are (request, folder or collection) 
-I would create a environment for each server. 
+I would create an environment for each server. 
 
 ## Variables
 Variables can have 5 different scopes. The lower defined variable will override the more global defined ones.

@@ -3,6 +3,8 @@ layout: single
 title:  "Composition over inheritance"
 date:   2022-07-20 20:41:53 +0200
 categories: java
+header:
+  teaser: "/assets/images/java-teaser-500x300.JPG"
 ---
 
 I learned in 2007 in computer science class to use inheritance to achieve polymorphism-like behaviour. You just need to build a good inheritance tree to abstract the real world objects. 
