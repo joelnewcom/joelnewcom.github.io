@@ -1,4 +1,11 @@
 ---
+date: 2022-07-22
+tags:
+  - Azure
+categories:
+  - azure
+header:
+  teaser: "/assets/images/cloud-teaser.JPG"
 ---
 
 ### cloud
