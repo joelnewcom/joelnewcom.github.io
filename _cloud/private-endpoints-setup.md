@@ -1,15 +1,8 @@
 ---
 ---
 
-[Home](/)
-
-[Back](../index.md)
-
-
 ## Used quickstart: 
 https://github.com/Azure/azure-quickstart-templates/tree/master/quickstarts/microsoft.web/private-webapp-with-app-gateway-and-apim
-
-## Another 
 
 
 ## Commands to create deploy storage
@@ -35,4 +28,3 @@ This worked with private endpoints disabled:
 https://web-u4ojl5tpyinng-staging.azurewebsites.net/weatherforecast
 
 
-https://apim-u4ojl5tpyinng.azure-api.net/weatherforecast
