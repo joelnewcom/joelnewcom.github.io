@@ -1,0 +1,7 @@
+main:
+  - title: "Posts"
+    url: /blog
+  - title: "Collections"
+    url: /collections/
+  - title: "Categories"
+    url: /categories/
