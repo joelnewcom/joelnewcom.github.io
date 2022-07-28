@@ -2,10 +2,14 @@
 title: Project RegHub
 layout: archive
 classes: wide
+header:
+    teaser: "/assets/images/six/reg-hub-overview.png"
 ---
 
 ## Project RegHub
 *// 29.03.2020*
+
+![reghub](/assets/images/six/reg-hub-overview.png)
 
 ### Green field
 After my studies at ZHAW, I had the privilege to work on a green field project as a junior software engineer in a financial software company. This was from 2016 to 2020.
@@ -43,14 +47,14 @@ It gave a bit of structure to our daily work and at the end we all just tried to
 ### Who's fault is it? 
 People got angry. Business came always with new ideas which did not fit into our hardened landscape. We only could solve it with workarounds, instead of nicely adding a new feature. 
 At one day, our company decided to quit all external contracts till the end of 2019. All people who wrote a lot of code, made a lot of decisions and won the most arguments for their own game, were gone.
-So the answer is easy: Its the fault of the developers who remained. Suddenly YOU take the ownership about everything in the past.
+So the situation got easy: It is the fault of the developers who remained. Suddenly YOU take the ownership about everything in the past.
 
 ### the craftsman, the journeyman
 The project was two years old and a new guy joined the team. By this time I wasn't a junior developer anymore. I knew the system and all the insider stories and enjoyed the kudos of a problem-solver. 
-One day this new guy just pushed some changes which lead to a failing develop on our CI. I was under pressure and in charge of creating a new release candidate. I needed this develop to be green.
+One day this new guy just pushed some changes which lead to a failing develop on our CI. I was under pressure and in charge of creating a new release candidate. I needed this develop branch to be green.
 I approached him quite angry and in my mind I already imagined him as an old guy who doesn't even know how to run tests and use git properly. Little did I know that this guy will change my career.
-After some time we figured out that this guy knows more than we do. He first proved his skills by writing very solid code and it seemed he always had already a plan B for everything, was just one step ahead.
-And the most important thing about him was: He did not destroy people in discussions, but started to teach others. 
+After some time we figured out that this guy knows more than we do. He first proved his skills by writing very solid code, and it seemed he always had already a plan B for everything, was just one step ahead.
+And the most important thing about him was: He did not destroy people in discussions, but started to **teach** others. 
 At the end he was it, who rewrote the super complicated DAO layer and decoupled the business logic out of it. Step by step we introduced checkstyle and pmd checks and added so many tests that a refactoring is just as easy as writing new code.  
 
 ### It is all clear now
@@ -58,3 +62,7 @@ Looking back to this project, so many moments come back to my memory, where I to
 For example: If I didn't want to have a red develop branch, why was it even possible to push directly to it? 
 Why didn't I raised my hand and said: I do not agree. Or: I do not fully understand it.
 Now I know, software craftsmanship is black and white. Its that simple. If somebody writes code and annotate it with a //TODO you need to consider it as not done. **Every workaround** become the final implementation.
+
+## Rewards
+* Best RegTech Solution, FTF News Technology Innovation Awards, 2019
+* Best Reference Data Newcomer, Inside Market Data & Inside Reference Data Awards (IMD/IRD), 2018

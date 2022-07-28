@@ -123,3 +123,6 @@ API Gateway also supports a variety of policies to apply on the incoming traffic
 
 ## Event grid
 Webhooks can be used to get synchronous notification from the event grid.
+
+## Bastion
+Lets you dp rdp to your VMs. 

@@ -9,7 +9,7 @@ classes: wide
 
 ### First project
 In late 2016 I had the privilege to work on a green field project as a junior software engineer in a financial software company.
-The project was called [reghub](projects-i-worked-on/project-reghub.md) which needed to go live on a specific date because an european regulatory became effective beginning of 2018. 
+The project was called [reghub](projects-i-worked-on/project-reghub.md) which needed to go live on a specific date because a european regulatory became effective beginning of 2018. 
 After two years the project got into troubles because developing new features got slower to almost no progress.
 
 ### the craftsman, the journeyman, the mentor
