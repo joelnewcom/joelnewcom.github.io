@@ -98,23 +98,40 @@ Usecases:
 * Run application in cloud
 * extend your datacenter
 
-Its cool because you can shutdown your VM and don't pay anymore. When you manage VM's yourself you still pay for the underlying infrastructure.
+It is cool because you can shutdown your VM and don't pay anymore. When you manage VM's yourself you still pay for the underlying infrastructure.
 
-## Availability zones
-Availabilityzone is one of three physicly seperate zones in an azure region (Not every azure region support availability zones)
+### VM scaling group
+You can define a group of VMs which share all the same settings.
 
-## Failure-Domain
-Group depending on same infrastructure as electricity, switch, rack etc.
-
-## Update-Domain
-Group of Hardware/Software which will be maintained (updated) by Microsoft. 
-
-## Availabilitygroup
+### Availabilitygroup
 You can group your VMs into groups and Azure will make sure that VMs in the groups
 are distributed over different failuredomains.
 
+#### Failure-Domain
+Group depending on same infrastructure as electricity, switch, rack etc.
+
+#### Update-Domain
+Group of Hardware/Software which can be updated at the same time
+
 ## Load balancer
 To make sure, traffic only goes to VMs which are running, you need to place an Azure Load Balancer in front of them.
+
+
+
+# Azure infrastructure 
+
+## Regions
+Stands for an area on the planet which contains at least on azure datacenter. 
+### Region pairs
+If you want to go full resilience you make usage of region pairs. If a whole region goes down, your resource would fail over to the region pair.
+
+### Sovereign Regions
+These are some seperated azure regions for US and China goverment. 
+
+## Availability zones
+Availabilityzone is one of minimum three physically separate datacenter in an azure region (Not every azure region support availability zones)
+
+
 
 ## API Gateway
 Azure API Gateway can mock api and can do retry logic.
@@ -126,3 +143,9 @@ Webhooks can be used to get synchronous notification from the event grid.
 
 ## Bastion
 Lets you dp rdp to your VMs. 
+
+## organizing azure resources
+* Azure management groups: Lets you group subscriptions (Composition of multiple management groups are possible). Enables to define access for multiple subscriptions and to apply policies to multiple subscriptions. 
+* Subscriptions: Second tier. Where the billing happens. You can also define access on this level. You cannot put a subscription into another subscription.
+* Resource Group: To group resources
+* Resource
