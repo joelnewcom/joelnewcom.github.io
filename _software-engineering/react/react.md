@@ -12,3 +12,5 @@ Officially, you should also uppercase it.
 ```C:\Users\Gijs van Dam\AppData\Roaming\npm-cache```
 the path with the short folder name is:
 ```C:\Users\GIJSVA~1\AppData\Roaming\npm-cache```
+
+# 
