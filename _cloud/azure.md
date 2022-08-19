@@ -16,7 +16,20 @@ There are two major causes if you cannot reach a host:
 * DNS isn't accessible. The DNS timeout is 3 seconds per DNS server. If you have two DNS servers, the timeout is 6 seconds. Use ```nameresolver``` to see if DNS is working. 
 You can't use nslookup, because that doesn't use the DNS your virtual network is configured with. If inaccessible, you could have a firewall or NSG blocking access to DNS or it could be down.
 
-## Blob Storage
+
+
+## Azure storage
+Locally redundant storage (LRS) replicates your data three times within a single data center in the primary region. LRS provides at least 11 nines of durability (99.999999999%) of objects over a given year.
+For Availability Zone-enabled Regions, zone-redundant storage (ZRS) replicates your Azure Storage data synchronously across three Azure availability zones in the primary region. ZRS offers durability for Azure Storage data objects of at least 12 nines (99.9999999999%) over a given year.
+
+
+Azure Blobs: A massively scalable object store for text and binary data. Also includes support for big data analytics through Data Lake Storage Gen2.
+Azure Files: Managed file shares for cloud or on-premises deployments.
+Azure Queues: A messaging store for reliable messaging between application components.
+Azure Disks: Block-level storage volumes for Azure VMs.
+
+
+### Blob Storage
 
 is ideal for
 Serving images or documents directly to a browser.
@@ -71,7 +84,7 @@ Ein beliebiger OpenID Connect-Anbieter	/.auth/login/<providerName>	App Service O
 
 You can decide if the auth modul should let unauthorized traffic through or not.
 
-## Appsettings
+## App settings
 The Azure app service app settings overrides the ```Web.config``` and ```appsettings.json``` values. 
 App settings are encrypted at rest.
 
@@ -117,7 +130,6 @@ Group of Hardware/Software which can be updated at the same time
 To make sure, traffic only goes to VMs which are running, you need to place an Azure Load Balancer in front of them.
 
 
-
 # Azure infrastructure 
 
 ## Regions
@@ -149,3 +161,30 @@ Lets you dp rdp to your VMs.
 * Subscriptions: Second tier. Where the billing happens. You can also define access on this level. You cannot put a subscription into another subscription.
 * Resource Group: To group resources
 * Resource
+
+
+## Azure functions
+If you have code which only needs to be run after a certain trigger like REST call, timer or event. (If you need to have the code running all the time, then better use web-app or VW as underlying platform)
+
+### Durable function
+is azure function but stateful 
+
+## Azure AD
+A tenant is a representation of an organization. A tenant is typically separated from other tenants and has its own identity.
+Each Microsoft 365, Office 365, Azure, and Dynamics CRM Online tenant is automatically an Azure AD tenant.
+
+## Azure policy
+The policy definition can be assigned to Management groups, subscriptions or resource groups.
+
+## Calculate composite SLA
+![sla setup](sla.svg)
+
+| Service | SLA |
+|---------|-----|
+| Azure Virtual Machines | 99.9 percent |
+| Azure SQL Database | 99.99 percent |
+| Azure Load Balancer | 99.99 percent |
+
+As two VMs are required, you need to use the SLA of a VM twice.
+99.9%×99.9%×99.99%×99.99% (=0.999×0.999×0.9999×0.9999) 
+=0.9978 (=99.78%)
