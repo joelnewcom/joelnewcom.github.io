@@ -49,4 +49,12 @@ Count distinct values of id grouped by user_id
 ```| summarize MeetingsCreatedAccount = dcount(meet_id) by user_Id```
 
 ### Failures
-To seperate different backend dependencies you can filter on "Dependency Base name". 
+To separate different backend dependencies you can filter on "Dependency Base name". 
+
+# Iff
+```
+dependencies
+| where name contains "/zch_archivemetadata"
+| extend docType_endpoint = iff(name contains "/metadata_a", "Type A", iff(name contains "/metadata_b", "Type B", "undefined"))
+| summarize resultCodeCount = count() by resultCode, docType_endpoint
+```

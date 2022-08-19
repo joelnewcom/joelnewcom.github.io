@@ -8,6 +8,14 @@ header:
   teaser: "/assets/images/cloud-teaser.JPG"
 ---
 
+# Get help
+Online reference: https://docs.microsoft.com/en-us/cli/azure/
+
+```az find blob ``` returns infos about "blob" commands
+
+```az storage blob --help``` returns msn instructions. 
+
+
 # login
 ```az login``` will open a browser to login
 
