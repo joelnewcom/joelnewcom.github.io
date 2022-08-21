@@ -13,4 +13,25 @@ Officially, you should also uppercase it.
 the path with the short folder name is:
 ```C:\Users\GIJSVA~1\AppData\Roaming\npm-cache```
 
-# 
+# Conditional rendering
+```
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      hidden: false
+    };
+  }
+  render() {
+    return (
+      <div className="App">
+        {!this.state.hidden && <SpinnerBasicExample />}
+        <h2>Start editing to see some magic happen!</h2>
+      </div>
+    );
+  }
+}
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
+```
