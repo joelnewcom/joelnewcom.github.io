@@ -13,9 +13,13 @@ The standard enforces the use of XML-based messages to pass information (securit
 SAML enables SSO in form of a browser session cookie.  
 
 # OAuth 2.0
-Its meant for delegated authority. This standard only covers authorization to a resource. 
+It is meant for delegated authority. This standard only covers authorization to a resource. 
 User (Resource owner) logs in into the authorization server to delegate access to the client (custom application) for the resource on the resource server.
 The authorization server issues JWT token (access token, could also be another format) to the client.
+
+There are different flows to support mutiple scenarios:
+https://developer.okta.com/docs/concepts/oauth-openid/#what-kind-of-client-are-you-building
+
 
 # OpenId Connect (OIDC)
 Builds up on OAuth 2.0 and adds the missing authentication layer in Oauth. It also defines the JWT token as standard.

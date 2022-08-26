@@ -9,48 +9,12 @@ header:
   teaser: "/assets/images/cloud-teaser.JPG"
 ---
 
-
 ## connectivity troubleshooting
 There are two major causes if you cannot reach a host:
 * If you have a firewall in the way, you hit the TCP timeout. The TCP timeout is 21 seconds in this case. Use the ```tcpping``` tool to test connectivity.
 * DNS isn't accessible. The DNS timeout is 3 seconds per DNS server. If you have two DNS servers, the timeout is 6 seconds. Use ```nameresolver``` to see if DNS is working. 
 You can't use nslookup, because that doesn't use the DNS your virtual network is configured with. If inaccessible, you could have a firewall or NSG blocking access to DNS or it could be down.
 
-
-
-## Azure storage
-Locally redundant storage (LRS) replicates your data three times within a single data center in the primary region. LRS provides at least 11 nines of durability (99.999999999%) of objects over a given year.
-For Availability Zone-enabled Regions, zone-redundant storage (ZRS) replicates your Azure Storage data synchronously across three Azure availability zones in the primary region. ZRS offers durability for Azure Storage data objects of at least 12 nines (99.9999999999%) over a given year.
-
-
-Azure Blobs: A massively scalable object store for text and binary data. Also includes support for big data analytics through Data Lake Storage Gen2.
-Azure Files: Managed file shares for cloud or on-premises deployments.
-Azure Queues: A messaging store for reliable messaging between application components.
-Azure Disks: Block-level storage volumes for Azure VMs.
-
-
-### Blob Storage
-
-is ideal for
-Serving images or documents directly to a browser.
-Storing files for distributed access.
-Streaming video and audio.
-Storing data for backup and restore, disaster recovery, and archiving.
-Storing data for analysis by an on-premises or Azure-hosted service.
-Storing up to 8 TB of data for virtual machines.
-
-Three resource level are needed to manage blobs.
-![](blob1.png)
-
-Types of storage accounts:
-* General-purpose v2: For most scenarios. Can store blobs, files, queues and tables
-* Block blob: For Block blobs. Recommended for high transaction scenarios on small objects. Low transaction latency
-* Page blob: For Page blobs only.
-
-Types of blobs:
-* Block blobs store text and binary data and each block of data can be managed individually.
-* Append blobs are made up of blocks like block blobs, but are optimized for append operations. Ideal for logging data.
-* Page blobs store random access files up to 8 TiB in size. Page blobs store virtual hard drive (VHD) files and serve as disks for Azure virtual machines.
 
 ## Azure app service
 The app service plan defines in which azure region your app will run. 
@@ -141,9 +105,11 @@ If you want to go full resilience you make usage of region pairs. If a whole reg
 These are some seperated azure regions for US and China goverment. 
 
 ## Availability zones
-Availabilityzone is one of minimum three physically separate datacenter in an azure region (Not every azure region support availability zones)
+Availability-zone is one of minimum three physically separate datacenter in an azure region (Not every azure region support availability zones)
+There might be even more than 3 zones within a region. 
 
-
+If you spread your VM's into 3 availability zones, Azure makes sure that these VMs are in 3 different Update and failure domains.
+To make sure that they, for example, don't get updated at the same time.
 
 ## API Gateway
 Azure API Gateway can mock api and can do retry logic.
@@ -156,12 +122,37 @@ Webhooks can be used to get synchronous notification from the event grid.
 ## Bastion
 Lets you dp rdp to your VMs. 
 
-## organizing azure resources
+## azure resource groups
 * Azure management groups: Lets you group subscriptions (Composition of multiple management groups are possible). Enables to define access for multiple subscriptions and to apply policies to multiple subscriptions. 
 * Subscriptions: Second tier. Where the billing happens. You can also define access on this level. You cannot put a subscription into another subscription.
 * Resource Group: To group resources
 * Resource
 
+Resource group stores metadata about itself and its resources. So with the region of the resourcegroup we decide where to store this data.
+Resource groups cannot be nested
+
+
+# Azure groups
+secrity group: Used to organize members and access.
+microsoft 365 groups: Used to colaborate. The allow access on mail boxes, calendar and sharepoint sites etc.
+
+# RBAC and AD
+
+Every Azure-Abonnement is associated with one Azure AD-directory.
+Azure AD connect is used to sync Azure AD and on-prem AD.
+
+RBAC Permission need a principal (user, group or service principal) a role def (dos and donts ) and a scope (management group, subscription resource group or resource)
+
+
+
+# Azure AD
+The term Tenant means a single instance of Azure AD representing a single organization.
+The terms Tenant and Directory are often used interchangeably.
+
+## Locks
+Locks get inherited by resources
+
+Two types of locks: Readonly-lock, Delete-lock
 
 ## Azure functions
 If you have code which only needs to be run after a certain trigger like REST call, timer or event. (If you need to have the code running all the time, then better use web-app or VW as underlying platform)
@@ -188,3 +179,4 @@ The policy definition can be assigned to Management groups, subscriptions or res
 As two VMs are required, you need to use the SLA of a VM twice.
 99.9%×99.9%×99.99%×99.99% (=0.999×0.999×0.9999×0.9999) 
 =0.9978 (=99.78%)
+

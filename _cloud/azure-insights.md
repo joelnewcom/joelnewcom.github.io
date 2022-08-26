@@ -58,3 +58,65 @@ dependencies
 | extend docType_endpoint = iff(name contains "/metadata_a", "Type A", iff(name contains "/metadata_b", "Type B", "undefined"))
 | summarize resultCodeCount = count() by resultCode, docType_endpoint
 ```
+
+# fullouter join
+If you want to join tables and want to keep data, even there is no match on the specified colum(s) you use fullouter-join
+If there is no match, it will create a new key colum like in the following image for key "D": 
+![Fullouter join](full-outer-join.PNG)
+
+
+# make_set
+Make_set comes in handy if you want to group values under one key in one row. 
+```
+let UserIdToUserName=(
+customEvents
+| where timestamp between(datetime("2020-01-01T00:00:00") .. end_time_report)
+| extend customProperties = todynamic(tostring(parse_json(customDimensions['Properties'])))
+| extend knownUser = tostring(parse_json(customProperties).username)
+| where knownUser != "Unknown User"
+| summarize username_corrected = make_set(knownUser) by user_Id
+| project user_Id, tostring(username_corrected)
+);
+```
+
+# mv-expand
+Once you have a set or a list, you can do the reverse operation "mv-expand". This duplicates the row for each entry in the set and therefore flattens the set or list.
+
+```
+let UserIdToUserName=(
+customEvents
+| where timestamp between(datetime("2020-01-01T00:00:00") .. end_time_report)
+| extend customProperties = todynamic(tostring(parse_json(customDimensions['Properties'])))
+| extend knownUser = tostring(parse_json(customProperties).username)
+| where knownUser != "Unknown User"
+| extend normaizedUser = normalizeUserName(knownUser)
+| summarize username_corrected = make_set(normaizedUser, 2) by user_Id
+| mv-expand username_corrected
+);
+```
+
+# summarize sum
+You can use sum aggregation to aggregate values on multiple columns based on one or multiple keys (by clause)
+```
+UserIdToUserName
+| join kind = fullouter (ActiveDaysCount) on user_Id
+| join kind = fullouter (meetingCreatedCountContact) on user_Id
+| summarize ActiveDays = sum(ActiveDays),
+MeetingsCreatedContact = sum(MeetingsCreatedContact),
+by tostring(username_corrected)
+```
+
+# function
+You can create a function if you don't want to repeat yourself
+```
+let normalizeUserName = (userName:string) {
+extract("^([^@]+)", 1, tolower(userName))
+};
+
+customEvents
+| extend customProperties = todynamic(tostring(parse_json(customDimensions['Properties'])))
+| extend knownUser = tostring(parse_json(customProperties).username)
+| where knownUser != "Unknown User"
+| extend normaizedUser = normalizeUserName(knownUser)
+
+```
