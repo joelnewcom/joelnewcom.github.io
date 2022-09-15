@@ -25,8 +25,8 @@ It is necessary for a software-project to have static code analysis checks in pl
 On Jenkins the reports of pmd and checkstyle can be easily evaluated by the "Warnings Next Generation Plugin" plugin.
 To reuse the pmd or checkstyle configuration, we created an own project called build-tools which just holds these files as resources. 
 
-- [Checkstyle config](../software-engineering/devops/checkstyle-config.xml)
-- [PMD config](../software-engineering/devops/pmd_rules.xml)
+- [Checkstyle config](/software-engineering/devops/checkstyle-config.xml)
+- [PMD config](/software-engineering/devops/pmd_rules.xml)
 
 In JenkinsFile:
 ```

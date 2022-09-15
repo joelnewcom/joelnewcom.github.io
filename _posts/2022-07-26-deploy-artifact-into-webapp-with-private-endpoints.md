@@ -9,7 +9,7 @@ categories: azure
 The normal approach would be to call the azure cli command: ```az webapp deploy --src-url```. Also the standard ADO pipeline task just wraps this call.
 This should work on a we-app with private endpoint enabled because ARM calls are still allowed. 
 
-![arm api](../assets/images/azure/arm-api-layers.png)
+![arm api](/assets/images/azure/arm-api-layers.png)
 
 ## deploy with azure storage and sas link
 az storage account create -n deploystorageaccount -g ${resource-group} -l westeurope

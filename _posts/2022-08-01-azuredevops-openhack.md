@@ -17,7 +17,7 @@ The setup is 4 different API applications and one website application to
 
 A simulator runs throughout the entire event after you spin up infrastructure to send your APIs the data your users generate in real life.
 
-![preferences](../assets/images/azure-devops/MyDriving-Overview.PNG)
+![preferences](/assets/images/azure-devops/MyDriving-Overview.PNG)
 
 We got provided with 6 users on Azure which had owner role on a subscription for this OpenHack.
 
@@ -33,9 +33,9 @@ I think we already did our first mistake to not store the "azuresp.json" which i
 We ended up with a new ADO space with a repo copied from: https://github.com/Microsoft-OpenHack/devops-artifacts
 
 On Azure it looked like this:
-![preferences](../assets/images/azure-devops/Resource-Groups-Azure.PNG)
+![preferences](/assets/images/azure-devops/Resource-Groups-Azure.PNG)
 
-![preferences](../assets/images/azure-devops/Azure-Setup.PNG)
+![preferences](/assets/images/azure-devops/Azure-Setup.PNG)
 
 ### Challenge 1 - Establish your plan
 We had to configure our newly created ADO. Like setting ADO into Agile mode and creating our first task board with specific rules and states.
@@ -54,7 +54,7 @@ the built-in tasks they provide.
 Terraform needs to have access to its Terraform state. For this we got a Variable Group which had all the infos to
 connect to our Terraform state on Azure.
 
-![preferences](../assets/images/azure-devops/Variable-Group-Terraform.PNG)
+![preferences](/assets/images/azure-devops/Variable-Group-Terraform.PNG)
 
 First Task in the pipeline is to check the terraform (*.tf) files:
 
@@ -171,7 +171,7 @@ Then we used two builtIn Tasks to comment on a PR and to create a bug.
 
 We got a good template for a PR comment if Unitests failed:
 
-![preferences](../assets/images/azure-devops/PR-Comment.PNG)
+![preferences](/assets/images/azure-devops/PR-Comment.PNG)
 
 ```
 ### Unit Test `failure`
@@ -196,7 +196,7 @@ condition: and(failed(), eq(variables['Build.Reason'], 'Manual'))
 
 ### Challenge 5 - Implement Continuous Deployment (CD)
 Needed to create a new pipeline to deploy a docker image to Azure container registry.
-We basically just copy pasted the provided command into the pipeline and it just worked.
+We basically just copy-pasted the provided command into the pipeline and it just worked.
 
 To not override the previous docker image, we needed to tag the image with ```$(build.buildId)```
 Took us a while to figure out that the azureSubscription parameter for the AzureWebAppContainer Task is the AzureServiceConnection name.
@@ -209,7 +209,7 @@ Todo so we used the "Invoke REST API" Azure pipeline task. In this task you eith
 In our case we had to call a generic API and to do so, you need to first create a Generic connection under /Project Settings/Service Connections -> New Generic Connection
 It is better to just define the serverUrl more general, then every endpoint as new connection. In the task we could then define the UrlSuffix of the specific endpoint.
 
-![preferences](../assets/images/azure-devops/Generic-Connection.PNG)
+![preferences](/assets/images/azure-devops/Generic-Connection.PNG)
 
 This task needed to run "agentless", we achieved this by put the task into a job and define the job running in ```pool: server```
 
@@ -276,17 +276,17 @@ The azure web app should read the secret value from an environment variable. In 
 ```
 The application would recognize this and try to get the value from the specified vault. To enable the app to do so, we needed to create a system identity:
 
-![preferences](../assets/images/azure-devops/System-assigned-identity.PNG)
+![preferences](/assets/images/azure-devops/System-assigned-identity.PNG)
 
 And on the other hand the KeyVault needs to have an access-policy which allows this identity to ```List``` and ```Get``` on this vault.
 
-![preferences](../assets/images/azure-devops/KeyVault-AccessPolicy.PNG)
+![preferences](/assets/images/azure-devops/KeyVault-AccessPolicy.PNG)
 
 ### Challenge 9 - Implement a Load Testing & Monitoring solution with alerting
 We barely touched this challenge. We created an Azure Load Testing resource on Azure. We could upload this [JMeter file](https://github.com/Microsoft-OpenHack/devops-artifacts/blob/main/support/resources/MyDrivingTest.jmx)
 and run the test (Had to configure 4 parameters, which were the url of each API application)
 
-![preferences](../assets/images/azure-devops/Load-Test-Outcome.PNG)
+![preferences](/assets/images/azure-devops/Load-Test-Outcome.PNG)
 
 
 ## Key take a ways
