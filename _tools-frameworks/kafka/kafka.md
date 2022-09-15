@@ -3,7 +3,7 @@ layout: single
 ---
 
 # what is kafka?
-Is realtime event-streaming platform.
+It is realtime event-streaming platform.
 
 * Can be the event broker in a event driven architecture
 * Can cope with high volume data

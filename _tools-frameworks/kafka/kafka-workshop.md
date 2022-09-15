@@ -2,6 +2,8 @@
 layout: single
 ---
 
+Vanilla java and spring-boot kafka snippets.
+
 # Prerequisites
 
 Downloading kafka_2.13-3.0.1-company.zip and unzip it under a short path ("C:\Git\kafka-workshop\kafka") without any
