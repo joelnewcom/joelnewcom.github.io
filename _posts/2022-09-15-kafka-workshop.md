@@ -1,8 +1,9 @@
 ---
 layout: single
+title:  "Vanilla Java Kafka producer and consumer snippets"
+date:   2022-09-15 00:00:00 +0200
+categories: kafka
 ---
-
-Vanilla java and spring-boot kafka snippets.
 
 # Prerequisites
 
