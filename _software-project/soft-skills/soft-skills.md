@@ -41,14 +41,21 @@ This effect says people with low abilities overestimate their abilities and peop
 
 # Leading
 ## Blaming
-When there is someone exposed like a project-leader it is super easy to blame him/her and talk bad about their way of leading. 
-People want to remove him/her because they think someone else or even themselves can do it much better. 
-In a lot of cases we also assume the leader have hidden agendas or just lying about stuff. 
+When there is someone exposed like a project-leader it is easy to blame him/her and talk bad about their way of leading. 
+People think they can lead the team much better than the current leader.  
+In a lot of cases we also assume the leader has hidden agendas, is lying about stuff, or at least doesn't tell the whole truth. 
 
-In all cases where the leadership actually changed, I took the chance to talk privately with them and we could speak 
-very openly about the past times. To my surprise it always turns out that they just did their job and tried their best
-to hold multiple groups (with different ambitions) together. 
+In all cases where the leadership actually changed, I took the chance to talk privately with them and could speak 
+very openly about the past times. To my surprise it always turns out that they just were humans, did their job and tried their best
+to hold multiple groups/stakeholders (with different ambitions) together. 
+
+## Identification of a team
+As a team leader you can give your team an identity. This helps everyone to express in the name of a group and to feel they are in the same boat.
+* Team name(s)
+* A good example is the zkp team: They chose lego as their theme and now everybody is like a lego figure. 
+(After the attempt, naming the team to cinema super heros)
+* 
 
 # Documentation
-P.A.R.A. stands for Projects — Areas — Resources — Archives, the four top-level categories that encompass every type of information you might encounter in your work and life.
+P.A.R.A. stands for Projects.Areas.Resources.Archives, the four top-level categories that encompass every type of information you might encounter in your work and life.
 ![para](para.bmp)
