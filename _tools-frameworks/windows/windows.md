@@ -29,3 +29,6 @@ curl --location --request POST "https://okta.com/oauth2/v1/token" ^
 pause
 
 ```
+
+# Hostname
+WIN-XXXXXXXXXXX is the default hostname of a windows machine. 
