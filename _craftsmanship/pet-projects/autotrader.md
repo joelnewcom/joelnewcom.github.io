@@ -1,5 +1,7 @@
 ---
 layout: single
+categories:
+  - craftsmanship
 ---
 
 Is an application which utilizes Lykke cryptocurrency exchange to automatically trade assets.

@@ -2,6 +2,8 @@
 title: Books
 layout: archive
 classes: wide
+categories:
+  - craftsmanship
 ---
 
 

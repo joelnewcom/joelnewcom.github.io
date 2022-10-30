@@ -2,6 +2,8 @@
 title: Project DAW
 layout: archive
 classes: wide
+categories:
+  - craftsmanship
 header:
     teaser: "/assets/images/daw/risk-cards.PNG"
 ---

@@ -1,5 +1,7 @@
 ---
 layout: single
+categories:
+  - craftsmanship
 ---
 
 ### Offline GeoCoder

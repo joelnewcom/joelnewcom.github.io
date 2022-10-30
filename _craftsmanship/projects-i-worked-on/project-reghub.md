@@ -2,6 +2,8 @@
 title: Project RegHub
 layout: archive
 classes: wide
+categories:
+  - craftsmanship
 header:
     teaser: "/assets/images/six/reg-hub-overview.png"
 ---

@@ -2,6 +2,8 @@
 title: Craftsman
 layout: archive
 classes: wide
+categories:
+  - craftsmanship
 ---
 
 ## My tale of becoming a craftsman
