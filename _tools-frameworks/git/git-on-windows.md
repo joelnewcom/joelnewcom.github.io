@@ -94,12 +94,31 @@ Check if the command points to C:\Windows\System32\OpenSSH\ssh.exe
 PS> Get-Command ssh | Select-Object Source
 ```
 ## Troubleshooting
-Check if ssh-agent is even running by: ``` eval `ssh-agent -s` ```
+Check if ssh-agent is even running by: ```eval `ssh-agent -s` ```
 
 Git would only add ssh key files automatically starting with id_
 Add your ssh key to ssh-agent: ``` ssh-add ~/.ssh/id_rsa ```
 
 Check if you can ssh to your git server:  ```ssh -v git@ssh.dev.azure.com```
+Or this: ```ssh -vT git@github.com```
 
 Let git show you what target it has:  ```git config --get remote.origin.url```
 
+
+### Do SSH via HTTPS port 443 instead of 22
+
+If the company blocks traffic to port 22 you can do SSH via HTTP:
+https://docs.github.com/en/authentication/troubleshooting-ssh/using-ssh-over-the-https-port
+
+
+url with ssh via https looks like this:
+```ssh://git@ssh.github.com:443/YOUR-USERNAME/YOUR-REPOSITORY.git```
+
+In my case: ```ssh://ssh.github.com:443/joelnewcom/joelnewcom.github.io.git```
+
+### Change remote repo url
+List the remote repo urls: ```git remote -v```
+
+run ```git remote set-url origin https://github.com/USERNAME/REPOSITORY.git```
+
+In my case: ```git remote set-url origin ssh://ssh.github.com:443/joelnewcom/joelnewcom.github.io.git```
