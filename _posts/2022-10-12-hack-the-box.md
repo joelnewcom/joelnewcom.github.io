@@ -90,3 +90,25 @@ Check OS info with -sV options
 
 Getting the flag
 ![getFlag](/assets/images/hackthebox/fawn_get_flag.png)
+
+FTP (File transfer protocol) works normally on port 21.
+
+## Dancing
+Targets IP: 10.129.189.104
+
+Trying again with ovpn, but this time tacking US starting point.
+It worked. 
+
+SMB (Server Message Block) works on port 445.
+
+Doing nmap scan on target: 
+```
+nmap -sV 10.129.189.104
+```
+-sV: Probe open ports to determine service/version info
+
+```
+smbclient -L 10.129.189.104
+```
+
+
