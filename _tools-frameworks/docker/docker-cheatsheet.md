@@ -4,7 +4,9 @@ layout: single
 
 ## Advantages
 The big advantage of containers is the non existing virtualisation layer. The running application within a docker container actually runs directly on the physical machine as process.
-If you don't need to configure the hardware, you better use container instead of VW. 
+If you don't need to configure the hardware, you better use container instead of VW.
+
+The key thing that Docker provides is the guarantee that the containerized software will always run the same. It doesn't matter if the code is run locally on Windows, Linux or in the cloud on Azure.
 
 ## docker usages
 ```Usage:  docker run [OPTIONS] IMAGE [COMMAND] [ARG...]```
