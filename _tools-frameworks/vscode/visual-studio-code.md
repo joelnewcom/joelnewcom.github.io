@@ -2,6 +2,12 @@
 layout: single
 ---
 
+# Online version
+
+1. https://github.com/muhammadthm/SantaGiftShop
+2. https://vscode.dev/https://github.com/muhammadthm/SantaGiftShop
+3 https://vscode.dev/github/muhammadthm/SantaGiftShop
+
 # Keybinding
 Install extension: IntelliJ IDEA Keybindings
 
