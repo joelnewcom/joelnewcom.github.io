@@ -8,7 +8,7 @@ If you want to create a meeting for only reminding purpose (like: UAT not availa
 or to show you are on vacation, you should configure the meeting as "free-time", so it doesn't block the time for your friend for actual meetings.
 
 ## 12 hours clock am/pm
-Its not always clear how to represent the start and end of a day with 12hours format. To prevent confusion NIST defined it like this:
+It is not always clear how to represent the start and end of a day with 12hours format. To prevent confusion NIST defined it like this:
 Start of the day: 12:01 am
 End of the day: 11:59 pm
 
@@ -54,17 +54,16 @@ As a team leader you can give your team an identity. This helps everyone to expr
 * Team name(s)
 * A good example is the zkp team: They chose lego as their theme and now everybody is like a lego figure. 
 (After the attempt, naming the team to cinema super heros)
-* 
 
 # Documentation
 P.A.R.A. stands for Projects.Areas.Resources.Archives, the four top-level categories that encompass every type of information you might encounter in your work and life.
-![para](../../assets/images/softskills/para.bmp)
+![para](/assets/images/softskills/para.bmp)
 
 # Cruft and technical debts
 This is a presentation to explain the business how important built-in quality is. It copied from: [Source](https://martinfowler.com/articles/is-quality-worth-cost.html)
 
 ## Is quality worth the cost?
-![We are too busy](../../assets/images/softskills/we-are-too-busy.png)
+![We are too busy](/assets/images/softskills/we-are-too-busy.png)
 
 ### internal versus external quality
 Explain that you talk about internal quality. Its most of the time not visible on the frontend. Its the developer who needs to cope with all this. 
@@ -82,4 +81,4 @@ External quality
 (In german überflüssiger Müll / nutzloser Code)
 
 # Getting things done
-![My GTD](../../assets/images/softskills/myGTD.drawio.png)
+![My GTD](/assets/images/softskills/myGTD.drawio.png)
