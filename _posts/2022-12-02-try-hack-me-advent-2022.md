@@ -176,3 +176,50 @@ $ get
 ### What is the password for the username santahr?
 ![smbClient](/assets/images/tryhackme/Task-9-smb-interactive.PNG)
 
+
+# Task 10 [Day 5] Brute-Forcing He knows when you're awake
+
+We are going to dictionary attack an account. 
+
+First scan the target via ```nmap -sS 10.10.93.183``` -sS = TCP SYN Scan technique
+![hydra -f](/assets/images/tryhackme/day5/nmap.PNG)
+
+THC Hydra is am commandline tool which understands SSH, VNC, FTP, POP*, IMAP, SMTP and others. 
+
+We run the command: ```hydra -l alexander -P /usr/share/wordlists/rockyou.txt ssh://10.10.93.183 -V```
+This will find us the password for ssh user alexander. 
+
+Next task is to find a VNC password on the target. As VNC doesn't use username we omit it: 
+```hydra -P /usr/share/wordlists/rockyou.txt vnc://10.10.93.183 -V```
+This took quite long. 
+Somehow it didn't stop after it found a password. 
+I run again with ```hydra -P /usr/share/wordlists/rockyou.txt vnc://10.10.93.183 -f``` which should explicit stop after the first match.
+
+![hydra -f](/assets/images/tryhackme/day5/hydra-f.PNG)
+
+Eventually I could vnc login with Remmina into the target. 
+
+# Task 11 [Day 6] Email Analysis It's beginning to look a lot like phishing
+
+## OSINT
+Using https://emailrep.io tells you something about a sender address reputation. ("From" and "Return-Path")
+
+| Tool              | 	Purpose | 
+| ------------------| ----------| 
+| VirusTotal        | A service that provides a cloud-based detection toolset and sandbox environment.| 
+| InQuest           | A service provides network and file analysis by using threat analytics. (https://labs.inquest.net/)| 
+| IPinfo.io         | A service that provides detailed information about an IP address by focusing on geolocation data and service provider.| 
+| Talos Reputation  | An IP reputation check service is provided by Cisco Talos.| 
+| Urlscan.io        | A service that analyses websites by simulating regular user behaviour.| 
+| Browserling       | A browser sandbox is used to test suspicious/malicious links.| 
+| Wannabrowser      | A browser sandbox is used to test suspicious/malicious links.| 
+
+
+By running ```emlAnalyzer -i Urgent\:.eml --header --html -u --text --extract-all``` we can extract the attachment without opening it. 
+
+With ```sha256sum``` we calculate the checksum of the attachement to then search it on virusTotal: https://www.virustotal.com
+![hydra -f](/assets/images/tryhackme/day6/virustotal.PNG)
+
+and we can also check on https://labs.inquest.net/
+![hydra -f](/assets/images/tryhackme/day6/Inquest.PNG)
+ 
