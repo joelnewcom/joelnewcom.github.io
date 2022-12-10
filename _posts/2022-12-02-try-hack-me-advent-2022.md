@@ -217,9 +217,48 @@ Using https://emailrep.io tells you something about a sender address reputation.
 
 By running ```emlAnalyzer -i Urgent\:.eml --header --html -u --text --extract-all``` we can extract the attachment without opening it. 
 
-With ```sha256sum``` we calculate the checksum of the attachement to then search it on virusTotal: https://www.virustotal.com
+With ```sha256sum``` we calculate the checksum of the attachment to then search it on virusTotal: https://www.virustotal.com
 ![hydra -f](/assets/images/tryhackme/day6/virustotal.PNG)
 
 and we can also check on https://labs.inquest.net/
 ![hydra -f](/assets/images/tryhackme/day6/Inquest.PNG)
  
+# Task 12 [Day 7] CyberChef Maldocs roasting on an open fire 
+## CyberCheck
+Is a webapplication to analyze data files. 
+In this task we are going to analyze the attachment of previous Task. 
+
+There were several steps to finally extract the flag:  
+
+* Strings. (output only strings with minimum length of 258). It is obfuscated with "[_]" between every letter.
+* Find / Replace. (with regex("[\[\]_\n]") .It shows that we start a Powershell with a base64 encoded content
+* Drop bytes. (To output only the base64 encoded part)
+* From Base64. It show a powershell script
+* Decode Text. (UTF16LE) as powershell uses this encoding. 
+* Find / Replace. to clean a bit up by removin obfuscate patterns
+* Find / Replace. to replace simple strings we know the value (http)
+* Extract URLs (Outputs only urls)
+* Split (Split by @, as each url of suffixed with an @)
+* Defang URL (Makes the URLs invalid/ unclickable)
+ 
+# Task 13 [Day 8] Smart Contracts Last Christmas I gave you my ETH
+## Blockchain
+Simple explanation of a blockchain:  database to store information in a specified format and is shared among members of a network with no one entity in control.
+
+# Smart Contracts
+Are a lot of the time the backbone of DeFi (Decentralized Financial apps) to support cryptocurrency on a blockchain. 
+A smart contract is a program stored on a blockchain that runs when pre-determined conditions are met.
+
+## The Re-entrancy Attack
+When smartcontracts are not perfectly written and exceptions are not properly handled or allowing fallback functions while executing the main withdrawal function. 
+
+We load the two provided smartcontracts into Remix IDE.
+
+One contract acts as normal wallet. You can call deposit, withdraw, get balance. 
+The other contract implements a re-entrancy attack on a given wallet address. 
+
+[exploitable contract](/assets/images/tryhackme/day8/EtherStore.sol)
+[exploit](/assets/images/tryhackme/day8/Attack.sol)
+
+#Task 14 [Day 9] Pivoting Dock the halls 
+
