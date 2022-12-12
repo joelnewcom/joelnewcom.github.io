@@ -55,6 +55,8 @@ Always the same. VPN connection is working but target is not pingable.
 
 ## Kali linux
 Same behaviour as Parrot.
+username: kali
+password: kali
 
 # Starting Point Challenges 
 ## Meow
