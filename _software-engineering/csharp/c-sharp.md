@@ -2,6 +2,14 @@
 layout: single
 ---
 
+# Building steps
+## dotnet restore
+Uses NuGet to restore dependencies and project specific tools.
+```dotnet restore``` is run automatically in other dotnet commands like, ```new, build, build-server, run, test, publish and pack```
+
+## dotnet publish
+Will create an artifact which can be deployed (Depending on the parameters and configuration)
+
 # async and await
 
 In C# you can make usage of the keywords async and await like this:

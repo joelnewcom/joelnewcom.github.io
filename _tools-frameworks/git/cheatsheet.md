@@ -13,3 +13,6 @@ git -d v1.0.1
 
 ## delete a tag remote
 git push --delete origin v1.0.1
+
+## Reset all local changes
+git reset --hard HEAD
