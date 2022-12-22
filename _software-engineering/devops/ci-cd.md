@@ -4,6 +4,17 @@ layout: single
 
 # Azure DevOps
 
+## Pipelines
+
+Jobs run on independent agents (separate computers) and do not have any kind of shared filesystem.
+https://learn.microsoft.com/en-us/azure/devops/pipelines/process/phases?view=azure-devops&tabs=yaml
+
+Any files created in one job that you want to make available on a dependent job must be explicitly staged (in job 'A') and then explicitly downloaded (in job 'B').
+See publish: https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/utility/publish-build-artifacts?view=azure-devops
+
+And download: https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/utility/download-build-artifacts?view=azure-devops
+
+
 ## ARM Templates
 * In full-mode, the template would delete resources not mentioned in the template.
 * In incremental mode, ARM would not delete the not mentioned resources.
