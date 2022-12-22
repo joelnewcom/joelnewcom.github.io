@@ -126,24 +126,19 @@ author:
       # url: "https://instagram.com/"
 
 collections:
+  collections_dir: collections
   cloud:
     output: true
-    permalink: /:collection/:path/
   craftsmanship:
     output: true
-    permalink: /:collection/:path/
   software-engineering:
     output: true
-    permalink: /:collection/:path/
   tools-frameworks:
     output: true
-    permalink: /:collection/:path/
   software-project:
     output: true
-    permalink: /:collection/:path/
   try-hack-me-advent-2022:
     output: true
-    permalink: /:collection/:path/
 
 # Site Footer
 footer:
