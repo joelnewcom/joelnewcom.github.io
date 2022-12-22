@@ -1,16 +1,11 @@
 ---
-title: "TryHackMe"
-date: 2022-12-01
-tags:
-  - hacking
-categories:
-  - hacking
+layout: single
+title: "[Day 1] Frameworks Someone's coming to town!"
 header:
   teaser: "/assets/images/hacking-teaser.JPG"
 ---
 
-# Task #6 [Day 1] Frameworks Someone's coming to town!
-Explenation about different security frameworks
+Explanation about different security frameworks
 
 ## NIST Cyber security framework (CSF)
 Focuses around these five functions: Identify -> Protect -> Detect -> Respond -> Recover.

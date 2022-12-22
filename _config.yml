@@ -125,8 +125,9 @@ author:
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
 
+collections_dir: collections
+
 collections:
-  collections_dir: collections
   cloud:
     output: true
   craftsmanship:
@@ -139,6 +140,12 @@ collections:
     output: true
   try-hack-me-advent-2022:
     output: true
+    order:
+      - intro.md
+      - day1.md
+      - day2.md
+      - day3.md
+      - day4.md
 
 # Site Footer
 footer:

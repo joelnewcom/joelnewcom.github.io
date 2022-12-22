@@ -1,14 +1,9 @@
 ---
-title: "TryHackMe"
-date: 2022-12-01
-tags:
-  - hacking
-categories:
-  - hacking
+layout: single
+title: "Intro"
 header:
   teaser: "/assets/images/hacking-teaser.JPG"
 ---
-
 # Task #1 Introduction
 Read through the awesomes prices and notice how each task gets also a walkthrough of famous cyber security streamers.
  Click "Completed" and task is done. 
@@ -23,7 +18,6 @@ put the IP into the browsers addressbar and you get the flag.
 ![Cyber kill chain](/assets/images/tryhackme/tutorial-target-ip.PNG)
 
 ![Cyber kill chain](/assets/images/tryhackme/tutorial-target-ip-in-browser.PNG)
-
 
 There are also rules diplayed like don't share the flags and don't hack other users..
 
