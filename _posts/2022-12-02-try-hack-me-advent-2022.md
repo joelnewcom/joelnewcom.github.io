@@ -5,6 +5,8 @@ date:   2022-12-02 00:00:00 +0200
 categories: try-hack-me
 ---
 
+[Cloud](/try-hack-me-advent-2022)
+
 # Task #1 Introduction
 Read through the awesomes prices and notice how each task gets also a walkthrough of famous cyber security streamers.
  Click "Completed" and task is done. 
@@ -416,7 +418,7 @@ When we walk into the obstacle which will decrease our livepoints we search agai
 We repeat this until we see an address which could fit. We set this value to a high value and become imortal. 
 ![imortal](/assets/images/tryhackme/day10/set-livepoint.PNG)
 
-# Task 16 [Day 10] Hack a game You're a mean one, Mr. Yeti 
+# Task 16 [Day 11] Hack a game You're a mean one, Mr. Yeti 
 ## Memory Forensics
 ### Process
 At the simplest, a process is a running program.
@@ -437,5 +439,55 @@ To list all running processes at the time of dump: ```python3 vol.py -f workstat
 To export specific binaries regarding a process: ```python3 vol.py -f workstation.vmem windows.dumpfiles --pid 4640```
 
 # Task 17 [Day 12] Malware Analysis Forensic McBlue to the REVscue!
-
+## Malware behaviour
+* Network connections -> A malware tends to make connections to a host to get instructions, download payloads etc. Or to do lateral movement.  
+Registry Run Keys -> Allows binaries to be automatically be executed when a user logs in or on boot up.
+File manipulation -> Everyprogram needs to have a set of files to work.
  
+## Working with malware
+Always assume the malware infects your computer. 
+Use a sandbox to run a malware. 
+
+## FlareVM
+Is a windows vm to analyse how the malware behaves on windows. 
+
+### Detect It Easy
+Provides infos about the binary. For example we see that the binary is packed with UPX. This obfuscated binary is hard to analyse so we need to unpack it first.  
+![Detect it easy](/assets/images/tryhackme/day12/detect-it-easy.PNG)
+
+### CAPA
+Is a static analysis tool. 
+![Unpack and capa](/assets/images/tryhackme/day12/unpack%20and%20capa.PNG)
+
+### ProcMon
+Is a Windows tool that shows real-time registry, file system, and process/thread activity
+![Registry run key](/assets/images/tryhackme/day12/registry-run-key-modification.PNG)
+
+![Startup persistance](/assets/images/tryhackme/day12/Startup-persistence.PNG)
+
+![Network connectivity](/assets/images/tryhackme/day12/network-connectivity.PNG)
+
+# Task 18 [Day 13] Packet Analysis Simply having a wonderful pcap time 
+
+## Wireshark
+To get an overview of the captured traffic you can navigate to "Statistics" -> "Protocol Hierachy" 
+![Wireshark statisik](/assets/images/tryhackme/day13/wireshark-statistik.PNG)
+
+As well "Statistics" -> "Conversations". This helps to identify IPs and port used for conversations. 
+
+![Wireshark DNS Query](/assets/images/tryhackme/day13/wireshark-dns-query.PNG)
+filter all pakets via "dns". This shows the used domains
+
+![Wireshark HTTP Query](/assets/images/tryhackme/day13/wireshark-export-http.PNG)
+Filter by http traffic shows us that one downloaded two files
+
+The files can be exported: 
+![Wireshark Export HTTP](/assets/images/tryhackme/day13/wireshark-export-http.PNG)
+
+Lets take the sha265 checksum of the file.
+![sha265](/assets/images/tryhackme/day13/sha256sum-of-files.PNG)
+
+Lets check the hash on virustotal
+![vt](/assets/images/tryhackme/day13/check-sum-on-vt.PNG)
+
+# Task 19 [Day 14] Web Applications I'm dreaming of secure web apps

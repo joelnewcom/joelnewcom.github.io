@@ -125,7 +125,6 @@ author:
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
 
-
 collections:
   cloud:
     output: true
@@ -140,6 +139,9 @@ collections:
     output: true
     permalink: /:collection/:path/
   software-project:
+    output: true
+    permalink: /:collection/:path/
+  try-hack-me-advent-2022:
     output: true
     permalink: /:collection/:path/
 
