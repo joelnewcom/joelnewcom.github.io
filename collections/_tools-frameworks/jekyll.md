@@ -18,4 +18,7 @@ Steps I did to use Jekyll on this GitHub pages following this [manual](https://d
 ## Add new collection
 1. Create new collection in ```_config.yml```
 2. Create a folder under "collection" folder with the same name as in ```_config.yml```, but prefixed with underscore.
-3. Add a file under ```_pages``` with the same name as defined in ```_config.yml``` 
+3. Add a file under ```_pages``` with the same name as defined in ```_config.yml```
+
+## Version on gitHub pages
+https://pages.github.com/versions.json 
