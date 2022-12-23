@@ -1,0 +1,201 @@
+parameters:
+- name: isRelease
+  default: false
+  type: boolean
+  
+variables:
+- group: 'xyz'
+- name: BuildConfiguration
+  value: "Debug"
+
+stages:
+- stage: Build_API
+  displayName: 'Build - API'
+  jobs:  
+  - job: Build_the_application
+    displayName: 'dotnet publish with debug'
+    timeoutInMinutes: 180
+    cancelTimeoutInMinutes: 1
+    steps:
+    - checkout: self
+    - checkout: CICD
+
+    - script: |
+                echo "start"
+                echo "Environment: $(environment)"
+                echo "Definition Name: $(Build.DefinitionName)"
+                echo "BuildId: $(build.BuildId)"
+                echo "BuildConfiguration: $(BuildConfiguration)"
+                echo "Veracode App Profile API: $(veracodeAppProfile_API)
+                echo "Veracode Sandbox Name API: $(sandboxName_API)
+                echo "ls  $(Build.SourcesDirectory)"
+                ls  '$(Build.SourcesDirectory)'
+      displayName: 'Echo Infos'
+
+    - task: UseDotNet@2
+      displayName: 'Use dotnet 6'
+      inputs:
+        version: '6.0.x'
+        
+    - task: CmdLine@2
+      displayName: Install dotnet tools
+      inputs:
+        script: |
+                  dotnet new tool-manifest
+                  dotnet tool install dotnetsay
+                  dotnet tool restore
+                  dotnet tool install --global dotnet-ef
+                  dotnet --list-sdks                      
+
+    # https://docs.veracode.com/r/compilation_net
+    # dotnet publish -c Debug -o <OutputFolder>
+    - task: DotNetCoreCLI@2
+      displayName: 'dotnet publish api'
+      inputs:
+        command: publish
+        publishWebProjects: false
+        projects: '**/Allora.API.csproj'
+        arguments: '--configuration Debug --output $(Build.BinariesDirectory)/myc_publish_output'
+        zipAfterPublish: false
+        modifyOutputPath: false
+
+    - task: CopyFiles@2
+      displayName: 'Copy only Allora* files to $(Build.BinariesDirectory)'
+      inputs:
+        SourceFolder: '$(Build.BinariesDirectory)/myc_publish_output'
+        Contents: 'Allora*'
+        TargetFolder: '$(Build.BinariesDirectory)/myc_publish_output_reduced'
+        OverWrite: true
+
+    - task: ArchiveFiles@2
+      displayName: 'Archive reduced api'
+      inputs:
+        rootFolderOrFile: '$(Build.BinariesDirectory)/myc_publish_output_reduced'
+        includeRootFolder: false
+        archiveFile: '$(Build.ArtifactStagingDirectory)/$(myCustomerZipFile)'
+    
+    - task: CmdLine@2
+      displayName: 'tree command'
+      inputs:
+        workingDirectory: $(Build.ArtifactStagingDirectory)
+        script: 'tree'
+
+    # This will publish the articats to the Azure Pipeline
+    - task: PublishBuildArtifacts@1
+      displayName: 'Publish Artifact: drop '
+      inputs:
+        PathtoPublish: '$(build.artifactstagingdirectory)'
+        artifactName: MyCustomerAPIAppZip
+
+    - task: CmdLine@2
+      displayName: 'tree command in $(Build.ArtifactStagingDirectory)'
+      inputs:
+        workingDirectory: $(Build.ArtifactStagingDirectory)
+        script: 'tree'
+
+  - job: VeraCode
+    condition:  succeeded('Build_AlloraAzure')
+    dependsOn: [Build_AlloraAzure]
+    displayName: 'VeraCode job'
+    steps:    
+    - checkout: CICD
+
+    - task: DownloadBuildArtifacts@1
+      displayName: 'Download droped artifact from previous job'
+      inputs:
+        buildType: 'current' # 'current' | 'specific'. Required. Download artifacts produced by. Default: current.
+        downloadType: 'single' # 'single' | 'specific'. Required. Download type. Default: single.
+        artifactName: 'MyCustomerAPIAppZip' # string. Required when downloadType == single. Artifact name. 
+        downloadPath: '$(System.ArtifactsDirectory)' # string. Required. Destination directory. Default: $(System.ArtifactsDirectory).
+    
+    - task: PowerShell@2
+      displayName: "Download VeraCode Pipeline Scan"
+      inputs:
+        targetType: "inline"
+        script: |
+          $extractFolder = "$(Agent.ToolsDirectory)/veracode-pipeline-scan/latest"
+          if(!(Test-Path -Path $extractFolder/pipeline-scan.jar -PathType Leaf)){
+            Invoke-WebRequest https://downloads.veracode.com/securityscan/pipeline-scan-LATEST.zip -OutFile pipeline-scan.zip  
+            Expand-Archive pipeline-scan.zip -DestinationPath $extractFolder
+          }
+
+    - task: CmdLine@2
+      displayName: 'Tree on System.ArtifactsDirectory'
+      inputs:
+        workingDirectory: $(System.ArtifactsDirectory)
+        script: |
+          echo "tree $(System.ArtifactsDirectory)"
+          tree $(System.ArtifactsDirectory)
+
+    - task: CmdLine@2
+      displayName: 'Tree on System.DefaultWorkingDirectory: $(System.DefaultWorkingDirectory)'
+      inputs:
+        workingDirectory: $(System.DefaultWorkingDirectory)
+        script: |
+          echo "tree $(System.DefaultWorkingDirectory)"
+          tree $(System.DefaultWorkingDirectory)
+
+    # The manual: https://docs.veracode.com/r/r_pipeline_scan_commands
+    # Add this once you have a basline file: --baseline_file "$(Build.SourcesDirectory)/azurePipelines/templates/Azure-API/build/templates/results.json" `
+    # --summary_output "true" produces the results.txt
+    - task: PowerShell@2
+      displayName: "Run VeraCode Pipeline Scan with basefile"
+      #condition: and(succeeded(), eq(variables['Build.Reason'], 'PullRequest' ))
+      inputs:
+        workingDirectory: $(System.DefaultWorkingDirectory)
+        targetType: "inline"
+        script: |
+          Write-Host "run pipeline-scan.jar..."
+          java -jar $(Agent.ToolsDirectory)/veracode-pipeline-scan/latest/pipeline-scan.jar `
+          -vid "$(VeraCodeID)" `
+          -vkey "$(VeraCodeKey)" `
+          -f "$(System.ArtifactsDirectory)/MyCustomerAPIAppZip/$(myCustomerZipFile)" `
+          --veracode_profile "$(veracodeAppProfile_API)" `
+          --baseline_file "$(System.DefaultWorkingDirectory)/azurePipelines/templates/Azure-API/build/templates/allora.api_veracode_baseline.json" `
+          --summary_display "true" `
+          --summary_output "true" `
+          --development_stage "Development"
+          exit 0
+
+    - task: CmdLine@2
+      displayName: 'Tree on System.DefaultWorkingDirectory: $(System.DefaultWorkingDirectory)'
+      inputs:
+        workingDirectory: $(System.DefaultWorkingDirectory)
+        script: |
+          echo "tree $(System.DefaultWorkingDirectory)"
+          tree $(System.DefaultWorkingDirectory)
+
+    - task: PowerShell@2
+      displayName: "upload summary"
+      inputs:
+        workingDirectory: $(System.DefaultWorkingDirectory)
+        targetType: "inline"
+        script: |
+          Write-Host "Upload summary"
+          Write-Host "##vso[task.uploadsummary]$(System.DefaultWorkingDirectory)/results.txt"
+          exit 0
+
+    - task: PublishBuildArtifacts@1
+      displayName: Create Build Artifact for Veracode Pipeline Scan Results
+      inputs:
+        PathtoPublish: "filtered_results.json"
+        ArtifactName: "veracode-results"
+        publishLocation: "Container"
+
+    - task: PowerShell@2
+      displayName: "Create PR-Comments based on VeraCode-Check"
+      condition: and(succeeded(), eq(variables['Build.Reason'], 'PullRequest')) 
+      env:
+        SYSTEM_ACCESSTOKEN: $(System.AccessToken)
+      inputs:
+        targetType: "inline"
+        script: |
+          $request = @{
+              orgUrl = "https://dev.azure.com/zurichinsurance/MyCustomer"
+              repo = "$(Build.Repository.Name)"
+              prId = "$(System.PullRequest.PullRequestId)"
+              pathToResultJson = "$(System.DefaultWorkingDirectory)/filtered_results.json"
+              accessToken = $env:SYSTEM_ACCESSTOKEN
+          }
+          Write-Host ($request | Out-String) -ForegroundColor Green
+          $(System.DefaultWorkingDirectory)/create-veracode-pr-comments.ps1 -request @request

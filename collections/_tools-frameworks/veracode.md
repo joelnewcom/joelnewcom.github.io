@@ -1,6 +1,7 @@
 ---
 layout: single
 ---
+
 [VeraCode documentation about pipeline scan](https://docs.veracode.com/r/c_about_pipeline_scan)
 
 # Doing it locally in powershell:
