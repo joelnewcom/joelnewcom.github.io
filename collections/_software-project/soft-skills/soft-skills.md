@@ -51,9 +51,10 @@ to hold multiple groups/stakeholders (with different ambitions) together.
 
 ## Identification of a team
 As a team leader you can give your team an identity. This helps everyone to express in the name of a group and to feel they are in the same boat.
-* Team name(s)
-* A good example is the zkp team: They chose lego as their theme and now everybody is like a lego figure. 
-(After the attempt, naming the team to cinema super heros)
+* Team name(s) like superheroes
+* Release names like mountains or planets 
+ 
+A good example: Design every team member as LEGO figure. [Minifigs](https://minifigs.me/)
 
 # Documentation
 P.A.R.A. stands for Projects.Areas.Resources.Archives, the four top-level categories that encompass every type of information you might encounter in your work and life.
