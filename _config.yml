@@ -130,14 +130,19 @@ collections_dir: collections
 collections:
   cloud:
     output: true
+    permalink: /:collection/:name
   craftsmanship:
     output: true
+    permalink: /:collection/:name
   software-engineering:
     output: true
+    permalink: /:collection/:name
   tools-frameworks:
     output: true
+    permalink: /:collection/:name
   software-project:
     output: true
+    permalink: /:collection/:name
   try-hack-me-advent-2022:
     output: true
     order:
