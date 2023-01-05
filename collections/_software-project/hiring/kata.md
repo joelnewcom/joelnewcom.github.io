@@ -1,6 +1,7 @@
 ---
 layout: single
-permalink: /software-project/kata
+permalink: /software-project/
+---
 
 # C# Kata
 [Source](https://github.com/asierba/Katas.CSharp)
