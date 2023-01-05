@@ -27,9 +27,11 @@ End of the day: 11:59 pm
 | Midnight (end of day) <br /> or shown as start of next day   | 24:00 |
 
 # Acronyms
-LOB (Line of business)
-AOB (Any other business) is used for a last point in agendas to emphasize every other topic can be discussed as well.
-PPMO (Project Portfolio management office)
+- LOB (Line of business). Big companies split into line of business
+- AOB (Any other business) is used for a last point in agendas to emphasize every other topic can be discussed as well.
+- PPMO (Project Portfolio management office). Supports project in terms of finance, hiring, on/off-boarding, timesheets, holidays, project roadmap etc.
+- IMHO (In my humble opinion)
+- TBH (To be honest)
 
 # Effects and laws to describe a standard situation
 
@@ -59,27 +61,3 @@ A good example: Design every team member as LEGO figure. [Minifigs](https://mini
 # Documentation
 P.A.R.A. stands for Projects.Areas.Resources.Archives, the four top-level categories that encompass every type of information you might encounter in your work and life.
 ![para](/assets/images/softskills/para.bmp)
-
-# Cruft and technical debts
-This is a presentation to explain the business how important built-in quality is. It copied from: [Source](https://martinfowler.com/articles/is-quality-worth-cost.html)
-
-## Is quality worth the cost?
-![We are too busy](/assets/images/softskills/we-are-too-busy.png)
-
-### internal versus external quality
-Explain that you talk about internal quality. Its most of the time not visible on the frontend. Its the developer who needs to cope with all this. 
-
-Internal quality
-* Module structure
-* Software architecture (MVVN)
-* Software design (SOLID, yagni etc.)
-* Tests
-
-External quality
-* What the customer currently sees and feels
-
-### Cruft
-(In german überflüssiger Müll / nutzloser Code)
-
-# Getting things done
-![My GTD](/assets/images/softskills/myGTD.drawio.png)

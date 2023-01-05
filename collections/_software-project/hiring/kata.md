@@ -2,10 +2,10 @@
 layout: single
 ---
 
-https://github.com/asierba/Katas.CSharp
+# C# Kata
+[Source](https://github.com/asierba/Katas.CSharp)
 
-Following can be run in https://dotnetfiddle.net/
+Following code can be run in [DotNet fiddle](https://dotnetfiddle.net/) if there is no IDE at hand. 
 
-[Empty](Kata-Empty.cs)
-
-[Solution](Kata-Solution.cs)
+* [Empty](Kata-Empty.cs)
+* [Solution](Kata-Solution.cs)
