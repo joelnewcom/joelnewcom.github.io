@@ -1,6 +1,6 @@
 ---
 layout: single
-permalink: /software-project/
+permalink: /software-project/kata
 ---
 
 # C# Kata
