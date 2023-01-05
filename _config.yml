@@ -140,7 +140,7 @@ collections:
   tools-frameworks:
     output: true
     permalink: /:collection/:name
-  software-project:
+  archive:
     output: true
     permalink: /:collection/:name
   try-hack-me-advent-2022:
