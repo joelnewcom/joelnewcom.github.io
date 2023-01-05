@@ -1,5 +1,6 @@
 ---
 layout: single
+permalink: /software-project/kata.md
 ---
 
 # C# Kata
@@ -7,5 +8,5 @@ layout: single
 
 Following code can be run in [DotNet fiddle](https://dotnetfiddle.net/) if there is no IDE at hand. 
 
-* [Empty](Kata-Empty.cs)
-* [Solution](Kata-Solution.cs)
+* [Empty](./Kata-Empty.cs)
+* [Solution](./Kata-Solution.cs)
