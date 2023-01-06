@@ -8,7 +8,8 @@ layout: single
 
 ## Package the .net app
 [VeraCode documentation to pack .Net app](https://docs.veracode.com/r/compilation_net)
-```dotnet publish .\Allora.API\Allora.API.csproj -o myPublishedApp -c Debug```
+
+Run: ```dotnet publish .\Allora.API\Allora.API.csproj -o myPublishedApp -c Debug```
 
 ## Reduce it to the min
 ```
