@@ -75,3 +75,7 @@ curl --location --request POST 'https://dev.azure.com/{org}/{project}/_apis/git/
 [Checkout the sample pipeline](/assets/cicd/Create-veracode-pr-comment/get_veracode_feedback.yml)
 
 [And its powershell script](/assets/cicd/Create-veracode-pr-comment/create-veracode-pr-comments.ps1)
+
+
+# Use emojis
+[Emoji in Azure Devops()]https://learn.microsoft.com/en-us/azure/devops/project/wiki/markdown-guidance?view=azure-devops#emoji)
