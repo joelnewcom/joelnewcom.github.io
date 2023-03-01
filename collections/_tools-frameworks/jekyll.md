@@ -22,3 +22,20 @@ Steps I did to use Jekyll on this GitHub pages following this [manual](https://d
 
 ## Version on gitHub pages
 https://pages.github.com/versions.json 
+
+## Escape content
+https://stackoverflow.com/questions/3426182/how-to-escape-liquid-template-tags
+```
+{% raw  %}
+{% raw  %}
+{% this %}
+{% endraw %}
+{% endraw %}
+```
+
+will display
+```
+{% raw  %}
+{% this %}
+{% endraw %}
+```
