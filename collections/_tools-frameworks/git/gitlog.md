@@ -31,5 +31,7 @@ git diff --shortstat `git hash-object -t tree /dev/null`
  
 ## Count all commits with "fix" in comment.
 ```
+{% raw  %}
 git log --all -i --grep='fix' --pretty=format:"{%H}" | wc -l
+{% endraw %}
 ```
