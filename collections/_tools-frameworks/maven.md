@@ -2,8 +2,30 @@
 layout: single
 ---
 
+# Install maven
+
+1. Enter the URL: https://maven.apache.org/download.cgi
+
+2. On the Apache Maven Project page, find the heading Current Release of Maven (Proposal : 3.5.2)
+3. Select available version
+4. Click Save apache-maven-X.Y.Z-bin.zip file
+5. Unzip it to the folder (installation folder) you want to store Apache Maven (For example : c:\software\maven\apache-maven-X.Y.Z-bin)
+6. Add the ```MAVEN_HOME``` environment variable set to <installation folder>  (It is also common to use the environment variable M2_HOME)
+7. Optional : Add the ```MAVEN_OPTS``` environment variable
+8. Add the bin directory to your ```PATH``` environment variable → ```%MAVEN_HOME%\bin```
+
+
+# settings.xml
+If both files exists, their contents gets merged, with the user-specific settings.xml being dominant
+
+## global
+${maven.home}/conf/settings.xml	
+
+## user
+${user.home}/.m2/settings.xml
+
 # Setup maven to use a specific artifactory
-Default path for settings.xml is: %user/.m2 folder. 
+Default path for settings.xml is: %user%/.m2 folder. 
 
 In the settings.xml you can define to which repo maven shall go:
 
