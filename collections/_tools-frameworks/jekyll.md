@@ -25,17 +25,5 @@ https://pages.github.com/versions.json
 
 ## Escape content
 https://stackoverflow.com/questions/3426182/how-to-escape-liquid-template-tags
-```
-{% raw  %}
-{% raw  %}
-{% this %}
-{% endraw %}
-{% endraw %}
-```
 
-will display
-```
-{% raw  %}
-{% this %}
-{% endraw %}
-```
+![Files involved](/assets/images/tools/jekyll/escaping.PNG)
