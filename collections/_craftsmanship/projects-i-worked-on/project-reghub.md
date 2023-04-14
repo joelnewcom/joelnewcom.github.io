@@ -8,7 +8,6 @@ header:
     teaser: "/assets/images/six/reg-hub-overview.png"
 ---
 
-## Project RegHub
 *// 29.03.2020*
 
 ![reghub](/assets/images/six/reg-hub-overview.png)

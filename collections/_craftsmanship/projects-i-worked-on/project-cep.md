@@ -8,7 +8,6 @@ header:
     teaser: "/assets/images/cep/CEP.PNG"
 ---
 
-# Project CEP
 *// 03.03.2023*
 
 This project is responsible to provide APIs and CIAM functionality for a customer portal.

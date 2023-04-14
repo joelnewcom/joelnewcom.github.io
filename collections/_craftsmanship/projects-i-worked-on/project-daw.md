@@ -8,7 +8,6 @@ header:
     teaser: "/assets/images/daw/risk-cards.PNG"
 ---
 
-## Project DAW
 *// 01.06.2020*
 
 Project DAW (digital agents workplace) equips every swiss Zurich agent with an iPad and develops an iOS app called MyCustomer. The project also manages thirdparty iOS apps like Fluix.
