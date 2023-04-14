@@ -3,9 +3,9 @@ title: Project CEP
 layout: archive
 classes: wide
 categories:
-- craftsmanship
-  header:
-  teaser: "/assets/images/cep/CEP.PNG"
+  - craftsmanship
+header:
+    teaser: "/assets/images/cep/CEP.PNG"
 ---
 
 # Project CEP
