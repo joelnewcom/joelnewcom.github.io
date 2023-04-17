@@ -12,3 +12,5 @@ teaser: "/assets/images/cloud-teaser.JPG"
 
 # What is it
 Azure Data Factory is a cloud-based ETL (Transform and Load) and data integration service
+
+Azure datafactory or synapse workspace is kinda the same. 
