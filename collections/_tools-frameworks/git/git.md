@@ -113,3 +113,12 @@ There are two option to keep your local branch up to date with a long-living bra
 ![git keep up to date](/assets/images/git/git-keep-up-to-date.PNG)
 
 
+# Use .gitignore locally
+You can add this line to ```~/.gitconfig```
+```
+[core]
+    excludesfile = ~/.gitignore
+```
+And add a ```.gitignore``` file in your ```~/``` folder with this content: 
+
+

@@ -79,3 +79,51 @@ curl --location --request POST 'https://dev.azure.com/{org}/{project}/_apis/git/
 
 # Use emojis
 [Emoji in Azure Devops()]https://learn.microsoft.com/en-us/azure/devops/project/wiki/markdown-guidance?view=azure-devops#emoji)
+
+# SonarQube integration
+
+Create a sonarQube project and configure it to integrate with your ADO repository. Only with this setting, SonarQube will be able to publish a state back to the PR. 
+![azure-devops-build-validation](/assets/images/azure-devops/qualitygateToADO.PNG)
+
+Then you need to create a pipeline with these steps in it: 
+
+````yaml
+  - job: SonarQubeAnalysis
+    displayName: "SonarQube Analysis"
+    dependsOn: BuildTest
+    steps:
+      - task: DownloadPipelineArtifact@2
+        displayName: 'Download Pipeline Artifact'
+        inputs:
+          artifact: artifactForSQ
+          path: target/
+      - task: SonarQubePrepare@5
+        displayName: 'Prepare SonarQube'
+        inputs:
+          SonarQube: 'service-connection'
+          scannerMode: 'CLI'
+          configMode: 'manual'
+          cliProjectKey: SonarQubeprojectKey
+          extraProperties: |
+            sonar.coverage.exclusions=**/test/**
+            sonar.java.binaries=target/
+            sonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
+            sonar.exclusions=src/main/resources/sql/**
+      - task: SonarQubeAnalyze@5
+        displayName: 'Analyze SonarQube'
+      - task: SonarQubePublish@5
+        displayName: 'Publish SonarQube'
+        inputs:
+          pollingTimeoutSec: '300'
+````
+
+Then define this pipeline as Build Validation step.
+
+After the first run you should be able to set a Status Check on SonarQube quality gate:
+![azure-devops-build-validation](/assets/images/azure-devops/StatusCheck-SonarQube.PNG)
+
+# Paths on ADO pipeline
+
+$(Pipeline.Workspace) equals to $(Agent.BuildDirectory) 
+
+-> $(Build.SourcesDirectory) -> $(Pipeline.Workspace)/s 
