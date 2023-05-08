@@ -126,4 +126,24 @@ After the first run you should be able to set a Status Check on SonarQube qualit
 
 $(Pipeline.Workspace) equals to $(Agent.BuildDirectory) 
 
--> $(Build.SourcesDirectory) -> $(Pipeline.Workspace)/s 
+-> $(Build.SourcesDirectory) -> $(Pipeline.Workspace)/s
+
+# Debug on Pipelines
+
+````yaml
+    steps:
+      - task: DownloadPipelineArtifact@2
+        displayName: 'Download Pipeline Artifact'
+        inputs:
+          artifact: artifactForSQ
+          targetPath: '$(Pipeline.Workspace)/s'
+      - script: |
+          echo "ls $(System.DefaultWorkingDirectory)/"
+          ls $(System.DefaultWorkingDirectory)/
+          
+          echo "ls $(Pipeline.Workspace)"
+          ls $(Pipeline.Workspace)
+          
+          echo "ls $(Pipeline.Workspace)/s"
+          ls $(Pipeline.Workspace)/s
+````
