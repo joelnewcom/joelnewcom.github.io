@@ -2,6 +2,24 @@
 layout: single
 ---
 
+# Setup
+After you defined your DB context you can run these commands:
+
+
+cd into where your Program.cs resides. 
+
+Install Design package: 
+
+```
+dotnet add package Microsoft.EntityFrameworkCore.Design
+```
+
+Run the first migration: 
+```
+dotnet ef migrations add InitialCreate
+```
+
+
 # Relationships
 
 By default, a relationship will be created when there is a navigation property discovered on a type
