@@ -8,7 +8,10 @@ Here you can create a new Quicklist like: Git heavy used actions
 
 ![Quicklist](quicklist.PNG)
 
-Now bind a shortcut to this quicklist. I use Ctrl+$ to open this list.
+Or you can just use the "VCS Operations" list. 
+
+Now bind a shortcut to this quicklist via Keymaps. You will find your Quicklist there and 
+can assign for example`Ctrl+$` to open this list.
 
 # Shortcuts
 Shift+F6 - Rename anything (file, method-name, variable-name, class-name) 

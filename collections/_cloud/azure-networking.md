@@ -20,4 +20,8 @@ You can create a vNet to segment your application landscape. Within a vNet each 
 Within a vNet you can create subnets. A subnet can have zero or one NSG. 
 
 ### NSG
-Network security group: Can be assigned to a subnet or a NIC (network interface controller) 
+Network security group: Can be assigned to a subnet or a NIC (network interface controller)
+
+
+# App service networking
+ Virtual network integration is used for making outbound traffic into you virtual network.

@@ -90,8 +90,9 @@ Resource groups cannot be nested
 
 
 # Azure groups
-secrity group: Used to organize members and access.
-microsoft 365 groups: Used to colaborate. The allow access on mail boxes, calendar and sharepoint sites etc.
+Security group: Used to organize members and access.
+Microsoft 365 groups: Used to collaborate. 
+It allows access on mail boxes, calendar and sharepoint sites etc.
 
 # RBAC and AD
 
@@ -100,7 +101,8 @@ Azure AD connect is used to sync Azure AD and on-prem AD.
 
 RBAC Permission need a principal (user, group or service principal) a role def (dos and donts ) and a scope (management group, subscription resource group or resource)
 
-
+To create a role assignment for privileged roles like contributor, owner or User Access Administrator you need to chose the tab "Priviledged administrator roles"
+![Privileged roles](/assets/images/azure/role-assignment.PNG)
 
 # Azure AD
 The term Tenant means a single instance of Azure AD representing a single organization.

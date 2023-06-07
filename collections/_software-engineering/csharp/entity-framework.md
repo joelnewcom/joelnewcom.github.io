@@ -5,7 +5,6 @@ layout: single
 # Setup
 After you defined your DB context you can run these commands:
 
-
 cd into where your Program.cs resides. 
 
 Install Design package: 
@@ -19,6 +18,11 @@ Run the first migration:
 dotnet ef migrations add InitialCreate
 ```
 
+# database update
+
+```
+C:\Git\DAW.MW.Admin>dotnet ef database update --project "DAW.MW.Admin.DAL.Application" --startup-project "DAW.MW.Admin" --context ApplicationDBContext -- --environment Development
+```
 
 # Relationships
 

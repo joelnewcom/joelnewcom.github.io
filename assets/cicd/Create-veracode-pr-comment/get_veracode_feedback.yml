@@ -191,7 +191,7 @@ stages:
         targetType: "inline"
         script: |
           $request = @{
-              orgUrl = "https://dev.azure.com/zurichinsurance/MyCustomer"
+              orgUrl = "https://dev.azure.com/<company>/<project>"
               repo = "$(Build.Repository.Name)"
               prId = "$(System.PullRequest.PullRequestId)"
               pathToResultJson = "$(System.DefaultWorkingDirectory)/filtered_results.json"

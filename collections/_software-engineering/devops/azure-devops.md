@@ -2,6 +2,17 @@
 layout: single
 ---
 
+# Pipeline runs: 
+pull requests can require (via branch policy) builds to happen before they can be merged. 
+Normal runs are happening after something is merged into a branch. 
+
+
+# predefined variables
+## Build.Reason
+* IndividualCI -> Triggered when a branch is updated 
+* PullRequest -> Triggered by a branch policy
+* Manual -> Triggered manually
+
 # Create PR comments with Powershell
 
 Make a conditional task within a pipeline 

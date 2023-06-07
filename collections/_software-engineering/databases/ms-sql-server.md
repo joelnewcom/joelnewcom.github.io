@@ -12,10 +12,12 @@ Once installed you can connect to the database with SQL server management studio
 
 # Provide access rights to other users
 Then click on "Security" -> "Logins" -> "BUILTIN\Users" (In German: "Vordefiniert\Users") 
-![provide access to other user](/assets/images/software-engineering/databases/ssql-server-management-studio)
+![provide access to other user](/assets/images/software-engineering/databases/ssql-server-management-studio.PNG)
 
 and provide needed access to all windows logins. This is obviously only for developing purposes.
 ![provide access to other user](/assets/images/software-engineering/databases/sql-server-management-studio-grant-access.PNG)
+
+When you enable the sysadmin flag, every windows user becomes admin on the sql server.
 
 # Am I sysadmin?
 To check if your current account has admin priviledge run: 
