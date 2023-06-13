@@ -119,7 +119,7 @@ Then you need to create a pipeline with these steps in it:
             sonar.coverage.exclusions=**/test/**
             sonar.java.binaries=target/
             sonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
-            sonar.exclusions=src/main/resources/sql/**
+            sonar.exclusions=src/main/resources/sql/**, src/main/resources/templates/**
       - task: SonarQubeAnalyze@5
         displayName: 'Analyze SonarQube'
       - task: SonarQubePublish@5

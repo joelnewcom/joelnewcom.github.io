@@ -59,12 +59,17 @@ If "Deployment slot setting" is enabled, the setting is only for the actual slot
 
 For linux containers you need to defined embedded json object like this: ```ApplicationInsights__InstrumentationKe```, so the ":" becomes "__"
 
+The order of different ways to set config: [order of config](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-7.0#default-application-configuration-sources)
+
+If we want to see the actual content ap appsettings.json of a deployed app within appservice we can open advanced tools.
+And then navigate to ```site/wwwroot/appsettings.json```
+
 ## Scaling
 You can either scale up/down, which means changing the app service plan, eg. making the machine(s) bigger.
 Or scale out/in, which means add more instances of your current app service plan machine.  
 
 ## Automatic Scaling rules
-Can be matric-based or time-based. 
+Can be metric-based or time-based. 
 
 Automatic scaling rule first aggregates all values of all instances on the metric specific "AggregationIntervall". Most of metrics have this set to 1min.
 After that, the custom settings of duration and aggregationmethod (min, max, av) will be applied on the previous metric aggregation.

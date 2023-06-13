@@ -32,6 +32,7 @@ End of the day: 11:59 pm
 - PPMO (Project Portfolio management office). Supports project in terms of finance, hiring, on/off-boarding, timesheets, holidays, project roadmap etc.
 - IMHO (In my humble opinion)
 - TBH (To be honest)
+- COTS (Customized off the shelf) software. 
 
 # Effects and laws to describe a standard situation
 
