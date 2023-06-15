@@ -34,6 +34,11 @@ End of the day: 11:59 pm
 - TBH (To be honest)
 - COTS (Customized off the shelf) software. 
 
+
+LGTM -> Looks good to me
+LGCO -> looks good carry on
+
+
 # Effects and laws to describe a standard situation
 
 ## Conway's law
