@@ -47,7 +47,6 @@ This can be used like this:
 
 ```
 var p = new Person() { Name = "jonson"};
-
 ```
 
 # Naming conventions

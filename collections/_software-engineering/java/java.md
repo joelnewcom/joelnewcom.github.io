@@ -9,6 +9,9 @@ First you need declare the test-folder as ```Test Sources Root```
 
 After that you can ``` Alt + Enter``` on the Class name you want to create a test for -> ````Create Test```.
 
+# profile JVM memory and CPU consumption
+Download [VisualVM](https://visualvm.github.io/download.html) and run it. It will list all running JVMs and if your application is running you will see it there.
+
 # Regex
 In this example I wrote code to determine if a string started with ```=``` ```+``` ```-``` ```@``` ```\n``` or ```\r``` and if so prepend it with ```'```. This way we can make sure that the output to csv is protected from automatic formula execution (cwe-1236) 
 [To convert regex to java regex string](https://www.regexplanet.com/advanced/java/index.html)

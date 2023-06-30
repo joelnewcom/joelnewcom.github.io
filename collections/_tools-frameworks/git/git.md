@@ -12,6 +12,10 @@ I know three types of branching model for git.
 
 [Good comparison between the strategies](https://www.toptal.com/software/trunk-based-development-git-flow)
 
+
+
+
+
 # Git merge
 Git merge goes like this:
 

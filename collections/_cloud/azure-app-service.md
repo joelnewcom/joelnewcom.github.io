@@ -56,6 +56,8 @@ The Azure app service app settings overrides the ```Web.config``` and ```appsett
 App settings are encrypted at rest.
 
 If "Deployment slot setting" is enabled, the setting is only for the actual slot and will not be shared with other slots.
+For example: We configured a "connectionStringToStageDb" on the staging slot and define it as "deployment slot setting".
+When we swap the staging and prod slot, the previous mention setting will still reside on the staging slot and our application which was previously on staging will now use the setting defined on the prd slot.
 
 For linux containers you need to defined embedded json object like this: ```ApplicationInsights__InstrumentationKe```, so the ":" becomes "__"
 
