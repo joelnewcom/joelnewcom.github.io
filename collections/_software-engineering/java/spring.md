@@ -24,7 +24,7 @@ public void testParameters(String name, int value) {
 }
 ````
 
-If you want to test null values, you neeed to do something like this:
+If you want to test null values, you need to do something like this:
 ````java
     @ParameterizedTest
     @CsvSource(value = {"de,true", "null,false", "fr,false"},
@@ -34,4 +34,46 @@ If you want to test null values, you neeed to do something like this:
         testParty.setLanguage(language);
         assertThat(isLanguageDeRule.evaluate(testParty), is(result));
     }
+````
+
+You can also define a method to provide the parameters:
+
+````java
+    private static String[] nullEmptyBlankSource() {
+        return new String[] { null, "", " " };
+    }
+    
+    @ParameterizedTest
+    @MethodSource("nullEmptyBlankSource")
+    void invalidValuesAreNotAllowed(String person) {
+        assertThatThrownBy(() -> greet(person))
+        .isInstanceOf(IllegalArgumentException.class)
+        .hasMessage("person is mandatory");
+    }
+````
+
+# Exception assertions
+Source: https://www.baeldung.com/junit-assert-exception
+
+## Test no exception thrown
+````java
+    @ParameterizedTest
+    @CsvSource({"PROD", "UAT", "SIT", "DEV"})
+    void getEnvironmentOk(String env) {
+        Config config = new Config();
+        assertDoesNotThrow(() -> config.setEnvironment(env));
+    }
+````
+
+## Test exception thrown
+````java
+    @ParameterizedTest
+@CsvSource(value = {"prod", "uat", "sit", "dev", "''", "null"},
+        nullValues = {"null"})
+    void getEnvironmentNok(String env) {
+        Config config = new Config();
+        Exception exception = assertThrows(IllegalStateException.class, () -> config.setEnvironment(env));
+        String actualMessage = exception.getMessage();
+        assertThat(actualMessage, is("Environment needs to be one of the values of DEV, SIT, UAT or PROD"));
+        }
 ````
