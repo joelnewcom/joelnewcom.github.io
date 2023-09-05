@@ -94,7 +94,7 @@ It works like this:
 ```tf import {your-terraform-id} {object-id-on-azure}```
 
 Where {your-terraform-id} is the string after the # printed out when you do ```tf plan```
-[Terraform id](/assets/images/tools/terraform/terraform-resource-id.PNG)
+![Terraform id](/assets/images/tools/terraform/terraform-resource-id.PNG)
 
 Where {object-id-on-azure} is the "Resource ID". You can find it on the resource on Azure portal under Properties:  
 Its a path, something like "/subscriptions/{subscriptionid}/resourceGroups/{rg-name}/providers/Microsoft.KeyVault/vaults/{keyVaultName}"

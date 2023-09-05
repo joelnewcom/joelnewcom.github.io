@@ -5,7 +5,7 @@ date:   2023-09-01 00:00:00 +0200
 categories: Architecture
 ---
 # general idea
-[Hexagonal](/assets/images/software-engineering/architecture/hexagonal/hexagonal-project.png)
+![Hexagonal](/assets/images/software-engineering/architecture/hexagonal/hexagonal-project.png)
 
 You define your application structure like this:
 
