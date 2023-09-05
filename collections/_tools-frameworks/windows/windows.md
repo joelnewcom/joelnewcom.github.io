@@ -10,6 +10,7 @@ To get the absolute path of a file you need to shift-right click on a file and c
 # PowerShell
 To show manual you need to run Get-Help cmdlet: ```Get-Help Get-Credentials```
 
+
 # BAT / CMD
 
 ## CMD

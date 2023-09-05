@@ -3,20 +3,34 @@ layout: single
 ---
 
 # Pipeline runs: 
-pull requests can require (via branch policy) builds to happen before they can be merged. 
+pull requests can require (via branch policy: Build Validation) builds to happen before they can be merged.
+
 Normal runs are happening after something is merged into a branch. 
 
+# variables
+## secret variables
 
-# predefined variables
-## Build.Reason
+You need to map the secret variables first to get its content.
+For example:
+````yaml
+  - script: jmeter -n -t $(Build.SourcesDirectory)/.azure/load-test-preference-service.jmx -l reports/results.jtl -e -o reports
+    env:
+      CND_CUSTOMER_PREFERENCE_SERVICE_HOST: $(LOAD_TEST_HOST)
+      LOAD_TEST_PASSWORD: $(LOAD_TEST_PASSWORD)
+      LOAD_TEST_SYSTEM_OF_RECORD_ID : $(LOAD_TEST_SYSTEM_OF_RECORD_ID)
+````
+
+## predefined variables
+### Build.Reason
 * IndividualCI -> Triggered when a branch is updated 
 * PullRequest -> Triggered by a branch policy
 * Manual -> Triggered manually
 
+
 # Create PR comments with Powershell
 
 Make a conditional task within a pipeline 
-```
+````yaml
 - task: PowerShell@2
   condition: eq(variables['Build.Reason'], 'PullRequest')
   displayName: Post Message to PR
@@ -25,7 +39,7 @@ Make a conditional task within a pipeline
   inputs:
       targetType: filePath
       filePath: PostToPR.ps1
-```
+````
 
 # Trigger Pipeline run on Pull request
 
@@ -34,14 +48,31 @@ Make a conditional task within a pipeline
 
 ## Option 2 - Via yml pipeline file
 
-```
+````yaml
 # trigger this pipeline if there's a PR to any of these branches
 pr:
 - master
 - main
 - staging
 - releases/*
-```
+````
+
+# Scheduled trigger
+By default every pipeline is enabled for IndividualCI trigger. As soon as there are changes to the branch, the pipeline would run. Thats why you need to disable this.
+You can also define schedules via ADO ui and it will override whats defined in the yaml definition. 
+
+````yaml
+trigger: none
+
+schedules:
+- cron: '0 0 1 * *' # check: https://learn.microsoft.com/en-us/azure/devops/pipelines/process/scheduled-triggers?view=azure-devops&tabs=yaml#cron-syntax
+  displayName: Every first day of a month
+  branches:
+  include:
+    - main
+````
+
+
 
 # Using PAT basic authorization
 Generate a new personal access token on Azure Devops. 
@@ -54,7 +85,7 @@ You can use the token in the Basic Authorization header. Just keep the username 
 
 Make this REST call according to the [MS docu](https://learn.microsoft.com/en-us/rest/api/azure/devops/git/pull-request-threads/create?view=azure-devops-rest-7.0&tabs=HTTP), but omit the ```pullRequestThreadContext``` attribute, as ADO would then ignore the filePath attribute.  
 
-```
+````shell
 curl --location --request POST 'https://dev.azure.com/{org}/{project}/_apis/git/repositories/{repo-name}/pullRequests/95973/threads?api-version=7.0' \
 --header 'Authorization: Basic {PAT}' \
 --header 'Content-Type: application/json' \
@@ -81,7 +112,7 @@ curl --location --request POST 'https://dev.azure.com/{org}/{project}/_apis/git/
         }
       }
     }'
-```
+````
 
 [Checkout the sample pipeline](/assets/cicd/Create-veracode-pr-comment/get_veracode_feedback.yml)
 
@@ -157,4 +188,14 @@ $(Pipeline.Workspace) equals to $(Agent.BuildDirectory)
           
           echo "ls $(Pipeline.Workspace)/s"
           ls $(Pipeline.Workspace)/s
+````
+
+# Tree
+This will output the content of the defined workingDirectory in a nice tree. Its including folder and files
+````yaml
+- task: CmdLine@2
+  displayName: 'tree command in $(Build.ArtifactStagingDirectory)'
+  inputs:
+    workingDirectory: $(Build.ArtifactStagingDirectory)
+    script: 'tree /F'
 ````

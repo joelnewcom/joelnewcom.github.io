@@ -3,11 +3,15 @@ layout: single
 ---
 
 # Building steps
+
 ## dotnet restore
+
 Uses NuGet to restore dependencies and project specific tools.
-```dotnet restore``` is run automatically in other dotnet commands like, ```new, build, build-server, run, test, publish and pack```
+```dotnet restore``` is run automatically in other dotnet commands
+like, ```new, build, build-server, run, test, publish and pack```
 
 ## dotnet publish
+
 Will create an artifact which can be deployed (Depending on the parameters and configuration)
 
 # async and await
@@ -78,15 +82,16 @@ Order of settings (A higher number overrides the lower)
 Changes made to the appsettings.json and appsettings.Environment.json file after the app starts are read by the JSON
 configuration provider.
 
-# NuGet packages
+## Launch setting
 
-## Licensing
+To set environment variable, you can edit the ```launchSettings.json```
+Normally this file is placed under ```src/application/Properties/launchSettings.json```
 
-A NuGet package available on nuget.org can have any license.
-There is no restriction on whether the NuGet package is free, open source or commercially licensed.
-You should review the license that each NuGet package has.
-Typically a NuGet package that does not have an open source license will require you to accept the license agreement
-before installing it but you should still review the license even if you are not prompted to accept one.
+## user secrets
+
+```Cd``` into where your appsettings.json file is. Its normally under ```src/application//appsettings.json```
+To add the setting "ServicePrincipal:ClientSecret":
+run ```dotnet user-secrets set ServicePrincipal:ClientSecret {secret value}```
 
 # Start from scratch
 
@@ -125,3 +130,5 @@ numbers needs to be a float: integer / (float)integer
 | NullReferenceException        |    Attempt to use an unassigned reference |
 | OutofmemoryException          |    Not enough memory to continue execution |
 | StackOverFlowException        |    A Stack has overflowed |
+
+

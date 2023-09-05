@@ -11,13 +11,19 @@ Get-Help Get-AzureADObjectByObjectId
 ```
 
 # Run a ps1 file without signing it: 
-Create a cmd file with: ```powershell -ExecutionPolicy Unrestricted -File ./read.ps1```
+run ```Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass``` before running the ps1 file. 
+
+Or create a cmd file with: ```powershell -ExecutionPolicy Unrestricted -File ./read.ps1```
 
 # Variables
 ```
 $loc = "East US"
 $iterations = 3
 ```
+
+## set environment variable
+$env:VSS_NUGET_EXTERNAL_FEED_ENDPOINTS = '{"some-quoted-string": "value"'
+
 # Arrays
 ## Create an array
 $MyArray = @()

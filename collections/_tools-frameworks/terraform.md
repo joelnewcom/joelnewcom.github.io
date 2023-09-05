@@ -4,6 +4,8 @@ layout: single
 
 # Terraform
 
+## init tfstate
+
 Terraform has 4 main commands;
 
 * ```terraform init```
@@ -75,5 +77,26 @@ Normally a terraform folder is structured like:
 
 run ```tf init ```
 
+# Export azure resources
+There is an Azure Export tool for terraform.
+[Microsoft learn](https://learn.microsoft.com/en-us/azure/developer/terraform/azure-export-for-terraform/export-first-resources?tabs=azure-cli)
+
+The ```main.tf``` holds the new terraform scripts to create the exported resources. Don't forget to import these
+resources to terraform before apply these scripts. 
+
+
+# Import existing resources
+When we want to terraform existing resources, we also need to add them first to terraform state file by importing these
+resources to terraform.
+
+It works like this: 
+
+```tf import {your-terraform-id} {object-id-on-azure}```
+
+Where {your-terraform-id} is the string after the # printed out when you do ```tf plan```
+[Terraform id](/assets/images/tools/terraform/terraform-resource-id.PNG)
+
+Where {object-id-on-azure} is the "Resource ID". You can find it on the resource on Azure portal under Properties:  
+Its a path, something like "/subscriptions/{subscriptionid}/resourceGroups/{rg-name}/providers/Microsoft.KeyVault/vaults/{keyVaultName}"
 
 
