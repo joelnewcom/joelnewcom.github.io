@@ -2,6 +2,15 @@
 layout: single
 ---
 
+# Spring basic 3 tier pattern
+You can split your application into 3 layers: 
+
+* Controllers
+* Service
+* Repository
+
+[3tier](/assets/images/software-engineering/architecture/3tier/software-architecture.PNG)
+
 # Tell java compiler and IDE not warn about Spring dependency injection
 Annotate a method or classes with: ```@SuppressWarnings("unused")```
 

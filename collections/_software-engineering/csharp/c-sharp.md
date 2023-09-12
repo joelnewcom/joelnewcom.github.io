@@ -2,6 +2,15 @@
 layout: single
 ---
 
+# DotNet SDK
+The even version-numbers are the LTS(long term support) versions. For big projects its good to stick to the latest 
+even .Net version. Only opt for a preview or STS (Standard term version) if you depend on a new feature of this sdk. 
+
+[SDK version policy](https://dotnet.microsoft.com/en-us/platform/support/policy)
+
+## Download the right dotnet version
+[Download dotnet](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks)
+
 # Building steps
 
 ## dotnet restore

@@ -27,5 +27,8 @@ Compared to 3 tier architecture, you never know where the boundary of your busin
 translate from business-logic language to other domain language. 
 
 For example: You define a model "Customer" on your business layer and define a @service, @controller and @repository classes for it.
-Which class shall now translate from "Customer" to "CustomerDto" used by @Controller?
+Which class shall now translate from "Customer" to "CustomerDto" used by @Controller? The Controller itself, or shall the Service already return
+the type CustomerDto?
+
+[3tier](/assets/images/software-engineering/architecture/3tier/software-architecture.PNG)
 
