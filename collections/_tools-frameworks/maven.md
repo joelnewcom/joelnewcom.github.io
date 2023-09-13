@@ -126,3 +126,60 @@ mvn install -pl :B -am
 ## Save maven warnings to a file
 mvn clean install -Dmaven.compiler.showDeprecation=true -Dmaven.compiler.showWarnings=true --log-file maven-warnings.txt
 
+# Maven Dependency plugin
+
+# Maven dependency
+
+You can use it like this: 
+
+````xml
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-dependency-plugin</artifactId>
+            <version>${maven-dependency-plugin.version}</version>
+            <!-- Plugin config according to: https://maven.apache.org/plugins/maven-dependency-plugin/examples/failing-the-build-on-dependency-analysis-warnings.html -->
+            <!-- This execution is hooked to the "mvn verify" goal-->
+            <executions>
+                <execution>
+                    <id>analyze</id>
+                    <goals>
+                        <goal>analyze-only</goal>
+                    </goals>
+                    <configuration>
+                        <ignoreNonCompile>true</ignoreNonCompile>
+                        <failOnWarning>true</failOnWarning>
+                        <outputXML>true</outputXML>
+                        <!-- Following dependencies are loaded by spring and maven cannot detect them-->
+                        <usedDependencies>
+                            <dependency>org.springframework.boot:spring-boot-starter-web</dependency>
+                            <dependency>org.springframework.boot:spring-boot-starter-jdbc</dependency>
+                        </usedDependencies>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+</build>
+````
+
+The above setup would hook on the ```mvn verify``` command. The plugin is configured
+to fail if some plugins (for example from spring parent) are used, but not explicitly defined in the project pom.
+Locally you can run ```mvn clean verify``` or just the specific goal if you want to skip the tests: ```mvn dependency:analyze-only``` and check if there are any warning.
+
+If the output is something like:
+
+````text
+[INFO] --- dependency:3.5.0:analyze-only (analyze) @ customer-preference-service ---
+[ERROR] Used undeclared dependencies found:
+[ERROR]    org.springframework.boot:spring-boot-actuator:jar:3.1.0:compile
+[INFO] Add the following to your pom to correct the missing dependencies:
+[INFO]
+<dependency>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-actuator</artifactId>
+  <version>3.1.0</version>
+</dependency>
+````
+you can just do what is suggested and should be good to go. 
