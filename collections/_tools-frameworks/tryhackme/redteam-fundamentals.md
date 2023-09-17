@@ -15,6 +15,8 @@ Pentesting, but simulates an actual attack.
 * Red team might emulate an existing APT group like APT38 by using the TTPs (Technics, Tactics and Procedures) of this
   particular group.
 
+The Rules of Engagement (RoE) is the legally binding agreement about scope, expectations goal and limits of an engagement.   
+
 # Cyber kill chain (Lockheed Martin)
 
 | Technique 	           | Purpose                                                                           | 	Examples                                        |
