@@ -2,7 +2,7 @@
 layout: single
 ---
 
-- Single Responsibility
+- Single Responsibility principle
 - Open closed principle
 - Liksov substitution principle
 - Interface segregation

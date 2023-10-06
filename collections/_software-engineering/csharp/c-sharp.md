@@ -102,6 +102,9 @@ Normally this file is placed under ```src/application/Properties/launchSettings.
 To add the setting "ServicePrincipal:ClientSecret":
 run ```dotnet user-secrets set ServicePrincipal:ClientSecret {secret value}```
 
+Though this is only for development. If you want to run sit, uat or prod application setup locally you would need
+to pass this secrets via environment variable in launchSettings.json.
+
 # Start from scratch
 
 ```dotnet new console```  will create a new console project.

@@ -199,3 +199,26 @@ This will output the content of the defined workingDirectory in a nice tree. Its
     workingDirectory: $(Build.ArtifactStagingDirectory)
     script: 'tree /F'
 ````
+
+# If else
+
+Following example show how to use ```createSandBox``` and ```sanboxName``` attributes only if the if-condition is met.    
+```yaml
+  - task: Veracode@3
+    displayName: 'Upload to VeraCode and run static scan'
+    inputs:
+      ConnectionDetailsSelection: Credentials
+      apiId: '$(veracode-api-id)'
+      apiKey: '$(veracode-api-secret)'
+      veracodeAppProfile: 'blalba' # Veracode application profile to scan
+      version: '$(build.buildNumber)-$(Build.BuildId)' # name of the scan to run
+      filepath: '$(Build.ArtifactStagingDirectory)/publish_output' # filepath or folderpath of files to upload to Veracode
+      ${{ if parameters.isPr }}:
+        createSandBox: true # true to scan of new development sandbox
+        sandboxName: 'PullRequest-Sandbox'
+      createProfile: false # false to enforce using existing profiles
+      failBuildIfUploadAndScanBuildStepFails: true # true to fail build if Upload and Scan task fails to start
+      importResults: true # required to view Veracode results in Azure DevOps
+      failBuildOnPolicyFail: true # true to fail the build if application fails policy
+      maximumWaitTime: '360' # wait time, in minutes, to fail the build if no scan results available
+```

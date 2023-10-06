@@ -6,7 +6,6 @@ layout: single
 
 The ```QrCodeInstructionPipe``` class defines a rule engine as a list of Rules and then stream over each Rule and call the avaluate method. 
 
-
 ````java
 public class QrCodeInstructionPipe implements UnaryOperator<Party> {
     private static final List<Rule> rules = new ArrayList<>();

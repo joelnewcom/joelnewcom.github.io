@@ -12,10 +12,6 @@ I know three types of branching model for git.
 
 [Good comparison between the strategies](https://www.toptal.com/software/trunk-based-development-git-flow)
 
-
-
-
-
 # Git merge
 Git merge goes like this:
 
@@ -125,4 +121,15 @@ You can add this line to ```~/.gitconfig```
 ```
 And add a ```.gitignore``` file in your ```~/``` folder with this content: 
 
+```
+# PhpStorm
+.idea
 
+# VSCode
+.vscode
+```
+
+This is useful if you don't want to change projects .gitignore as you are the only one working on a specific IDE.
+
+# Use different email for work and private repos
+[manual](https://blog.hao.dev/how-to-use-different-git-emails-for-personal-and-work-repositories-on-the-same-machine)
