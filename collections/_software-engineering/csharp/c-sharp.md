@@ -150,4 +150,69 @@ Default in standard deserializer of [System.Text.Json](https://learn.microsoft.c
 
 The more intuitive defaults are set in the [web defaults option](https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/configure-options?pivots=dotnet-7-0#web-defaults-for-jsonserializeroptions): 
 * Case in-sensitive
-* Enums can also be their string representations. 
+* Enums can also be their string representations.
+
+
+# Asynchronous
+## await versus WhenAll
+WhenAll will wait for all tasks to complete even in the presence of failures (faulted or canceled tasks)
+
+## IQueryable
+On LINQ statements, there are ones that return IQueryable (and IEnumerable), and the ones returning List<TResult>, TResults, TKey, etc, anything that are not IQueryable/IEnumerable.
+If the return value is an IQueryable, the function uses lazy execution: the Expression to perform the query is created, but the query is not executed yet.
+
+The query is executed when you ask the IQueryable to get an enumerator and if you start enumerating, either implicitly by using foreach, 
+or explicitly by using IQueryable.GetEnumerator() and IEnumerator.MoveNext() (which are also called by foreach).
+
+# AppDomain.FirstChanceException
+Here is an integration test which checks if specific Exceptions got thrown
+```
+    [Theory]
+    [InlineData("v1/api?customerId=00000000-0000-0000-0000-000000000000")]
+    public async Task GetAndFail(string url)
+    {
+        var insideFirstChanceExceptionHandler = false;
+        var exceptionMessage = "";
+        AppDomain.CurrentDomain.FirstChanceException += (_, eventArgs) =>
+        {
+            if (insideFirstChanceExceptionHandler)
+            {
+                // Prevent recursion (If exception is thrown in this method)
+                return;
+            }
+
+            insideFirstChanceExceptionHandler = true;
+            try
+            {
+                if (eventArgs.Exception.GetType() == typeof(InvalidOperationException) && eventArgs.Exception.Message.Contains("The connection is closed"))
+                {
+                    exceptionMessage = eventArgs.Exception.Message;
+                }
+
+                if (eventArgs.Exception.GetType() == typeof(ObjectDisposedException))
+                {
+                    exceptionMessage = eventArgs.Exception.Message;
+                }
+                
+                _outputHelper.WriteLine("FirstChanceException event raised in {0}: {1}",
+                    AppDomain.CurrentDomain.FriendlyName, eventArgs.Exception.Message);
+
+            }
+            finally
+            {
+                insideFirstChanceExceptionHandler = false;
+            }
+            
+        };
+        
+        // Arrange
+        var client = _factory.CreateClient();
+
+        // Act
+        var response = await client.GetAsync(url);
+
+        // Assert
+        exceptionMessage.Should().BeEmpty();
+        response.StatusCode.Should().Be(HttpStatusCode.NotFound);
+    }
+```

@@ -59,3 +59,19 @@ public class CSVOutputEscaper {
 }
 ````
 
+# Java strings
+Java is pooling its literal strings in an internal pool.  
+If you define a string like this: 
+
+````java
+String literal = "value";
+````
+The value would be added in to this internal pool.
+As this string is anyway immutable, it doesn't make sense to create a new object.
+
+But when you create a new String object like this during runtime: 
+````java
+String object = new String("value");
+````
+Java would actually create a new object and would not use the string pool. To tell java to do it anyway you can call ```String object = new String("value").intern()```
+This would look into the string pool and return a reference to the already existing "value" string, or create a new object in the pool. 
