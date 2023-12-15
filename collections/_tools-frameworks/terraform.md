@@ -107,8 +107,13 @@ resources to terraform before apply these scripts.
 
 
 # Import existing resources
-When we want to terraform existing resources, we also need to add them first to terraform state file by importing these
-resources to terraform.
+
+* Check for a clean terraform plan
+* Add a minimal resource block
+* Import the resource (You can use the terraform id from the plan output)
+* Configure until terraform plan is clean again
+* Apply the config with the --refresh-only switch
+[source](https://www.azurecitadel.com/terraform/fundamentals/import/)
 
 It works like this: 
 
@@ -119,6 +124,7 @@ Where {your-terraform-id} is the string after the # printed out when you do ```t
 
 Where {object-id-on-azure} is the "Resource ID". You can find it on the resource on Azure portal under Properties:  
 Its a path, something like "/subscriptions/{subscriptionid}/resourceGroups/{rg-name}/providers/Microsoft.KeyVault/vaults/{keyVaultName}"
+
 
 
 # concatenate

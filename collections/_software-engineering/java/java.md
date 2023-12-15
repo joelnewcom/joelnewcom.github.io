@@ -74,4 +74,14 @@ But when you create a new String object like this during runtime:
 String object = new String("value");
 ````
 Java would actually create a new object and would not use the string pool. To tell java to do it anyway you can call ```String object = new String("value").intern()```
-This would look into the string pool and return a reference to the already existing "value" string, or create a new object in the pool. 
+This would look into the string pool and return a reference to the already existing "value" string, or create a new object in the pool.
+
+## isBlank()
+Checks if the string is empty or has only blanks
+```" ".isBlank() -> true```
+```"".isBlank() -> true```
+
+## isEmpty()
+Checks only if the string is empty
+```"".isEmpty() -> true```
+```"".isEmpty() -> false```

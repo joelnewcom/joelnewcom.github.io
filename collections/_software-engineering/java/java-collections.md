@@ -46,9 +46,39 @@ innerMap.put(agreement.getSystemOfRecordId(), party);
 ## computeIfAbsent
 This is great if you want to work with the value right away.
 
+These lines lead to the same result:
+```
+Map<String, List<Party>> partiesByEmail;
+
+// via computeIfAbsent 
+List<Party> partiesWithSameEmail = partiesByEmail.computeIfAbsent(email, k -> new ArrayList<>());
+partiesWithSameEmail.add(party);
+
+// via getOrDefault, you still need to put the value into the map
+List<Party> partiesWithSameEmail = partiesByEmail.getOrDefault(email, new ArrayList<>());
+partiesWithSameEmail.add(party);
+partiesByEmail.put(email, partiesWithSameEmail);
+```
+
+
 ## merge
 merge(){
     computeIfAbsent(...)
     computeIfPresent(...)
 }
 
+
+## flatMap
+```
+Map<String, List<Party>> partiesByEmail = new HashMap<>();
+partiesByEmail.values().stream()
+    .filter(partiesWithSameEmail -> partiesWithSameEmail.size() > 1)
+    .flatMap(Collection::stream)
+    .forEach(item -> item.do());
+```
+
+```
+Before flattening 	: [[1, 2, 3], [4, 5], [6, 7, 8]]
+
+After flattening 	: [1, 2, 3, 4, 5, 6, 7, 8]
+```
