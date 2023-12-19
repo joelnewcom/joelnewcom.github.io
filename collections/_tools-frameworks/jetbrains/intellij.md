@@ -6,7 +6,7 @@ layout: single
 To create a quicklist go to File -> settings -> Appearance & Behaviour -> Quick-Lists.
 Here you can create a new Quicklist like: Git heavy used actions
 
-![Quicklist](quicklist.PNG)
+![Quicklist](/assets/images/tools/jetbrains/quicklist.PNG)
 
 Or you can just use the "VCS Operations" list. 
 

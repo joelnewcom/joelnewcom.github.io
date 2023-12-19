@@ -6,6 +6,9 @@ categories:
   - craftsmanship
 ---
 
+### More Effective C# by Bill Wagner
+Describes in very details how you should use C# features like async, await, anonymous types, properties, parallel computing
+[Amazon](https://www.amazon.com/-/de/dp/0672337886?keywords=More+Effective+C%23)
 
 ### REST API Design Rulebook 
 Basic rules for designing a REST API, like how to create an unstructured store, where a customer can save whatever it wants (preferences and settings). 
@@ -26,8 +29,9 @@ The book describes how and where to draw the borders in software to split it int
 [Amazon](https://www.amazon.com/Clean-Architecture-Craftsmans-Software-Structure/dp/0134494164)
 
 ### Head first - Design patterns Second Edition
-How and when use design patterns in code..
-[Amazon](https://www.amazon.com/Head-First-Design-Patterns-Object-Oriented/dp/149207800X)
+How and when use design patterns in code.
+[Amazon](https://www.amazon.com/-/de/dp/149207800X/?keywords=Head-First-Design-Patterns-Object-Oriented)
 
 ### Cracking the coding interview 6th edition
+How can you prepare for a code interview and how you become a better software engineer.  
 [Amazon](https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850)

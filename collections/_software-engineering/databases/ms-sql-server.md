@@ -17,7 +17,7 @@ Then click on "Security" -> "Logins" -> "BUILTIN\Users" (In German: "Vordefinier
 and provide needed access to all windows logins. This is obviously only for developing purposes.
 ![provide access to other user](/assets/images/software-engineering/databases/sql-server-management-studio-grant-access.PNG)
 
-When you enable the sysadmin flag, every windows user becomes admin on the sql server.
+When you enable the sysadmin flag, every Windows user becomes admin on the sql server.
 
 # Am I sysadmin?
 To check if your current account has admin priviledge run: 
@@ -56,3 +56,7 @@ Thats how it looks like when you have sys-admin access:
 
 Thats how it looks like if you don't have sys-admin access:
 ![You are admin](/assets/images/software-engineering/databases/sql-server-management-studio-check-access-admin-no.PNG)
+
+# Export data as CSV
+To export a small set of data: 
+Run a SQL statement with ```Results to Grid``` output. Then right-click on the grid and select ```Save Results As...``` and then you can choose between tab or semicolon delimited. 
