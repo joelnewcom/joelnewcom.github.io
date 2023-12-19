@@ -13,4 +13,6 @@ Set globally:
 
 You need to open a new cmd instance to see the new variable
 
+# Get file content
+```type note.txt``` will print the filecontent in the console. 
 
