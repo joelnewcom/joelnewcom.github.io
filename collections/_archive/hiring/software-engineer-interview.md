@@ -15,7 +15,7 @@ No correct/wrong answer
 - Dependency inversion principle (Make interfaces and use the interface to communicate with others)
 
 ## What does clean code means to you? 
-Show know at least some opinion about it
+Should have at least an opinion about it
 
 ### What do you think about linter? 
 Do you know better than the authors of a programming language? Or can you adhere to some principals?
@@ -66,13 +66,16 @@ External quality
 No correct/wrong answer
 Books, key figures, blogs to follow etc.
 
-## What is important to you?
-Software craftsmanship...
+## What is important to you regarding code?
+* Software craftsmanship 
+* Testing
+* Patterns
+* ...
  
 # C# Kata - Checkout
 [Source](https://github.com/asierba/Katas.CSharp)
 
 Following code can be run in [DotNet fiddle](https://dotnetfiddle.net/) if there is no IDE at hand. 
 
-* [Empty](./Kata-Empty.cs)
-* [Solution](./Kata-Solution.cs)
+* [Empty](/Kata-Empty.cs)
+* [Solution](/Kata-Solution.cs)
