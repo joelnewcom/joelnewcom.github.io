@@ -133,3 +133,8 @@ This is useful if you don't want to change projects .gitignore as you are the on
 
 # Use different email for work and private repos
 [manual](https://blog.hao.dev/how-to-use-different-git-emails-for-personal-and-work-repositories-on-the-same-machine)
+
+# undo, revert commit
+revert commit = New commit to undo all changes
+Undo commit = drop commit and get the changes back locally
+drop commit = Lose the changes completely

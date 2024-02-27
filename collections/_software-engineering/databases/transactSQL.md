@@ -19,3 +19,22 @@ AND birthdate IS NULL
 SELECT TOP(10)JobTitle, HireDate  
 FROM HumanResources.Employee;  
 GO  
+
+# WHERE two dates are n days apart
+```
+SELECT [somedata]
+, datediff(day, [createdon], [modifiedon])
+FROM [dbo].[tablename]
+WHERE datediff(day, [createdon], [modifiedon]) >= 30
+```
+
+# Delete
+
+## Delete by multiple ids
+```
+DELETE FROM [egm].[EngagementUser] WHERE EngagementId IN (
+'anId'
+,'anotherId'
+,'andanotherId'
+)
+```

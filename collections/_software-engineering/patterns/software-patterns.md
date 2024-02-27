@@ -6,7 +6,7 @@ layout: single
 If you want to instantiate a specific class with a lot of constructor parameters, or the class should be immutable, 
 the builder pattern encapsulates this logic into another class. You will have the possibility to work with the builder class until you have all information to actually build the real class.
 
-[Example in Java](../patterns/builder-pattern-java.md)   
+[Example in Java](builder/builder-pattern-java.md)   
 
 ## Factory
 The Factory take care the right implementation of the abstract class will be instantiated. Factory makes sense when you use different implementations depending on the parameter sent to the factory.
@@ -30,7 +30,7 @@ Many libraries do it like this.
 
 ## State pattern
 State pattern is the underlying pattern for State machine. Depending on the state of the machine it will do something different.
-[Example in C#](../patterns/statemachine-pattern-csharp.md)
+[Example in C#](state/statemachine-pattern-csharp.md)
 
 ## Pipeline pattern
 [Example in java](../patterns/pipeline-pattern-java.md)
