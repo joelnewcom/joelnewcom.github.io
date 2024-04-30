@@ -59,4 +59,36 @@ Thats how it looks like if you don't have sys-admin access:
 
 # Export data as CSV
 To export a small set of data: 
-Run a SQL statement with ```Results to Grid``` output. Then right-click on the grid and select ```Save Results As...``` and then you can choose between tab or semicolon delimited. 
+Run a SQL statement with ```Results to Grid``` output. Then right-click on the grid and select ```Save Results As...``` and then you can choose between tab or semicolon delimited.
+
+# History table (Temporal)
+SQL tables can be configured to keep every change. 
+
+````
+CREATE TABLE mySchema.User
+(
+    Id               UNIQUEIDENTIFIER default (newid()),
+    CONSTRAINT PK_Id PRIMARY KEY (Id),
+    -- For temporal table
+    ValidFrom        DATETIME2 GENERATED ALWAYS AS ROW START NOT NULL,
+    ValidTo          DATETIME2 GENERATED ALWAYS AS ROW END NOT NULL,
+    PERIOD FOR SYSTEM_TIME (ValidFrom, ValidTo)
+)
+WITH (SYSTEM_VERSIONING = ON (HISTORY_TABLE = mySchema.UserHistory));
+
+
+modelBuilder.Entity<User>(entity =>
+{
+    entity
+        .ToTable("User", "mySchema")
+        .ToTable(tb => tb.IsTemporal(ttb =>
+            {
+                ttb.UseHistoryTable("UserHistory", "mySchema");
+                ttb
+                    .HasPeriodStart("ValidFrom")
+                    .HasColumnName("ValidFrom");
+                ttb
+                    .HasPeriodEnd("ValidTo")
+                    .HasColumnName("ValidTo");
+            }));
+````

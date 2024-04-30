@@ -14,6 +14,13 @@ AND birthdate IS NOT NULL
 ## WHERE IS NULL
 AND birthdate IS NULL
 
+## WHERE LIKE
+```
+SELECT * FROM x WHERE LoginEmail LIKE 'startwith%'
+SELECT * FROM x WHERE LoginEmail LIKE '%endwith'
+SELECT * FROM x WHERE LoginEmail LIKE '%between%'
+```
+
 ## LIMIT
 -- Select the first 10 random employees.  
 SELECT TOP(10)JobTitle, HireDate  
