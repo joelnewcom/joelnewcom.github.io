@@ -35,3 +35,8 @@ How and when use design patterns in code.
 ### Cracking the coding interview 6th edition
 How can you prepare for a code interview and how you become a better software engineer.  
 [Amazon](https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850)
+
+### Righting software
+A different approach to design software components (instead of compose by functionality, compose by volatility) 
+and how to design a project to achieve/create the desired software. 
+[Amazon](https://www.amazon.com/Righting-Software-Juval-L%C3%B6wy/dp/0136524036/)

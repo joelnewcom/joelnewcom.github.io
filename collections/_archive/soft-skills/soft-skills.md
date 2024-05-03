@@ -64,3 +64,8 @@ As a team leader you can give your team an identity. This helps everyone to expr
  
 A good example: Design every team member as LEGO figure. [Minifigs](https://minifigs.me/)
 
+# Layers of resistance
+Out of the book discussion about Righting software and why do people discuss the same thing over and over again.  
+A reason might be that they did not peel the onion from the outside. 
+https://education.biu.ac.il/sites/education/files/shared/layers-of-resistance.pdf
+
