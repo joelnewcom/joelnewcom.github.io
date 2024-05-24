@@ -8,6 +8,11 @@ SELECT COUNT(*) FROM <TableName> WITH (NOLOCK)
 Explanation: On SQL Server the default transaction level is the READ COMMITTED. 
 The table hint NOLOCK will ignore the locks on updating data. This might lead to a dirty read and phantom read (miss data or read it twice)
 
+## COUNT GROUP BY
+SELECT column_name, COUNT(column_name)
+FROM table_name
+GROUP BY column_name;
+
 ## WHERE IS NOT NULL
 AND birthdate IS NOT NULL
 
@@ -29,8 +34,7 @@ GO
 
 # WHERE two dates are n days apart
 ```
-SELECT [somedata]
-, datediff(day, [createdon], [modifiedon])
+SELECT [somedata], datediff(day, [createdon], [modifiedon])
 FROM [dbo].[tablename]
 WHERE datediff(day, [createdon], [modifiedon]) >= 30
 ```

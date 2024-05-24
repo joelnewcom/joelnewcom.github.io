@@ -2,7 +2,14 @@
 layout: single
 ---
 
+# List
+## Create and init List 
+```List<String> ids = List.of("Id1","Id2");```
+
 # Map
+
+## Create and init Map
+```Map.of("Id", content);```
 
 ## compute
 If the function returns null, the mapping is removed (or remains absent if initially absent).

@@ -11,6 +11,12 @@ You can split your application into 3 layers:
 
 [3tier](/assets/images/software-engineering/architecture/3tier/software-architecture.PNG)
 
+I would keep your business code in a project called Services, your DAL code in a project called Repositories, and your interfaces and business objects(or entities) in a project called Core.
+Your REST project should reference only Core (and Services for resolving dependencies). 
+You program exclusively to interfaces.
+Your Services and Repositories should each only depend on Core. These concrete implementations need only implement Core interfaces and act on Core entities.
+[Source](https://stackoverflow.com/a/26908990/4132067)
+
 # Tell java compiler and IDE not warn about Spring dependency injection
 Annotate a method or classes with: ```@SuppressWarnings("unused")```
 
