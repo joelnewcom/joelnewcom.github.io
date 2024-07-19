@@ -38,7 +38,6 @@ End of the day: 11:59 pm
 LGTM -> Looks good to me
 LGCO -> looks good carry on
 
-
 # Effects and laws to describe a standard situation
 
 ## Conway's law
@@ -46,6 +45,9 @@ This law says an enterprise architecture (how we slice our components) converges
   
 ## Dunning-kruger effect
 This effect says people with low abilities overestimate their abilities and people with high abilities underestimate their abilities. 
+
+## Goodhart's law
+When a measure becomes a target, it ceases to be a good measure
 
 # Leading
 ## Blaming

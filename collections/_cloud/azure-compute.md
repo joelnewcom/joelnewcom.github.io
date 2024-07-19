@@ -41,7 +41,7 @@ They are small applications to do post-deployment automation tasks like software
 
 There are two main different extensions: 
 ## Custom Script Extension (CSE) 
-to run your custome script
+to run your custom script
 
 ## Desired State configuration (DSE) 
 This is only about configuration. You define a powershell script with declarative content how the setup should look like.

@@ -11,10 +11,11 @@ header:
 ---
 
 #  Azure container instances
-Top-level resources is container group. This is similar to kubernetes pod.
-Its a collection of containers on the same host machine. They share the same lifecycle, resources, sotrage volumes, network etc.
+Top-level resource is a container group. This is similar to a kubernetes pod.
+It is a collection of containers on the same host-machine. They share the same lifecycle, resources, storage volumes, network etc.
 
-The key thing that Docker provides is the guarantee that the containerized software will always run the same. It doesn't matter if the code is run locally on Windows, Linux or in the cloud on Azure.
+The benefit: Containerization guarantees the containerized software will always run the same. 
+It doesn't matter, if the code is run locally on Windows, Linux or in the cloud (as its always the same container).
 
 # Azure Kubernetes Service
 
