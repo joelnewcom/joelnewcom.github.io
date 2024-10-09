@@ -13,6 +13,14 @@ SELECT column_name, COUNT(column_name)
 FROM table_name
 GROUP BY column_name;
 
+## COUNT GROUP BY, only show where count > 1
+```
+SELECT COUNT(*) as Count, [column_name]
+FROM [table_name]
+GROUP BY [column_name]
+HAVING COUNT(*) > 1
+```
+
 ## WHERE IS NOT NULL
 AND birthdate IS NOT NULL
 
@@ -49,3 +57,4 @@ DELETE FROM [egm].[EngagementUser] WHERE EngagementId IN (
 ,'andanotherId'
 )
 ```
+
