@@ -2,6 +2,26 @@
 layout: single
 ---
 
+# SELECT
+
+## By comma separated values
+
+```
+DECLARE @CommaSeparatedValues NVARCHAR(MAX) = '1,2,3,4,5,6';
+
+DECLARE @ValuesToCheck TABLE (Value NVARCHAR(50));
+INSERT INTO @ValuesToCheck (Value)
+SELECT LTRIM(STR(CAST(TRIM(value) AS INT)))
+FROM STRING_SPLIT(@CommaSeparatedValues, ',');
+
+SELECT *
+FROM [schema].[tableName]
+WHERE [number] IN (
+    SELECT Value
+    FROM @ValuesToCheck
+);
+```
+
 ## SELECT COUNT
 SELECT COUNT(*) FROM <TableName> WITH (NOLOCK)
 

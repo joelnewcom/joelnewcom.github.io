@@ -92,3 +92,14 @@ modelBuilder.Entity<User>(entity =>
                     .HasColumnName("ValidTo");
             }));
 ````
+
+## Delete Table
+
+````
+ALTER TABLE mySchema.User SET ( SYSTEM_VERSIONING = OFF )
+GO
+
+DROP TABLE mySchema.User
+GO
+
+````

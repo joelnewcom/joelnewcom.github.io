@@ -126,6 +126,14 @@ mvn install -pl :B -am
 ## Save maven warnings to a file
 mvn clean install -Dmaven.compiler.showDeprecation=true -Dmaven.compiler.showWarnings=true --log-file maven-warnings.txt
 
+# Check dependencies
+
+## Via help
+```mvn help:effective-pom``` 
+
+## Via dependency plugin
+``` mvn dependency:tree -Dverbose=true``` 
+
 # Maven Dependency plugin
 
 # Maven dependency

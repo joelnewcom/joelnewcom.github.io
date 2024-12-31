@@ -47,9 +47,13 @@ Rename anything (file, method-name, variable-name, class-name)
 
 ````Ctrl + Alt + n````
 
+## Create Constructor
+
+````Alt + Insert```` and choose Constructor
+
 # My custom shortcuts
 
-## Clean up
+## Clean up Rider
 ````Ctrl + Alt + ö````
 Maps to silent clean up with Full Clean Up profile.
 
