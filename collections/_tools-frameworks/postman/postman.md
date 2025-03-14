@@ -76,6 +76,35 @@ response.context.key
 response[’@context’].key
 ```
 
-## Learning
+## Learnings
 * Don't keep a tab open with unsaved changes. 
 * Don't put too many variable into environment. Eg. Create a new environment for each application. 
+
+## Runner
+You can iterate over specific requests, folders or collections in postman. 
+You can use a csv or json file as input (Like ids)
+
+
+To create some data, I used a pre-request script like this: 
+
+````
+// Generate a random value containing only 0-9 and a-e characters
+const characters = '0123456789abcdef';
+let randomValue = '';
+for (let i = 0; i < 12; i++) { // Adjust the length as needed
+    randomValue += characters.charAt(Math.floor(Math.random() * characters.length));
+}
+
+// Store the random value in an environment variable
+pm.environment.set("randomValue", randomValue);
+
+// Log the random value to the console (optional)
+console.log("Random Value: ", randomValue);
+
+// Append the random value to a file (this will be done in the Collection Runner)
+pm.test("Store random value", function () {
+    pm.environment.set("randomValues", pm.environment.get("randomValues") + randomValue + "\n");
+});
+````
+
+After this, I copy pasted all entries from the randomValues environment variable into a file.
