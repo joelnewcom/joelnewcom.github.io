@@ -138,3 +138,12 @@ This is useful if you don't want to change projects .gitignore as you are the on
 revert commit = New commit to undo all changes
 Undo commit = drop commit and get the changes back locally
 drop commit = Lose the changes completely
+
+# Get branch from fork
+Nur einmal: ```git remote add upstream https://mycompany@dev.azure.com/mycompany/Project/_git/repo```
+
+```
+git fetch upstream
+git checkout -b feature-branch upstream/feature-branch
+git push origin feature-branch
+```
