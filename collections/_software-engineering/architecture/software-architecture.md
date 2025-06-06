@@ -17,7 +17,7 @@ You can split your application into 3 layers:
 * Service
 * Repository
 
-[3tier](/assets/images/software-engineering/architecture/3tier/software-architecture.PNG)
+![3tier](/assets/images/software-engineering/architecture/3tier/software-architecture.PNG)
 
 I would keep your business code in a project called Services, your DAL code in a project called Repositories, and your interfaces and business objects(or entities) in a project called Core.
 Your REST project should reference only Core (and Services for resolving dependencies).

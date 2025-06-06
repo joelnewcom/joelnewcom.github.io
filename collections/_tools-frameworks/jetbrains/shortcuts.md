@@ -54,8 +54,7 @@ Rename anything (file, method-name, variable-name, class-name)
 # My custom shortcuts
 
 ## Clean up Rider
-````Ctrl + Alt + ö````
-Maps to silent clean up with Full Clean Up profile.
+````Ctrl + Alt + ö```` Maps to silent clean up with Full Clean Up profile.
 
 ## Github co-pilot completions
 ````Alt + $```` (this, because its close to ````Alt + Enter```` which is used to see recommendations by the IDE 
