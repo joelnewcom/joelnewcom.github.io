@@ -78,3 +78,10 @@ DELETE FROM [egm].[EngagementUser] WHERE EngagementId IN (
 )
 ```
 
+# Update
+## Update single column
+```
+  UPDATE [dbo].[tableName]
+  SET columName = 'value'
+  FROM [dbo].[tableName] WHERE IdColumnName = 'value'
+```

@@ -17,7 +17,9 @@ One case which will always happen: The dataAccessObject did not find the object 
 
 * Return a dataNotFoundException
 
-I prefer not communicating via Exceptions. Exceptions should only be used when something happens, which shouldn't. The code will be bloated with a lot of try catches.
+I prefer not to communicate via Exceptions. Exceptions should only be used when something unexpected happens. 
+The code will be bloated with a lot of try catches.
+
 * Return a NoDataFound object which inherits the same interface as the actual entity you looked for.
 
 When returning an interface type, every caller needs to check the real type and cast the object, this will also be cumbersome.
@@ -25,8 +27,10 @@ When returning an interface type, every caller needs to check the real type and 
 
 Many libraries do it like this.
 * Return Optional<T> in Java 
+Same outcome, as returning null, but saver for NullpointerExceptions. 
 
 * Return null
+There will be a lot of null checks. 
 
 ## State pattern
 State pattern is the underlying pattern for State machine. Depending on the state of the machine it will do something different.

@@ -34,3 +34,9 @@ Depending on the type of your function app, it can be deployed in different ways
 ![Deployment Matrix](/assets/images/azure/azure-functions-deployment-types-matrix.png)
 [Source](https://learn.microsoft.com/en-us/azure/azure-functions/functions-deployment-technologies?tabs=linux#deployment-technology-availability)
 
+
+# Ilogger and ILoggerFactory
+If typed Ilogger (Ilogger<Classname>) is injected, the logs are not sent to Application Insights nor host. 
+You first need to enable the namespace via host file: 
+https://learn.microsoft.com/en-us/azure/azure-functions/functions-dotnet-dependency-injection#iloggert-and-iloggerfactory
+
