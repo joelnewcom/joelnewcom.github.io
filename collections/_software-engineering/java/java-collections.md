@@ -2,6 +2,32 @@
 layout: single
 ---
 
+# general construct
+````java
+String dataScopes = stream(InstructionType.values())
+                .filter(party::getInstruction)
+                .map(Enum::name)
+                .collect(Collectors.joining(","));
+````
+
+# Collectors
+https://www.baeldung.com/java-collectors
+
+## grouping by
+
+````java
+    List<String> groupedByAndJoined = 
+    data.stream()
+            .collect(groupingBy(
+                    link -> link.systemOfRecord() + ":" + link.agreement().systemOfRecordId(),
+                    mapping(link -> link.agreementRole().toString(), toSet())
+            ))
+            .entrySet().stream()
+            .map(entry -> entry.getKey() + "(" + String.join(", ", entry.getValue()).toLowerCase() + ")")
+            .toList();
+
+````
+
 # List
 ## Create and init List 
 ```List<String> ids = List.of("Id1","Id2");```
