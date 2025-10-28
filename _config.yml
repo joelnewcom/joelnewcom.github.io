@@ -110,7 +110,7 @@ author:
       icon: "fas fa-fw fa-envelope-square"
       # url: "mailto:joel.neukom@gmx.ch"
     - label: "LinkedIn"
-      icon: "fas fa-fw fa-linkedin"
+      icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/joelnewcom"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
@@ -254,14 +254,7 @@ plugins:
   - jekyll-feed
   - jekyll-include-cache
   - jekyll-remote-theme
-
-# mimic GitHub Pages with --safe
-whitelist:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jekyll-include-cache
+  - jekyll-seo-tag
 
 
 # Archives
