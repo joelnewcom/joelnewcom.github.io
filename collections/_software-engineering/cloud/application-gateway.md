@@ -17,7 +17,7 @@ Processes traffic to webapps where the webapps running on multiple webservers:
 * Encrypting traffic between app gateway and application servers. 
 
 
-![](../../assets/images/azure/application-gateway-topology.png)
+![](../../../assets/images/azure/application-gateway-topology.png)
 
 App gateway receives traffic on a public, a private or both. (But is limited to max one of each).
 

@@ -128,9 +128,6 @@ author:
 collections_dir: collections
 
 collections:
-  cloud:
-    output: true
-    permalink: /:collection/:name
   craftsmanship:
     output: true
     permalink: /:collection/:name
@@ -143,14 +140,6 @@ collections:
   archive:
     output: true
     permalink: /:collection/:name
-  try-hack-me-advent-2022:
-    output: true
-    order:
-      - intro.md
-      - day1.md
-      - day2.md
-      - day3.md
-      - day4.md
 
 # Site Footer
 footer:

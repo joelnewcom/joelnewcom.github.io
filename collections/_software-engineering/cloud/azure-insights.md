@@ -122,3 +122,23 @@ customEvents
 | extend normaizedUser = normalizeUserName(knownUser)
 
 ```
+
+# SeverityLevels
+Dotnet severity: https://learn.microsoft.com/en-us/aspnet/core/fundamentals/logging/?view=aspnetcore-9.0#log-level
+
+
+Azure insight severity: https://learn.microsoft.com/en-us/dotnet/api/microsoft.applicationinsights.datacontracts.severitylevel?view=azure-dotnet
+
+| Name        | Value | Description                |
+|-------------|-------|----------------------------|
+| Verbose     | 0     | Verbose severity level.    |
+| Information | 1     | Information severity level. |
+| Warning     | 2     | Warning severity level.    |
+| Error       | 3     | Error severity level.      |
+| Critical    | 4     | Critical severity level.   |
+
+
+
+Explanation: https://stackoverflow.com/questions/62541726/azure-application-insights-log-severity-levels
+* Kibana: 0 - 5
+* Insights: 0 - 4

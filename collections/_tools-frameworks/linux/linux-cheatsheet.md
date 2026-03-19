@@ -73,9 +73,18 @@ Append clipboard to file
 * cat file.txt (prints out the whole file at once)
 * more file.txt (by enter you can scroll through the file)
 
+## Write to file
+### Using echo
+* echo "my text" > file.txt (overwrites the file)
+* echo "my text" >> file.txt (appends to the file)
+
+If your text contains itself double quotes, you can use single quotes to wrap the text:
+* echo 'He said: "Hello World"' >> file.txt
+
+
 
 ## VI paste mode
-If you don't want Vim to mangle formatting in incoming pasted text, you want to consider using: ```:set paste ```This will prevent vim from re-tabbing your code. When done pasting, ```:set nopaste``` will return to the normal behavior.
+If you don't want Vim to mangle formatting in incoming pasted text, you want to consider using: ```:set paste ``` This will prevent vim from re-tabbing your code. When done pasting, ```:set nopaste``` will return to the normal behavior.
 
 ## Grep a file
 $ grep -C 5 "My error message" error.log

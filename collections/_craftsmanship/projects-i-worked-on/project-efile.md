@@ -10,8 +10,7 @@ header:
 
 *// 01.01.2025*
 
-![preference-service](/assets/images/efile/functions.png)
-
+![functions](/assets/images/efile/functions.png)
 # Project eFile
 EFile is a platform we developed from scratch to send out emails instead of paper letters to customers of Zürich insurance.
 
