@@ -3,23 +3,172 @@ permalink: /404.html
 layout: default
 ---
 
-<style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
+<style>
+  .error-container {
+    max-width: 700px;
+    margin: 60px auto;
     text-align: center;
+    font-family: "Courier New", Courier, monospace;
   }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
+
+  .glitch {
+    font-size: 8em;
+    font-weight: bold;
+    color: #e8d5b0;
+    position: relative;
+    display: inline-block;
     line-height: 1;
-    letter-spacing: -1px;
+  }
+
+  .glitch::before,
+  .glitch::after {
+    content: "404";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .glitch::before {
+    color: #f97316;
+    animation: glitch-shift 2s infinite;
+    clip-path: polygon(0 30%, 100% 30%, 100% 55%, 0 55%);
+    transform: translate(-4px, 0);
+  }
+
+  .glitch::after {
+    color: #38bdf8;
+    animation: glitch-shift 2s infinite reverse;
+    clip-path: polygon(0 60%, 100% 60%, 100% 80%, 0 80%);
+    transform: translate(4px, 0);
+  }
+
+  @keyframes glitch-shift {
+    0%   { transform: translate(0); }
+    20%  { transform: translate(-4px, 2px); }
+    40%  { transform: translate(4px, -2px); }
+    60%  { transform: translate(-2px, 4px); }
+    80%  { transform: translate(2px, -4px); }
+    100% { transform: translate(0); }
+  }
+
+  .terminal {
+    background: #1a1a1a;
+    border: 1px solid #444;
+    border-radius: 6px;
+    padding: 20px 24px;
+    margin: 30px auto;
+    text-align: left;
+    color: #a8d08d;
+    font-size: 0.85em;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  }
+
+  .terminal .prompt { color: #f97316; }
+  .terminal .output { color: #a8d08d; }
+  .terminal .error  { color: #ef4444; }
+  .terminal .comment{ color: #6b7280; }
+
+  .terminal-line {
+    margin: 4px 0;
+    white-space: pre;
+  }
+
+  .cursor {
+    display: inline-block;
+    width: 9px;
+    height: 1em;
+    background: #a8d08d;
+    vertical-align: text-bottom;
+    animation: blink 1s step-end infinite;
+  }
+
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+
+  .subtitle {
+    font-size: 1.3em;
+    margin-top: 20px;
+    color: #c8b896;
+  }
+
+  .actions {
+    margin-top: 30px;
+  }
+
+  .btn-home {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #8b6914;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 1em;
+    transition: background 0.2s;
+    margin: 6px;
+  }
+
+  .btn-home:hover {
+    background: #a8821a;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .btn-blog {
+    display: inline-block;
+    padding: 12px 28px;
+    border: 2px solid #8b6914;
+    color: #c8b896;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 1em;
+    transition: all 0.2s;
+    margin: 6px;
+  }
+
+  .btn-blog:hover {
+    background: #8b6914;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .fun-quote {
+    margin-top: 40px;
+    font-style: italic;
+    color: #7a6a50;
+    font-size: 0.9em;
   }
 </style>
 
-<div class="container">
-  <h1>404</h1>
+<div class="error-container">
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
+  <div class="glitch">404</div>
+
+  <p class="subtitle">Page not found &mdash; even <code>grep -r</code> couldn't help.</p>
+
+  <div class="terminal">
+    <div class="terminal-line"><span class="prompt">joel@github-pages:~$</span> curl {{ page.url }}</div>
+    <div class="terminal-line"><span class="error">curl: (404) Not Found — The requested resource has vanished.</span></div>
+    <div class="terminal-line">&nbsp;</div>
+    <div class="terminal-line"><span class="prompt">joel@github-pages:~$</span> find / -name "{{ page.url | split: '/' | last }}" 2>/dev/null</div>
+    <div class="terminal-line"><span class="comment"># searching entire filesystem...</span></div>
+    <div class="terminal-line"><span class="error">find: no results. It's gone. Like AKS after the platform team was done.</span></div>
+    <div class="terminal-line">&nbsp;</div>
+    <div class="terminal-line"><span class="prompt">joel@github-pages:~$</span> git log --oneline --all | grep "missing-page"</div>
+    <div class="terminal-line"><span class="error">fatal: no commits found matching "missing-page"</span></div>
+    <div class="terminal-line">&nbsp;</div>
+    <div class="terminal-line"><span class="prompt">joel@github-pages:~$</span> <span class="cursor"></span></div>
+  </div>
+
+  <div class="actions">
+    <a href="/" class="btn-home">🏠 Take me home</a>
+    <a href="/blog" class="btn-blog">📝 Read the blog</a>
+  </div>
+
+  <p class="fun-quote">
+    "It's not a bug, it's a 404 feature." &mdash; every dev, ever
+  </p>
+
 </div>

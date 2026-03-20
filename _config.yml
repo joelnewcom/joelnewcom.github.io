@@ -134,10 +134,7 @@ collections:
   software-engineering:
     output: true
     permalink: /:collection/:name
-  tools-frameworks:
-    output: true
-    permalink: /:collection/:name
-  archive:
+  resources:
     output: true
     permalink: /:collection/:name
 
