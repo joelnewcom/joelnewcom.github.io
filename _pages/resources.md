@@ -1,8 +1,8 @@
 ---
-title: Archive
+title: Resources
 layout: collection
 classes: wide
-permalink: /archive/
+permalink: /resources/
 entries_layout: list
 collection: archive
 ---

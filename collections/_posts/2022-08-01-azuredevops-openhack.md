@@ -2,7 +2,7 @@
 layout: single
 title:  "OpenHack workshop provided by microsoft"
 date:   2022-08-01 00:00:00 +0200
-categories: AzureDevOps
+categories: Azure
 ---
 
 ## OpenHack Documentation

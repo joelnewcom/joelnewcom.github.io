@@ -2,7 +2,7 @@
 layout: single
 title:  "Which PaaS is the right one for me?"
 date:   2024-06-19 00:00:00 +0200
-categories: azure
+categories: Azure
 ---
 
 https://learn.microsoft.com/en-us/azure/container-apps/compare-options

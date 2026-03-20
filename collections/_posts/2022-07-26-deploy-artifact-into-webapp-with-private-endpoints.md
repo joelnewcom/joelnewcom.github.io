@@ -2,7 +2,7 @@
 layout: single
 title:  "Deploy into Web-app with private endpoint enabled"
 date:   2022-07-26 10:00:00 +0200
-categories: azure
+categories: Azure
 ---
 
 # Default way

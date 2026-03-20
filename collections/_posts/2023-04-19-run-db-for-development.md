@@ -2,7 +2,7 @@
 layout: single
 title:  "Use a ms sql db for development"
 date:   2023-04-19 00:00:00 +0200
-categories: database
+categories: Database
 ---
 
 Following this tutorial: [link](https://learn.microsoft.com/en-us/azure/azure-sql/database/local-dev-experience-set-up-dev-environment?view=azuresql&tabs=vscode)

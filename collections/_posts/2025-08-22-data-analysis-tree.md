@@ -2,7 +2,7 @@
 layout: single
 title: "Data analysis with python"
 date:   2025-08-22 00:00:00 +0200
-categories: python
+categories: Python
 ---
 
 I got a table with hierarchical data and I want to have a tree structure out of it.

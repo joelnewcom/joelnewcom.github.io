@@ -2,7 +2,7 @@
 layout: single
 title: "Exception versus ResultWrapper"
 date:   2025-07-03 00:00:00 +0200
-categories: dev
+categories: Dev
 ---
 
 # null versus ResultWrapper

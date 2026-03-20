@@ -2,7 +2,7 @@
 layout: single
 title:  "Code smells"
 date:   2024-07-15 00:00:00 +0200
-categories: dev
+categories: Dev
 ---
 
 # MagicNumbers/string

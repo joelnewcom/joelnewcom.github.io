@@ -2,7 +2,7 @@
 layout: single
 title:  "Exceptions"
 date:   2022-07-20 20:41:53 +0200
-categories: java
+categories: Java
 header:
   teaser: "/assets/images/java-teaser-500x300.JPG"
 ---

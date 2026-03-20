@@ -2,7 +2,7 @@
 layout: single
 title:  "Rest Client with OAuth2"
 date:   2024-07-15 00:00:00 +0200
-categories: dev
+categories: Java
 ---
 
 # Simple RestClient

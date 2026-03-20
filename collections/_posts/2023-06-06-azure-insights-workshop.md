@@ -2,7 +2,7 @@
 layout: single
 title:  "Azure insights workshop"
 date:   2023-06-06 00:00:00 +0200
-categories: azure
+categories: Azure
 ---
 
 # Training

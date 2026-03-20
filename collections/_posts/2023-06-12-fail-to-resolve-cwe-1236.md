@@ -2,7 +2,7 @@
 layout: single
 title:  "CWE 1236 fix"
 date:   2023-06-12 00:00:00 +0200
-categories: java
+categories: Java
 ---
 
 https://cwe.mitre.org/data/definitions/1236.html
