@@ -5,7 +5,7 @@ classes: wide
 categories:
   - craftsmanship
 header:
-    teaser: "/assets/images/cep/CEP.PNG"
+    teaser: "/assets/images/cep/CEP-web.PNG"
 ---
 
 *// 03.03.2023*
@@ -13,11 +13,12 @@ header:
 The Customer Portal is a C# ASP.NET Core application providing APIs and CIAM functionality, enabling customers to manage their profile, view policies and download documents — all in one place.
 
 Edit your profile on the app:
-
 ![get-profile](/assets/images/cep/get-profile.PNG)
 
-Check your policies on portal website:
+Check your policies on the app:
+![get-profile](/assets/images/cep/CEP.PNG)
 
+Check your policies on portal website:
 ![get-policies](/assets/images/cep/CEP-web.PNG)
 ---
 
