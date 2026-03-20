@@ -1,5 +1,8 @@
 ---
 layout: single
+title: "Red Team Fundamentals"
+categories: Hacking
+tags: [tryhackme, red-team, ctf]
 ---
 
 # Red team engagement
