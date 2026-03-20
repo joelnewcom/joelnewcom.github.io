@@ -1,8 +1,9 @@
 ---
 layout: single
 title: "Exception versus ResultWrapper"
-date:   2025-07-03 00:00:00 +0200
-categories: Dev
+date: 2025-07-03 00:00:00 +0200
+categories: Engineering
+tags: [clean-code, patterns, error-handling]
 ---
 
 # null versus ResultWrapper

@@ -1,8 +1,9 @@
 ---
 layout: single
-title:  "Managing a soft-deleted apim resource"
-date:   2022-07-22 18:20:53 +0200
-categories: Azure
+title: "Managing a soft-deleted KeyVault"
+date: 2022-07-22 18:20:53 +0200
+categories: Cloud
+tags: [azure, keyvault]
 ---
 
 When a keyvault is deleted via azure portal it is actually only soft-deleted. The reason for this is to protect the user from deleting their secrets.

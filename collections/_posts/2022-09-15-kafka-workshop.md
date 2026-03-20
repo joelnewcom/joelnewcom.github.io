@@ -1,8 +1,9 @@
 ---
 layout: single
-title:  "Vanilla Java Kafka producer and consumer snippets"
-date:   2022-09-15 00:00:00 +0200
-categories: Kafka
+title: "Vanilla Java Kafka producer and consumer snippets"
+date: 2022-09-15 00:00:00 +0200
+categories: Engineering
+tags: [java, kafka, messaging]
 ---
 
 # Prerequisites

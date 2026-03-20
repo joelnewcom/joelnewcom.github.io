@@ -1,8 +1,9 @@
 ---
 layout: single
-title:  "Rubber Ducky"
-date:   2023-01-28 00:00:00 +0200
+title: "Rubber Ducky"
+date: 2023-01-28 00:00:00 +0200
 categories: Hacking
+tags: [hardware, rubber-ducky, red-team]
 ---
 
 I bought a rubberducky from hak5 and this is what I learned:

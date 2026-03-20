@@ -1,8 +1,9 @@
 ---
 layout: single
-title:  "Hack the Box"
-date:   2022-10-12 00:00:00 +0200
+title: "Hack the Box"
+date: 2022-10-12 00:00:00 +0200
 categories: Hacking
+tags: [ctf, hackthebox]
 ---
 
 # Access

@@ -1,8 +1,9 @@
 ---
 layout: single
-title:  "Builder pattern in Java"
-date:   2022-07-20 20:41:53 +0200
-categories: Java
+title: "Builder pattern in Java"
+date: 2022-07-20 20:41:53 +0200
+categories: Engineering
+tags: [java, patterns, clean-code]
 header:
   teaser: "/assets/images/java-teaser-500x300.JPG"
 ---

@@ -1,8 +1,9 @@
 ---
 layout: single
-title: "Data analysis with python"
-date:   2025-08-22 00:00:00 +0200
-categories: Python
+title: "Data analysis with Python"
+date: 2025-08-22 00:00:00 +0200
+categories: Engineering
+tags: [python, data-analysis]
 ---
 
 I got a table with hierarchical data and I want to have a tree structure out of it.

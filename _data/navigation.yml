@@ -1,7 +1,15 @@
 main:
   - title: "Blog"
     url: /blog
-  - title: "Collections"
-    url: /collections/
+  - title: "Engineering"
+    url: /engineering/
+  - title: "Hacking"
+    url: /hacking/
+  - title: "Projects"
+    url: /projects/
+  - title: "Craftsmanship"
+    url: /craftsmanship/
   - title: "Categories"
     url: /categories/
+  - title: "Tags"
+    url: /tags/

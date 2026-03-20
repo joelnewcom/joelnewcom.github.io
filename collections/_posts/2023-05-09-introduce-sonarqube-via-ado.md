@@ -1,8 +1,9 @@
 ---
 layout: single
-title:  "Introduce SonarQube"
-date:   2023-05-08 00:00:00 +0200
+title: "Introduce SonarQube"
+date: 2023-05-08 00:00:00 +0200
 categories: DevOps
+tags: [sonarqube, azure-devops, code-quality, ci-cd]
 ---
 
 # Create a new SonarQube project

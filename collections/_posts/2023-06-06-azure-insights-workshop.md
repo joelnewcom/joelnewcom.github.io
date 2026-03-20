@@ -1,8 +1,9 @@
 ---
 layout: single
-title:  "Azure insights workshop"
-date:   2023-06-06 00:00:00 +0200
-categories: Azure
+title: "Azure insights workshop"
+date: 2023-06-06 00:00:00 +0200
+categories: Cloud
+tags: [azure, monitoring, application-insights, workshop]
 ---
 
 # Training

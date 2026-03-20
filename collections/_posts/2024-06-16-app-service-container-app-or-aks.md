@@ -1,8 +1,9 @@
 ---
 layout: single
-title:  "Which PaaS is the right one for me?"
-date:   2024-06-19 00:00:00 +0200
-categories: Azure
+title: "Which PaaS is the right one for me?"
+date: 2024-06-19 00:00:00 +0200
+categories: Cloud
+tags: [azure, aks, webapp, container-apps, architecture]
 ---
 
 https://learn.microsoft.com/en-us/azure/container-apps/compare-options

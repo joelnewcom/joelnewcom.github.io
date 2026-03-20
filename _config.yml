@@ -131,10 +131,13 @@ collections:
   craftsmanship:
     output: true
     permalink: /:collection/:name
-  software-engineering:
+  engineering:
     output: true
     permalink: /:collection/:name
-  resources:
+  hacking:
+    output: true
+    permalink: /:collection/:name
+  projects:
     output: true
     permalink: /:collection/:name
 
@@ -298,10 +301,32 @@ defaults:
       type: pages
     values:
       layout: single
-  # _foo
+  # _engineering
   - scope:
       path: ""
-      type: foo
+      type: engineering
     values:
       layout: single
+      author_profile: false
+  # _hacking
+  - scope:
+      path: ""
+      type: hacking
+    values:
+      layout: single
+      author_profile: false
+  # _projects
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: single
+      author_profile: true
+  # _craftsmanship
+  - scope:
+      path: ""
+      type: craftsmanship
+    values:
+      layout: single
+      author_profile: true
 

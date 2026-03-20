@@ -1,8 +1,9 @@
 ---
 layout: single
-title:  "OpenHack workshop provided by microsoft"
-date:   2022-08-01 00:00:00 +0200
-categories: Azure
+title: "OpenHack workshop provided by Microsoft"
+date: 2022-08-01 00:00:00 +0200
+categories: DevOps
+tags: [azure-devops, ci-cd, workshop]
 ---
 
 ## OpenHack Documentation

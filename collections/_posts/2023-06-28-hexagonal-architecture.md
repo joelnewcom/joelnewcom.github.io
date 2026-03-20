@@ -1,8 +1,9 @@
 ---
 layout: single
-title:  "Hexagonal architecture"
-date:   2023-06-28 00:00:00 +0200
-categories: Architecture
+title: "Hexagonal architecture"
+date: 2023-06-28 00:00:00 +0200
+categories: Engineering
+tags: [architecture, clean-code, patterns]
 ---
 # general idea
 ![Hexagonal](/assets/images/software-engineering/architecture/hexagonal/hexagonal-architecture.png)

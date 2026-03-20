@@ -1,8 +1,9 @@
 ---
 layout: single
-title:  "Rest Client with OAuth2"
-date:   2024-07-15 00:00:00 +0200
-categories: Java
+title: "Rest Client with OAuth2"
+date: 2025-06-06 00:00:00 +0200
+categories: Engineering
+tags: [java, spring, oauth2, rest]
 ---
 
 # Simple RestClient

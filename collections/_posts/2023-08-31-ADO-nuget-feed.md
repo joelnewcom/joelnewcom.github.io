@@ -1,8 +1,9 @@
 ---
 layout: single
-title:  "Use ADO Feed inside docker"
-date:   2023-08-31 00:00:00 +0200
+title: "Use ADO Feed inside docker"
+date: 2023-08-31 00:00:00 +0200
 categories: DevOps
+tags: [azure-devops, nuget, docker, ci-cd]
 ---
 
 # Normal case

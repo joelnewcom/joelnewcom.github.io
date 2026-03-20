@@ -1,8 +1,6 @@
 ---
 title: Resources
-layout: collection
-classes: wide
+layout: redirect
+redirect_to: /engineering/
 permalink: /resources/
-entries_layout: list
-collection: resources
 ---

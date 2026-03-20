@@ -1,8 +1,9 @@
 ---
 layout: single
-title:  "Managing a softdeleted keyvault"
-date:   2022-07-22 18:20:53 +0200
-categories: Azure
+title: "Managing a soft-deleted APIM resource"
+date: 2022-07-22 18:20:53 +0200
+categories: Cloud
+tags: [azure, apim]
 ---
 
 Further infos: https://docs.microsoft.com/en-us/azure/api-management/soft-delete

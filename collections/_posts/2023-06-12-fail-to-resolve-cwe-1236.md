@@ -1,8 +1,9 @@
 ---
 layout: single
-title:  "CWE 1236 fix"
-date:   2023-06-12 00:00:00 +0200
-categories: Java
+title: "CWE 1236 fix"
+date: 2023-06-12 00:00:00 +0200
+categories: Engineering
+tags: [java, security, cwe, veracode]
 ---
 
 https://cwe.mitre.org/data/definitions/1236.html
