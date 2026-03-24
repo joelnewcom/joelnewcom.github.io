@@ -1,4 +1,5 @@
 ---
+hidden: true
 layout: single
 title: "[Day 21] MQTT Have yourself a merry little webcam"
 header:

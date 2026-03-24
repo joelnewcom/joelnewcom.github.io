@@ -130,16 +130,16 @@ collections_dir: collections
 collections:
   craftsmanship:
     output: true
-    permalink: /:collection/:name
+    permalink: /:collection/:path
   engineering:
     output: true
-    permalink: /:collection/:name
+    permalink: /:collection/:path
   hacking:
     output: true
-    permalink: /:collection/:name
+    permalink: /:collection/:path
   projects:
     output: true
-    permalink: /:collection/:name
+    permalink: /:collection/:path
 
 # Site Footer
 footer:

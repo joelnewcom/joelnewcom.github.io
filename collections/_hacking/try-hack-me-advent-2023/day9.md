@@ -1,4 +1,5 @@
 ---
+hidden: true
 layout: single
 title: "[Day 9] Malware analysis She sells C# shells by the C2shore"
 header:

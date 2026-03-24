@@ -1,4 +1,5 @@
 ---
+hidden: true
 layout: single
 title: "[Day 5] Reverse engineering A Christmas DOScovery: Tapes of Yule-tide Past"
 header:

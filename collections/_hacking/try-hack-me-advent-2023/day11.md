@@ -1,4 +1,5 @@
 ---
+hidden: true
 layout: single
 title: "[Day 11] Active Directory Jingle Bells, Shadow Spells"
 header:

@@ -1,4 +1,5 @@
 ---
+hidden: true
 layout: single
 title: " [Day 6] Memory corruption Memories of Christmas Past "
 header:

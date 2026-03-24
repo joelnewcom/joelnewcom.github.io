@@ -1,4 +1,5 @@
 ---
+hidden: true
 layout: single
 title: "[Day 2] Log analysis O Data, All Ye Faithful "
 header:

@@ -1,4 +1,5 @@
 ---
+hidden: true
 layout: single
 title: "[Day 8] Disk forensics Have a Holly, Jolly Byte!"
 header:

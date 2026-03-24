@@ -1,4 +1,5 @@
 ---
+hidden: true
 layout: single
 title: "[Day 22] Attack Surface Reduction Threats are failing all around me "
 header:

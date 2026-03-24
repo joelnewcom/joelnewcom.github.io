@@ -1,4 +1,5 @@
 ---
+hidden: true
 layout: single
 title: "[Day 13] Packet Analysis Simply having a wonderful pcap time "
 header:

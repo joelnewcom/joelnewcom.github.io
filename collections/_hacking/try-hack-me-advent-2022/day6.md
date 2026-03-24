@@ -1,4 +1,5 @@
 ---
+hidden: true
 layout: single
 title: "[Day 6] Email Analysis It's beginning to look a lot like phishing"
 header:

@@ -1,4 +1,5 @@
 ---
+hidden: true
 layout: single
 title: "[Day 7] Log analysis ‘Tis the season for log chopping!"
 header:

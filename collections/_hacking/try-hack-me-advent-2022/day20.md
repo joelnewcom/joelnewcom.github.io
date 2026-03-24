@@ -1,4 +1,5 @@
 ---
+hidden: true
 layout: single
 title: "[Day 20] Firmware Binwalkin’ around the Christmas tree "
 header:

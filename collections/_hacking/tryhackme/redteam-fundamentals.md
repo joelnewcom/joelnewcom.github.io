@@ -1,4 +1,5 @@
 ---
+hidden: true
 layout: single
 title: "Red Team Fundamentals"
 categories: Hacking

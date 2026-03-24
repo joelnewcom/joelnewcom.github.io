@@ -1,4 +1,5 @@
 ---
+hidden: true
 layout: single
 title: "[Day 12] Malware Analysis Forensic McBlue to the REVscue!"
 header:

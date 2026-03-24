@@ -1,4 +1,5 @@
 ---
+hidden: true
 layout: single
 title: "[Day 19] Hardware Hacking Wiggles go brrr"
 header:

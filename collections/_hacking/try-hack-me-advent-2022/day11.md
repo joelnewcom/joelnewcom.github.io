@@ -1,4 +1,5 @@
 ---
+hidden: true
 layout: single
 title: "[Day 11] Memory Forensics Not all gifts are nice "
 header:

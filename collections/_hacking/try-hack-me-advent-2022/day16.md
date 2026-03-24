@@ -1,4 +1,5 @@
 ---
+hidden: true
 layout: single
 title: "[Day 16] Secure Coding SQLi’s the king, the carolers sing "
 header:

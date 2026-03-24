@@ -1,4 +1,5 @@
 ---
+hidden: true
 layout: single
 title: "[Day 15] Secure Coding Santa is looking for a Sidekick"
 header:

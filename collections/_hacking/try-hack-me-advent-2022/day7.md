@@ -1,4 +1,5 @@
 ---
+hidden: true
 layout: single
 title: "[Day 7] CyberChef Maldocs roasting on an open fire"
 header:

@@ -1,4 +1,5 @@
 ---
+hidden: true
 layout: single
 title: "[Day 10] SQL injection Inject the Halls with EXEC Queries"
 header:

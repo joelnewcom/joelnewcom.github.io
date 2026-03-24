@@ -1,4 +1,5 @@
 ---
+hidden: true
 layout: single
 title: "[Day 5] Brute-Forcing He knows when you're awake"
 header:

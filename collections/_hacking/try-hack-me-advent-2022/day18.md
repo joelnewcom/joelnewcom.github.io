@@ -1,4 +1,5 @@
 ---
+hidden: true
 layout: single
 title: "[Day 18] Sigma Lumberjack Lenny Learns New Rules"
 header:

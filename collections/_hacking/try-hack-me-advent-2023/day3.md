@@ -1,4 +1,5 @@
 ---
+hidden: true
 layout: single
 title: "[Day 3] Brute-forcing Hydra is Coming to Town"
 header:

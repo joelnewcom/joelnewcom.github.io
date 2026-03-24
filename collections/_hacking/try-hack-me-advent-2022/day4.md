@@ -1,4 +1,5 @@
 ---
+hidden: true
 layout: single
 title: "[Day 4] Scanning Scanning through the snow"
 header:

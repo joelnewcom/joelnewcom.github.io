@@ -1,4 +1,5 @@
 ---
+hidden: true
 layout: single
 title: "[Day 9] Pivoting Dock the halls "
 header:

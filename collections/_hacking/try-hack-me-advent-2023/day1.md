@@ -1,4 +1,5 @@
 ---
+hidden: true
 layout: single
 title: "[Day 1] Machine learning Chatbot, tell me, if you're really safe? "
 header:

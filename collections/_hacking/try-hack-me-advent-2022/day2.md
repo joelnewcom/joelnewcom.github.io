@@ -1,4 +1,5 @@
 ---
+hidden: true
 layout: single
 title: "[Day 2] Log Analysis Santa's Naughty & Nice Log "
 header:

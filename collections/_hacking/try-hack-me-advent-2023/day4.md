@@ -1,4 +1,5 @@
 ---
+hidden: true
 layout: single
 title: "[Day 4] Brute-forcing Baby, it's CeWLd outside "
 header:

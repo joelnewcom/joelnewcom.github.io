@@ -1,4 +1,5 @@
 ---
+hidden: true
 layout: single
 title: "[Day 17] Secure Coding Filtering for Order Amidst Chaos "
 header:

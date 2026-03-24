@@ -1,4 +1,5 @@
 ---
+hidden: true
 layout: single
 title: "[Day 3] OSINT Nothing escapes detective McRed"
 header:

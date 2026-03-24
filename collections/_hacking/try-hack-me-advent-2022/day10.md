@@ -1,4 +1,5 @@
 ---
+hidden: true
 layout: single
 title: "[Day 10] Hack a game You're a mean one, Mr. Yeti"
 header:

@@ -1,4 +1,5 @@
 ---
+hidden: true
 layout: single
 title: "[Day 23] Defence in Depth Mission ELFPossible: Abominable for a Day"
 header:

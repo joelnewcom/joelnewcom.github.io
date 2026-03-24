@@ -1,4 +1,5 @@
 ---
+hidden: true
 layout: single
 title: "[Day 8] Smart Contracts Last Christmas I gave you my ETH"
 header:
