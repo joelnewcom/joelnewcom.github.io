@@ -41,7 +41,7 @@ If you don’t have this, you will lose a huge amount of time, everytime you inv
 
 ### Business Layer
 You need a business-layer in any case. 
-As soon as the DAO layer merges businessobjects, manipulates or verifies input, it is something wrong! The business layer handles logic like dependencies between entities, orphans, mappings, checks etc.
+As soon as the DAO layer merges business objects, manipulates or verifies input, it is something wrong! The business layer handles logic like dependencies between entities, orphans, mappings, checks etc.
 For example: It’s better to fetch the entity from the business layer for existence-check, rather than doing this in the DAO layer (even it feels better, as the DAO layer is closer to the database)
 The DAO layer should be as simple and neutral as possible. You never know what the needs in the future are!
 
@@ -70,3 +70,9 @@ Right at the beginning you need static code analysis. The application needs to h
 ### CI/CD
 You cannot invest enough time for that, do it before your first line of code. 
 It is essential, if your project successes or not.
+
+### The Twelve-Factor App
+A methodology for building modern, scalable, and maintainable software-as-a-service applications.
+It covers best practices around codebase, dependencies, configuration, backing services, build/release/run separation, processes, port binding, concurrency, disposability, dev/prod parity, logs, and admin processes.
+[https://12factor.net/](https://12factor.net/)
+
