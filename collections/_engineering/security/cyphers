@@ -1,0 +1,7 @@
+The below examples are of weak algorithms that are completely broken:
+
+The Data Encryption Standard (DES) is an algorithm that was adopted as an official standard in 1977 in the US. The original proposal was modified slightly to strengthen against differential cryptanalysis but also significantly weakened against brute-force attacks, particularly as a result of the reduction of key size to 56 bits. With enough horsepower, it was only a matter of time before a key-search machine, capable of rapidly computing every possible key, in turn, was able to break DES.
+
+Electronic Codebook (ECB) is an algorithm that has been proven to be semantically insecure, as the encryption of two identical cleartext blocks always generates the same block of ciphertext. Thus, it can enable an attacker to determine if two ECB blocks are identical, share a common prefix, or share other identifiable commonalities, including repetitive data.
+
+The Cipher Block Chaining (CBC) is largely being replaced by the Galois Counter Mode (GCM), which has the benefit of providing integrity, unlike CBC. Typically, CBC is combined with a Message Authentication Code to ensure the ciphertext has not been tampered with in transit; however, this additional layer of security is often missed.
