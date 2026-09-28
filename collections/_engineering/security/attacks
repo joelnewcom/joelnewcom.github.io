@@ -1,0 +1,31 @@
+
+
+# Cross site scripting (XSS)
+
+## Reflected XSS
+Reflected XSS attacks arise when a web server reflects(shows/display) an injected script, such as a search result, an error message, or any other response that includes some or all of the input sent to the server as part of the request.
+The attack is then delivered to the victim through another route (e.g., e-mail or an alternative website), thus tricking the user into clicking on a malicious link. 
+The injected code travels to the vulnerable website, which reflects the attack payload back to the user's browser. The browser then executes the code because it came from a "trusted" server.
+
+## Stored XSS
+In the Stored XSS attack, the injected script is stored on the target application as legitimate content, such as a message in a forum or a comment in a blog post. 
+The injected code is stored in the database and sent to the users when it is retrieved, thus executing the attack payload in the victim's browser.
+
+## DOM-based XSS
+DOM-based XSS vulnerabilities usually occur when the JavaScript in a page takes user-provided data from a source in the HTML, such as the document.location, and passes it to a JavaScript sink that allows JavaScript code to be run, such as innerHTML. 
+The classic attack delivers the payload to the victim through another route (e.g., e-mail or an alternative website), thus tricking the user into visiting a malicious link. The exploitation is client-side, and the code is immediately executed in the user's browser.
+Like this: 
+```
+query string: https://example.com/page.html?msg=<script>alert(1)</script>
+fragment/hash: https://example.com/page.html#<script>alert(1)</script>
+```
+
+So the script is "living" inly in the victims browser and if the app is weak for such attacks, it would run this script provided with the link. 
+
+
+# Prevention of XSS
+## Input validation
+By validation we would not take any unwanted scripts as input. (Normally only accept enums, or predefined values, or check against type/schema)
+
+## Output encoding
+Make sure the browser gets only html/url/css encoded content so it would run anything unwanted, it would just display the script as raw. 
