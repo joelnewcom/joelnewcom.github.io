@@ -1,0 +1,25 @@
+---
+layout: single
+title: Hashes
+---
+
+# Weak hashes
+Don't use those anymore if clashes lead to unwanted behaviour: 
+
+- MD5
+- SHA1
+- RIPEMD & RIPEMD-128
+- WHIRLPOOL
+
+
+# Strong hashes
+- RIPEMD-160/256/320: multiple variants with differing levels of security, although all considered robust.
+- BLAKE2/3: purportedly faster than SHA-1/2/3 and immune to length extension.
+- SHA-2: all variants are publicly resistant to collision attacks, and most variants are resistant to length extension attacks.
+- SHA-3: the most recent iteration of the SHA series; publicly resistant to collision and length extension attacks.
+
+# Extra strong hash to use for password hashing
+- bcrypt: the default password hash algorithm used in many systems.
+- scrypt: an algorithm specifically designed to make the hashing computationally intensive to mitigate brute-forcing.
+- argon2: the winner of the 2015 Password Hashing Competition; the computational intensiveness of the process can be fine-tuned.
+- PBKDF2: a key derivation algorithm recommended by NIST.
